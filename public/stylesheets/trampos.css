@@ -1,0 +1,91 @@
+
+
+.container-trampos{
+display: flex;
+margin-top: 35px;
+flex-flow: wrap row;
+justify-content: space-around;
+
+}
+.detalhes-box{
+width: 300px;
+height: 500px;
+border: #062439 2px solid;
+border-radius: 10px;
+background-color: gainsboro;
+margin: 30px;
+padding: 15px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+text-align: center;
+}
+.procurar-trampos{
+outline: none;
+border: none;
+border-radius: 7px;
+height: 30px;
+width: 200px;
+margin-bottom: 15px;
+}
+.radio-container{
+display: flex;
+flex-direction: row;
+}
+.remoto-box{
+margin-left: 20px;
+}
+.labelPresencial, .labelRemoto{
+color: #062439;
+font-weight: bold;
+}
+.procurarBtn{
+background-color: rgb(63, 130, 99);
+border: none;
+border-radius: 8px;
+color: aliceblue;
+padding: 10px 70px 10px 70px;
+font-size: 17px;
+font-weight: bold;
+cursor: pointer;
+transition: .5s;
+}
+.procurarBtn:hover{
+background-color:rgb(72, 207, 174);
+}
+                                        /* AREA DOS USUARIOS */
+
+.users-box{
+display:flex;
+flex-direction: row;
+margin-right: 50px;
+}
+@media (max-width:715px){
+.users-box{
+flex-wrap: wrap;
+}
+}
+.users{
+padding: 10px;
+}
+.user-name{
+    display: block;
+    text-align: center;
+    color: aliceblue;
+    font-family:Arial;
+    font-size:1.3rem;
+    background-color: #062439;
+    width: 168px;
+    height: 8;
+    cursor: pointer;
+    transition: .5s;
+    padding: 3px;
+}
+.user-name:hover{
+background-color: rgb(72, 207, 174);
+}
+#user:hover{
+    zoom: 105%;
+    box-shadow:0px 0px 8px 0px;
+}

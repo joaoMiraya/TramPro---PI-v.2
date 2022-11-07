@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TramPro</title>
+    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/entrar.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<%- include('./partials/header') %>
+ <body>
+ <section>
+<div class="container-principal">
+<div class="login-container">
+    <form action="#">
+        <fieldset><legend>Faça seu login</legend>
+    <div class="loginbox">
+    <label for="email" class="emailLabel labelGeral">Email:</label>
+    <input type="email" name="email" id="email" class="emailLogin input-entrar" required>
+    </div>  
+                                <br>
+    <div class="loginbox">
+    <label for="senha" class="senhaLabel labelGeral">Senha:</label>
+    <input type="password" name="senha" id="senha" class="senhaLogin input-entrar" required>
+    </div>
+</form>
+<a class="esqueciSenha" href="#"><p>Esqueci minha senha!</p></a>
+</fieldset>
+<button type="submit" class="entrarBtn">Entrar</button>
+    <br><br>
+
+    <div class="gmail-login">
+    <a class="gmail-login" href="#"><h3 class="text-login gmail">Entre com o <strong class="g-color">G</strong><strong class="m-color">m</strong><strong class="a-color">a</strong><strong class="i-color">i</strong><strong class="l-color">l</strong></h3>
+    <img src="/images/gmail-icon.png" class="iconLogin-gmail" alt="login-gmail" width="50px" height="50px"> </a>
+    </div>
+                        <br>
+    <div class="facebook-login">                  
+    <a class="facebook-login" href="#"><h3 class="text-login facebook">Entre com o <strong class="facebook-text">Facebook</strong></h3>
+    <img src="/images/facebook-icon-login.png" class="iconLogin-face" alt="login-facebook" width="50px" height="50px"> </a>
+    </div>      
+    <br>
+    
+</div>
+
+                                        <!-- AREA DO CADASTRO -->
+
+<div class="cadastro-container">
+    <fieldset><legend>Faça seu Cadastro</legend>
+<form action="#">
+
+ <div class="inputBox">
+<label for="nome" class="nomeLabel labelGeral">Nome Completo:</label>
+<input type="text" name="nome" id="nome" class="nomeInput input-entrar" required>
+</div>
+
+<div class="inputBox">
+<label for="telefone" class="telefoneLabel labelGeral">Telefone:</label>
+<input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar" required>
+</div>
+
+<div class="inputBox">
+<label for="email" class="emailLabel labelGeral">E-mail:</label>
+<input type="email" name="email" id="email" class="emailInput input-entrar" required>
+</div>
+
+<div class="inputBox">
+<label for="confirm-email" class="confirm-emailLabel labelGeral">Confirme seu E-mail:</label>
+<input type="email" name="confirm-email" id="confirm-email" class="confirm-emailInput input-entrar" required>
+</div>
+
+<div class="inputBox">
+<label for="senha" class="senhaLabel labelGeral">Senha:</label>
+<input type="password" name="senha" id="senha" class="senhaInput input-entrar" required>
+</div>
+
+<div class="inputBox">
+<label for="confirm-password" class="confirm-passwordlLabel labelGeral">Confirme sua Senha:</label>
+<input type="password" name="confirm-password" id="confirm-password" class="confirm-passwordInput input-entrar" required>
+</div>
+
+<div class="generoGrupo">
+<div class="generoInput">
+<label for="female">Feminino</label>
+<input type="radio" id="female" name="genero">
+</div>
+
+<div class="generoInput">
+<label for="male">Masculino</label>
+<input type="radio" id="male" name="genero">
+</div>
+
+<div class="generoInput">
+<label for="others">Outros</label>
+<input type="radio" id="others" name="genero">
+</div>
+</div>
+</fieldset>
+<button class="cadastrarBtn" type="submit">Cadastrar</button>
+</form>
+</div>
+</div>
+</section>
+<%- include('./partials/footer') %>
+</body>
+</html>

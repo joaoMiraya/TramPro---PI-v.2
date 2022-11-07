@@ -1,0 +1,92 @@
+main{
+    margin-bottom: 50px;
+}
+
+.paiDeTodos{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap-reverse row-reverse;
+    width: 100vw;
+   
+}
+.trampo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 10px;
+    width: 330px;
+    height: 400px;
+    margin-top: 30px;
+}
+
+    .seus-trampos{
+    text-align: center;
+  font-size: 40px;
+  color: #062439;
+    }
+    
+    .nenhumTrampoTxt{
+    color: rgb(73, 81, 77);
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    }
+    .addTrampoBox{
+    margin-bottom: 30px;
+    }
+    .add-trampo{
+        font-size:large;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        background-color: rgb(63, 130, 99);
+        color: aliceblue;
+        padding: 10px 40px 10px 40px;
+        transition: .4s;
+    }
+    .add-trampo:hover{
+      background-color:rgb(72, 207, 174);
+      color: aliceblue;
+      border:rgb(72, 207, 174) 2px solid;
+    }
+    .perfil-container{
+        width: 350px;
+        height: 400px;
+        background-color: aliceblue;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+                    /* INPUT FILE  */
+
+.foto-container{
+display: flex;
+background-color:gainsboro;
+width: 70%;
+height: 70%;
+border-radius: 50%;
+text-align: center;
+justify-content: center;
+flex-direction: column;
+}
+.foto-container:hover{
+    background-color: #54585c;
+    border: none;
+}
+.addFotoTxt{
+font-family: 'Roboto', sans-serif;
+color: #aab0b6;
+cursor: pointer;
+}
+#edit-icon{
+margin-left: 80%;
+cursor: pointer;
+
+}

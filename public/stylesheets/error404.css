@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    overflow-x: hidden;
+}
+.errorContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: #062439;
+ font-size: 40px;
+  position: relative;
+  top: 30px;
+  left: 80px
+}
+.returnError{
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    color: aliceblue;
+    background-color:rgb(40, 124, 39);
+    border-radius: 5px;
+    padding: 8px;
+    position: relative;
+    left: 200px;
+    top: 250px;
+}
