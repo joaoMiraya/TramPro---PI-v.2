@@ -85,8 +85,14 @@ font-family: 'Roboto', sans-serif;
 color: #aab0b6;
 cursor: pointer;
 }
-#edit-icon{
+.edit-profile-button{
+margin-top: 5px;
 margin-left: 80%;
+background-color:aliceblue;
+outline: none;
+border: none;
 cursor: pointer;
-
+}
+#edit-icon:hover{
+color:  rgb(72, 207, 174);
 }

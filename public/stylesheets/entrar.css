@@ -64,7 +64,11 @@ font-weight: bold;
 background-color: rgb(63, 130, 99);
 color: aliceblue;
 cursor: pointer;
+transition: .4s;
 }
+.entrarBtn:hover{
+ background-color: rgb(72, 207, 174);
+ }
     
     .gmail-login{
         display: flex;
@@ -143,4 +147,8 @@ font-weight: bold;
 background-color: rgb(63, 130, 99);
 color: aliceblue;
 cursor: pointer;  
+transition: .4s;
+}
+.cadastrarBtn:hover{
+background-color: rgb(72, 207, 174);
 }

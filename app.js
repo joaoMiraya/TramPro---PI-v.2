@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const profileRouter = require('./routes/profile');
 const entrarRouter = require('./routes/entrar');
 const tramposRouter = require('./routes/trampos');
+const editProfileRouter = require('./routes/editProfile');
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use('/users', usersRouter);
 app.use('/profile', profileRouter); 
 app.use('/entrar', entrarRouter); 
 app.use('/trampos', tramposRouter); 
+app.use('/editProfile', editProfileRouter); 
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
