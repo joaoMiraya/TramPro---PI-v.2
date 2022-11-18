@@ -1,97 +1,139 @@
-
+body{
+overflow-x: hidden;
+width: 100vw;
+}
+.container-main-desktop{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  }
 .first-vp{
     background-color: rgb(40, 124, 39);
     width: 100vw;
-    height: 700px;
+    height: 650px;
     padding: 15px;
 }
+.search-container-mobile{
+display:block;
+flex-direction: column;
+}
 .search-box-mobile{
-    display: flex;
-    margin-top: 20px;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
   }
 
   .search-text-mobile{
     background-color: aliceblue;
-    width: 35vh;
-    height: 40px;
+    width: 60%;
+    height: 50px;
     border-radius: 5px;
    border-style: none;
-   font-size: 18px;
+   font-size: 30px;
    padding: 5px;
    outline: none;
   }
-  .search-btn{
-  background-color: rgb(72, 207, 174);
+  .pesquisar-btn{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  }
+  .search-btnMobile{
   border-radius: 5px; 
+  width: 60%;
+  height: 50px;
+  background-color: #FDB139;
    border: none; 
    cursor: pointer;
-  
+   font-size: 25px;
+   font-weight: bold;
+   color: #DFF6FE;
+   transition: 1s;
   }
-  #search-icon{
-    color: aliceblue;
+  .search-btnMobile:hover{
+background-color: #F55253;
+  }
+.text-area-main-mobile{
+   display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+.text-1-mobile,
+.text-2-mobile{
+  font-size: 40px;
+  margin-top: 40px;
+  color: aliceblue;
+  font-family: 'Roboto', sans-serif;
+}
+.fazer-mobile,
+.seuServico-mobile{
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  line-height: 0;
+  color: rgb(253, 177, 57);
+}
 
-  }
-.text-area-main{
+
+
+
+
+
+
+
+
+
+                                    /* COMEÇO FIRST SECTION DESKTOP */
+.text-area-main-desktop{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
     float: left;
-   
     }
    
-    .text-1{
-    font-size: 25px;
-    padding: 20px 0px;
+    .text-1-desktop, .text-2-desktop{
+    font-size: 50px;
+    margin: 50px 50px 0px 0px;
     color: aliceblue;
     font-family: 'Roboto', sans-serif;
     }
-     .text-2{
-    font-size: 25px;
-    padding: 20px 0px;
-    color: aliceblue;
-    font-family: 'Roboto', sans-serif;
-    
-    }
+
     #seuServico{
         font-family: 'Dancing Script', cursive;
-        font-size: 35px;
+        font-size: 70px;
         line-height: 0;
         color: rgb(253, 177, 57);
     }
     
     #fazer{
         font-family: 'Dancing Script', cursive;
-        font-size: 35px;
+        font-size: 70px;
         color: rgb(253, 177, 57);  
     }                                /*  INICIO AREA SLIDES*/
-   .container-main{
-    display: flex;
-    justify-content: space-around;
-    }
+  
+                      /* AREA DOS SLIDES TRAMPAR/CONTRATAR */
+                      
+.contentSlides{
+display: flex;
+text-align: center;
 
+transform: translate(0%, -30%);
+}                    
 .slides{
 display: flex;
 justify-content: center;
 align-items: center;
 position: relative;
-bottom: 100px;
 }
 
 .s1{
 position: relative;
-top: 250px;
+top: 300px;
 }
                                
-.contentSlides{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-text-align: center;
-}
   .slide-label{
     display: flex;
     justify-content: center;
@@ -114,7 +156,7 @@ text-align: center;
   }
   .trabalhar, .contratar{
     color: #fff;
-    font-size: 30px;
+    font-size: 50px;
   }
   .contratarBtnBox, .trabalharBtnBox{
     padding: 20px;
@@ -139,6 +181,9 @@ text-align: center;
     align-items: center;
   }
                                         /*  FIM DA AREA SLIDES*/
+
+                                        /*  FIM DA AREA DESKTOP*/
+
 
 
                                           /*  SECOND VIEWPORT / ANUNCIOS */
@@ -249,12 +294,13 @@ padding: 10px 20px 10px 20px;
       font-family: 'Roboto', sans-serif;
       font-weight: bold;
       text-align: center;
-      color: #062439;
+      color: rgb(73, 81, 77);
     }
   
                               /* FIM DOS VIDEOS BOX */
 .info{
 display: inline-flex;
+margin: 30px;
 }
 
 .spn{
@@ -290,14 +336,10 @@ display: inline-flex;
     flex-wrap: wrap;
   }}
 
-  @media (min-width:715px){
-    .search-box-mobile{
-  display: none;
-    }
-  }
 
-   @media (min-width: 999px){
-    .servicos-mobile{
+
+   @media (min-width: 1100px){
+    .first-vp-mobile{
       display: none;
     }
   }
@@ -307,37 +349,8 @@ display: inline-flex;
         height: 360px;
     }
     }
-    @media (min-width:485px){
-      .text-1, .text-2{
-      font-size: 30px;
-      }
-      #seuServico, #fazer{
-        font-size: 45px;
-      }
+  @media (max-width: 1100px){
+    .container-main-desktop{
+    display: none;
     }
-    @media (min-width:665px){
-     .text-1, .text-2{
-      font-size: 40px;
-      }
-      #seuServico, #fazer{
-        font-size: 65px;
-      }
-      .trabalhar, .contratar{
-        font-size: 35px;
-      }
-    }
-    @media (min-width:999px){
-      .trabalhar, .contratar{
-        font-size: 50px;
-      }
-      .slides{
-        position: relative;
-        bottom: 200px;
-      }
-      .text-1, .text-2{
-        font-size: 50px;
-        }
-        #seuServico, #fazer{
-          font-size: 70px;
-        }
-    }
+  }

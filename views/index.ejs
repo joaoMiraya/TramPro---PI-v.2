@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TramPro</title>
     <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+                            <!-- css links -->
+    <link rel="stylesheet" href="/stylesheets/swiperCSS.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/home.css">
+                            <!-- swiper css -->
+    <link rel="stylesheet" href="/stylesheets/swiper.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,23 +34,17 @@
 
 <main>
  <section class="first-vp">
-  
-  <div class="search-box-mobile">
-    <input class="search-text-mobile" type="search" placeholder="Qual serviço está precisando?">                                  
-        <button type="submit" class="search-btn"><i class="material-icons" id="search-icon">search</i></button>
-      </div>
-
-    <div class="container-main"> 
+    <div class="container-main-desktop"> 
     
-<div class="text-area-main">
-<h2 class="text-1">
+<div class="text-area-main-desktop">
+<h2 class="text-1-desktop">
   Nesse momento
   pode ter alguém
   precisando do
  <br> <strong id="seuServico">seu serviço!</strong>
 </h2>
 
-<h2 class="text-2"> Pare de perder tempo e mostre
+<h2 class="text-2-desktop"> Pare de perder tempo e mostre
   oque <br> <strong id="fazer">você sabe fazer!</strong></h2> 
 </div>
 
@@ -60,16 +61,12 @@
         <button class="carrosselBtn">Contratar</button></div> 
         </div>
   
-
     <div id="txtSlide2" class="slide" style="visibility: hidden;">
       <h3 class="trabalhar txtBtn">Você pode<br>procurar trabalhos para<br>sair do aperto</h3>
         <div class="trabalharBtnBox">
           <button class="carrosselBtn">Trampar</button></div> 
           </div>
   
-    
- 
-
 <div class="slide-label">
 <label id="btn1" class="bar-slide bs1" for="slide1"></label>
 <label id="btn2" class="bar-slide bs2" for="slide2"></label>
@@ -77,82 +74,231 @@
  
 </div>
     </div> 
-                    <!--   FIM DA AREA SLIDE -->
-
-                           
-<!-- <h2 id="text-2-mobile"> Pare de perder tempo e mostre
-  oque você sabe fazer!</h2>  -->
-
+                    <!--   FIM DA AREA SLIDE -->  <!-- SECTION MOBILE -->
+ <div class="first-vp-mobile">
+  
+  <div class="search-container-mobile">
+    <div class="search-box-mobile">
+      <input class="search-text-mobile" type="search" placeholder="Qual serviço está precisando?">                                  
+           </div>
+           <div class="pesquisar-btn">
+            <button type="submit" class="search-btnMobile">Pesquisar</button>
+           </div>
+  </div>   
+  
+      <div class="container-main-mobile"> 
+      
+  <div class="text-area-main-mobile">
+  <h2 class="text-1-mobile">
+    Nesse momento
+    pode ter alguém
+    precisando do
+   <br> <strong class="seuServico-mobile">seu serviço!</strong>
+  </h2>
+  
+  <h2 class="text-2-mobile"> Pare de perder tempo e mostre
+    oque <br> <strong class="fazer-mobile">você sabe fazer!</strong></h2> 
+  </div>
+</div>          
+                    <!-- FIM SECTION MOBILE -->                         
   </section>
-                            <!-- AREA DOS ANUNCIOS MOBILE -->
+                                  
+                            <!-- AREA DOS ANUNCIOS -->
  <section>
   <h2 class="subtitle-anuncios">Encontre oque você precisa</h2>
 
-  <div class="servicos-mobile">
-
-    <div class="servico">
-    <img class="img-userMobile" src="/images/Usuario EX.png">
-    <a class="servicos-btn user-nameMobile">Exemplo 1</a>
+  <div class="slide-container swiper">
+    <div class="slide-content">
+      <div class="card-wraper swiper-wrapper">
+  
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo1.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
     </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo2.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo3.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo3.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo4.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo3.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo3.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo4.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        <div class="card swiper-slide">
+  <div class="image-content">
+  <span class="overlay"></span>
+  
+  <div class="card-image">
+  <img src="/images/imageModelo4.jpg" alt="user-image" class="card-img">
+  </div>
+  </div>
+  
+  <div class="card-content">
+    <h2 class="name">Fulano de Souza</h2>
+    <p class="description">Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s,
+       when an unknown printer took a galley</p>
+  <button class="button">Saber mais</button>
+  </div>
+    </div>
+
+        
     
-    <div class="servico">
-     <img class="img-userMobile" src="/images/Usuario EX.png">
-     <a class="servicos-btn user-nameMobile">Exemplo 2</a>
-     </div>
-    </div>
 
-                  <!-- FIM DA AREA DOS ANUNCIOS MOBILE -->
 
-                  <!-- AREA DOS ANUNCIOS DESKTOP -->
-                  <div class="servicos-desktop">
 
-        <section class="servicoDesktop">
-        <img class="img-user" src="/images/Usuario EX.png">
-        <a class="servicos-btn user-name-Desktop">Exemplo 1</a>
-        </section>
-        
-        <section class="servicoDesktop">
-         <img class="img-user" src="/images/Usuario EX.png">
-         <a class="servicos-btn user-name-Desktop">Exemplo 2</a>
-         </section>
 
-         <section class="servicoDesktop">
-        <img class="img-user" src="/images/Usuario EX.png">
-        <a class="servicos-btn user-name-Desktop">Exemplo 3</a>
-        </section>
-        
-        <section class="servicoDesktop">
-         <img class="img-user" src="/images/Usuario EX.png">
-         <a class="servicos-btn user-name-Desktop">Exemplo 4</a>
-         </section>
-                        
-         <section class="servicoDesktop">
-        <img class="img-user" src="/images/Usuario EX.png">
-        <a class="servicos-btn user-name-Desktop">Exemplo 5</a>
-        </section>
-                    
-        <section class="servicoDesktop">
-         <img class="img-user" src="/images/Usuario EX.png">
-         <a class="servicos-btn user-name-Desktop">Exemplo 6</a>
-         </section>
-
-         <section class="servicoDesktop">
-        <img class="img-user" src="/images/Usuario EX.png">
-        <a class="servicos-btn user-name-Desktop">Exemplo 7</a>
-        </section>
-        
-        <section class="servicoDesktop">
-         <img class="img-user" src="/images/Usuario EX.png">
-         <a class="servicos-btn user-name-Desktop">Exemplo 8</a>
-         </section>
+      </div>
         </div>
+  
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+  
+  </div>
+
+
+
+
+
+
 
                       <!-- FIM DA AREA DOS ANUNCIOS DESKTOP -->
     <h2 class="subtitle-anuncios2">Um país inteiro de trabalhadores
       freelancer ao seu alcance!</h2>
                                      <!--  AREA DOS VIDEOS -->
 
-      <h3 class="titulo-video">Cada trabalhador, uma historia!</h3>
+      <h3 class="titulo-video">Encontre uma variedade de mão de obra para seu negócio!</h3>
       <div class="videos-container">
 <iframe id="video1" src="https://player.vimeo.com/video/744249506?h=e0b2b751ad" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -160,7 +306,7 @@
 <div class="info">
   <span class=" spn txt-1">
   <p><strong class="str">O melhor para cada orçamento</strong>  <br>
-                      <br>
+                      <br> <br>
   Encontre serviços de alta qualidade com várias opções de preço.
    Sem tarifas por hora, preços somente com base em projetos.
     </p>
@@ -195,10 +341,14 @@
 
 
 
-<script src="/javascripts/click-event-slideshow.js"></script>
+
 <%- include('./partials/footer') %>
 
 </body>
+<script src="/javascripts/click-event-slideshow.js"></script>
+<!-- Swiper JS -->
+<script src="/javascripts/swiper-bundle.min.js"></script>
+<script src="/javascripts/swiperJs.js"></script>
 </html>
 
 
