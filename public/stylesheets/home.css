@@ -1,12 +1,9 @@
 body{
 overflow-x: hidden;
-width: 100vw;
+margin: 0;
+padding: 0;
 }
-.container-main-desktop{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row-reverse;
-  }
+
 .first-vp{
     background-color: rgb(40, 124, 39);
     width: 100vw;
@@ -77,15 +74,12 @@ background-color: #F55253;
 }
 
 
-
-
-
-
-
-
-
-
                                     /* COMEÇO FIRST SECTION DESKTOP */
+ .container-main-desktop{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  }                                   
 .text-area-main-desktop{
     display: flex;
     flex-wrap: wrap;
@@ -180,12 +174,7 @@ top: 300px;
     justify-content: center;
     align-items: center;
   }
-                                        /*  FIM DA AREA SLIDES*/
-
-                                        /*  FIM DA AREA DESKTOP*/
-
-
-
+                                        /*  FIM DA AREA SLIDES*/   /*  FIM DA AREA DESKTOP*/
                                           /*  SECOND VIEWPORT / ANUNCIOS */
 
 .subtitle-anuncios{
@@ -201,105 +190,19 @@ color: rgb(73, 81, 77);
 text-align: center;
 font-size: 2rem;
 padding: 10px 20px 10px 20px;
-}
-.servicos-mobile{
-    display: flex;
-    justify-content: space-around;
-    padding: 15px;
-    }
-  
-    .img-userMobile{
-      display: flex;
-      width: 120px;
-      height: 120px;
-      transition: 0,7;
-      padding-bottom: 5px;
-    }
-    .img-userMobile:hover{
-     zoom: 105%;
-     box-shadow:0px 0px 8px 0px;
-    }
-    .user-nameMobile{
-      display: block;
-      text-align: center;
-      color: aliceblue;
-      font-family:Arial;
-      font-size: 1.5rem;
-      background-color: #062439;
-      width: 120px;
-      height: 8;
-      cursor: pointer;
-      transition: .5s;
-    }
-    .user-nameMobile:hover{
-      background-color: rgb(72, 207, 174);
-    }
-
-        /* AREA DOS ANUNCIOS DESKTOP */
-        .servicos-desktop{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 20%;
-  margin-right: 20%;
-  justify-content: space-around;
-  padding: 15px;
-  }
-  
-  .img-user{
-    display: flex;
-    width: 168px;
-    height: 168px;
-    transition: 0,7;
-    padding-bottom: 5px;
-  }
-  .img-user:hover{
-   zoom: 105%;
-   box-shadow:0px 0px 8px 0px;
-  }
-  .user-name-Desktop{
-    display: block;
-    text-align: center;
-    color: aliceblue;
-    font-family:Arial;
-    font-size: 1.5rem;
-    background-color: #062439;
-    width: 168px;
-    height: 8;
-    cursor: pointer;
-    transition: .5s;
-  }
-  .user-name-Desktop:hover{
-    background-color: rgb(72, 207, 174);
-  }
-            /* FIM DA AREA DOS ANUNCIOS DESKTOP */
-            
+}     
                       /* VIDEOS BOX */
-    .videos-container{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 250px;
-      height: 100px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0px 20px 0px;
-    box-shadow: 0px 0px 5px 0px;
-    }
-    .titulo-video{
-      padding-top: 30px;
-      font-size: 40px;
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      text-align: center;
-      color: rgb(73, 81, 77);
-    }
-  
+
+  .video-container-pai{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 50px 30px;
+  justify-content: space-between;
+  align-items: center;
+  }                 
                               /* FIM DOS VIDEOS BOX */
 .info{
-display: inline-flex;
+flex-direction: column;
 margin: 30px;
 }
 
@@ -312,43 +215,147 @@ margin: 30px;
 }
 
   .str{
-    font-size: 1.5rem;
+    font-size: 25px;
     color: rgb(59, 66, 62);
   }
-
-
-
+                                       /*  EXPLORE CLASSES DE SERVIÇOS */
+.classes-servico-box{
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin: 30px;
+flex-wrap: wrap;
+}  
+.classes-servico{
+display: flex;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+align-items: center;
+transition: .8s;
+cursor: pointer;
+}  
+.classes-servico img{
+width: 350px;
+height: 200px;
+}         
+.classes-servico img:hover{
+opacity: .7;
+}                      
+.classes-image{
+width: 100%;
+height: 100%;
+overflow: hidden;
+border-radius: 10px;
+}
+.servicos-description{
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 300px;
+height: 100px;
+text-align: center;
+}
+.servicos-title{
+color: rgb(49, 49, 49);
+}
+.explore-title{
+margin-left:30px;
+color: rgb(56, 52, 52);
+}
+.nav-explore-servicos{
+display: flex;
+justify-content: space-between;
+}
+.nav-explore{
+margin-right: 50px;
+color: #F55253;
+}
+                                      /*   FIM DO MAIS PROCURADOS */
+.model-preFooter{
+width: 95vw;
+height: 500px;
+background-color: #1D6758;
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin: 30px;
+border-radius: 5px;
+}
+.image-preFooter img{
+width: 600px;
+height: 500px;
+margin-top: 4px;
+}
+.textBox-preFooter{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.text-preFooter{
+text-align: center;
+color: #EEF1E8;
+font-size: 40px;
+}
+.engrenagem,
+.girar{
+font-family: 'Dancing Script', cursive;
+font-size: 60px;
+color: #F55253;
+}
+.btn-preFooter{
+font-weight: bold;
+padding: 5px 10px;
+margin-top: 15px;
+font-size: 25px;
+background-color: #F55253;
+color: aliceblue;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: .6s;
+}
+.btn-preFooter:hover{
+background-color: #FDB139;
+}
                                       /*   MEDIA QUERIES */
  
-  @media (max-width: 999px){
-    .servicos-desktop{
-      display: none;
-    }
+  @media (max-width:900px){
+  .image-preFooter{
+  display: none;
   }
-  @media (max-width:715px){
-    .titulo-video, .umaHistoria{
-    font-size: 20px;
+  }                                   
+  @media (max-width:1100px){
+    .video-container-pai{
+     flex-wrap: wrap;
     }
+    }
+@media (max-width:700px){
+  #video1{
+  width: 500px;
+  height: 500px;
   }
-
-@media (max-width: 999px){
-  .info{
-    flex-wrap: wrap;
-  }}
-
-
+}
+@media (max-width:550px){
+  #video1{
+  width: 450px;
+  height: 450px;
+  }
+}
+@media (max-width:450px){
+  #video1{
+  width: 400px;
+  height: 400px;
+  }
+}
 
    @media (min-width: 1100px){
     .first-vp-mobile{
       display: none;
     }
   }
-  @media (min-width:715px){
-    .videos-container{
-      width: 640px;
-        height: 360px;
-    }
-    }
+
   @media (max-width: 1100px){
     .container-main-desktop{
     display: none;
