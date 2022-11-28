@@ -1,0 +1,109 @@
+fieldset{
+padding: 15px;
+border-radius: 50px 0px;
+border: 4px solid #143F6A;
+}
+
+legend{
+text-align: center;
+font-size: 20px;
+font-family: 'Roboto', sans-serif;
+color:#143F6A;
+font-weight: bold;
+}
+.editProfile-container{
+display: flex;
+flex-wrap: wrap;
+}
+.generoGrupo-editProfile{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.generoInput-editProfile{
+margin: 5px;
+display: flex;
+justify-content: center;
+margin-right: 10px;
+}
+.generoInput-editProfile label{
+color: #6a6a6a;
+margin-right: 5px;
+}
+.editProfile-container{
+display: flex;
+justify-content: space-around;
+margin: 30px;
+}
+.inputBox-editProfile{
+margin-bottom: 10px;
+padding: 8px;
+background-color: #fff;
+border-radius: 18px;
+}
+.inputBox-editProfile input{
+border: none;
+border-bottom: 1px solid #000;
+outline: none;
+font-size: 18px;
+}
+.inputBox-editProfile label{
+color: #6a6a6a;
+}
+
+
+.infoBox-editProfile{
+margin-bottom: 10px;
+background-color: #fff;
+padding: 8px;
+border-radius: 18px;
+}
+.infoBox-editProfile input{
+border: none;
+border-bottom: 1px solid #000;
+outline: none;
+}
+.infoBox-editProfile label{
+color: #6a6a6a;
+}
+.curriculoBox{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+}
+.curriculoBox p{
+color: #6a6a6a;
+}
+.material-symbols-outlined{
+color: #fff;
+transition: .4s;
+cursor: pointer;
+background-color: #143F6A;
+border-radius: 50%;
+padding: 5px;
+}
+.material-symbols-outlined:hover{
+color: #47B5FF;
+}
+.btn-salvar-box{
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+}
+.btn-salvar{
+background-color: #143F6A;
+color: #fff;
+font-weight: bold;
+padding: 8px 40px;
+border: none;
+border-radius: 8px;
+font-size: 18px;
+cursor: pointer;
+transition: .5s;
+margin-top: 40px;
+}
+.btn-salvar:hover{
+background-color: #47B5FF;
+}

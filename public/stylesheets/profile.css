@@ -2,6 +2,50 @@ main{
     margin-bottom: 50px;
 }
 
+.nav-profile-container{
+display: flex;
+justify-content: flex-end;
+margin-top: 15px;
+margin-right: 50px;
+}
+.btn-trocarAcc-box{
+margin-right: 45px;
+}
+.btn-trocarAcc{
+background-color: #143F6A;
+border: none;
+border-radius: 3px;
+padding: 10px 15px;
+transition: .5s;
+}
+.btn-trocarAcc:hover{
+background-color: #47B5FF;
+}
+.btn-trocarAcc a{
+color: #fff;
+font-weight: bold;
+font-size: 15px;
+}
+.favoritos-icon{
+margin-right: 30px;
+}
+.favoritos-icon .material-symbols-outlined{
+color: #143F6A;
+cursor: pointer;
+transition: .5s;
+}
+.favoritos-icon .material-symbols-outlined:hover{
+color: #47B5FF;
+}
+.mensagens-icon .material-symbols-sharp{
+margin-right: 15px;
+cursor: pointer;
+color: #143F6A;
+transition: .5s;
+}
+.mensagens-icon .material-symbols-sharp:hover{
+color: #47B5FF;
+}
 .paiDeTodos{
     margin-top: 50px;
     display: flex;
@@ -92,6 +136,10 @@ background-color:aliceblue;
 outline: none;
 border: none;
 cursor: pointer;
+}
+.material-icons{
+color: #6A6A6A;
+transition: .4s;
 }
 #edit-icon:hover{
 color:  rgb(72, 207, 174);

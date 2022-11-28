@@ -15,6 +15,7 @@ max-width: 1120px;
 width: 100%;
 background-color: none;
 border-radius: 25px;
+margin: 30px;
 }   
 .image-content, .card-content{
 display: flex;

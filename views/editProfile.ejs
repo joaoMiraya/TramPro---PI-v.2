@@ -7,7 +7,7 @@
     <title>TramPro</title>
     <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/stylesheets/editProfile.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,122 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <%- include('./partials/header') %>
+<body>
+  
+
+<main>
+  <div class="editProfile-container">
+<div class="editProfile-information">
+  <fieldset><legend>Edite suas informações</legend>
+<form action="#">
+
+<div class="inputBox-editProfile">
+<label for="nome" class="nomeLabel labelGeral">Nome Completo:</label>
+<input type="text" name="nome" id="nome" class="nomeInput input-entrar" required>
+</div>
+
+<div class="inputBox-editProfile">
+<label for="telefone" class="telefoneLabel labelGeral">Telefone:</label>
+<input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar" placeholder="(XX) XXXXX-XXXX" required>
+</div>
+
+<div class="inputBox-editProfile">
+<label for="email" class="emailLabel labelGeral">E-mail:</label>
+<input type="email" name="email" id="email" class="emailInput input-entrar" required>
+</div>
+
+<div class="inputBox-editProfile">
+<label for="confirm-email" class="confirm-emailLabel labelGeral">Confirme seu E-mail:</label>
+<input type="email" name="confirm-email" id="confirm-email" class="confirm-emailInput input-entrar" required>
+</div>
+
+<div class="inputBox-editProfile">
+<label for="senha" class="senhaLabel labelGeral">Senha:</label>
+<input type="password" name="senha" id="senha" class="senhaInput input-entrar" required>
+</div>
+
+<div class="inputBox-editProfile">
+<label for="confirm-password" class="confirm-passwordlLabel labelGeral">Confirme sua Senha:</label>
+<input type="password" name="confirm-password" id="confirm-password" class="confirm-passwordInput input-entrar" required>
+</div>
+
+<div class="generoGrupo-editProfile">
+<div class="generoInput-editProfile">
+<label for="female">Feminino</label>
+<input type="radio" id="female" name="genero">
+</div>
+
+<div class="generoInput-editProfile">
+<label for="male">Masculino</label>
+<input type="radio" id="male" name="genero">
+</div>
+
+<div class="generoInput-editProfile">
+<label for="others">Outros</label>
+<input type="radio" id="others" name="genero">
+</div>
+</div>
+
+</fieldset>
+</form>
+</div>
+
+<div class="profissionalArea">
+  <div class="editProfile-container">
+  <fieldset><legend>Edite suas informações</legend>
+<form action="#">
+
+<div class="infoBox-editProfile">
+<label for="profissao" class="profissao-label">Profissão:</label >
+<input type="text" name="profissao" id="profissao" class="profissao-input" required>
+</div>
+
+<div class="infoBox-editProfile">
+<label for="salario" class="salarioLabel">Salario desejado:</label>
+<input type="number" name="salario" id="salario" class="salario-input" required>
+</div>
+
+<div class="infoBox-editProfile">
+  <label for="endereco" class="enderecoLabel">Cidade:</label>
+  <input type="text" name="endereco" id="endereco" class="endereco-input" required>
+  <label for="estado" class="estadoLabel">Estado:</label>
+  <input type="text" name="estado" id="estado" class="estado-input" required>
+  </div>
+  
+  <div class="infoBox-editProfile">
+    <label for="cep" class="salarioLabel">CEP:</label>
+    <input type="number" name="cep" id="cep" class="cep-input" required>
+    </div>
+    
+ <div class="infoBox-editProfile">
+    <label for="distancia" class="salarioLabel">Distancia disponivel:</label>
+    <input type="range" min="10" max="1000" name="distancia" id="distancia" class="distancia-input" required>
+    </div>
+
+<div class="curriculoBox">
+  <p>Adicione seu Currículo</p>
+   <input id="inputCv" type="file" name="cv" style="display:none;">
+   <span id="cvIcon" class="material-symbols-outlined">
+      upload_file
+      </span>
+    </div>
+</div>
 
 
+</div>
+  </div>
+  <div class="btn-salvar-box">
+    <a href="#"><button class="btn-salvar">Salvar</button></a>
+    </div>
+    
+</main>
+
+
+<%- include('./partials/footer') %>
+</body>
+<script src="/javascripts/addCV.js"></script>
+</html>

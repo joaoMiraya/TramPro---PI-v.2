@@ -33,7 +33,7 @@
 <%- include('./partials/header') %>
 
 <main>
- <section class="first-vp">
+ <section id="section-test" class="first-vp">
     <div class="container-main-desktop"> 
     
 <div class="text-area-main-desktop">
@@ -272,12 +272,6 @@
   </div>
     </div>
 
-        
-    
-
-
-
-
       </div>
         </div>
   
@@ -347,7 +341,7 @@
   </div>
 <div class="servicos-description">
 <h2 class="servicos-title">Alimentação</h2>
-<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
   </div>
     </div>
 
@@ -357,7 +351,7 @@
   </div>
 <div class="servicos-description">
 <h2 class="servicos-title">Manutenção</h2>
-<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
   </div>
     </div>
 
@@ -367,7 +361,7 @@
   </div>
 <div class="servicos-description">
 <h2 class="servicos-title">Jardinagem</h2>
-<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
   </div>
     </div>
         </div>
@@ -377,7 +371,7 @@
 
   <div class="textBox-preFooter">
   <h1 class="text-preFooter">Encontre a <strong class="engrenagem">engrenagem</strong> que faltava para seu negócio <strong class="girar">girar  </strong>!</h1>
-  <button class="btn-preFooter">Começar</button>
+  <a href="entrar"><button class="btn-preFooter">Começar</button></a>
   </div>
 
     <div class="image-preFooter">
@@ -385,16 +379,39 @@
     </div>
 </div>
 
-
-
-</main>
-
-
-
+    </main>
 
 <%- include('./partials/footer') %>
 
+<div id="modal-cadastro" class="modal-container">
+<div class="modal">
+  <button id="modal-closeButton" class="close-modal-btn">x</button>
+  <h3 class="subtitle-modal">Faça o login ou crie uma conta</h3>
+  <form action="#">
+<div class="email-modal-box">
+<label for="input-modal-email">E-mail:</label>
+<input name="input-modal-email" type="email" class="input-modal">
+</div>
+
+<div class="senha-modal-box">
+<label for="input-modal-senha">Senha:</label>
+<input name="input-modal-senha" type="password" class="input-modal">
+</div>
+
+<button class="button-login-modal">Entrar</button>
+<div class="hr-modal-ou">
+<hr>ou<hr>
+</div>
+<div class="cadastrar-btn-modal-box">
+<button class="button-cadastrar-modal">Cadastrar</button>
+</div>
+  </form>
+</div>
+
+</div>
 </body>
+
+<script src="/javascripts/loginModalEvent.js"></script>
 <script src="/javascripts/click-event-slideshow.js"></script>
 <!-- Swiper JS -->
 <script src="/javascripts/swiper-bundle.min.js"></script>

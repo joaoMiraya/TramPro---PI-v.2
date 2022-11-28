@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TramPro</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+   <link rel="stylesheet" href="/stylesheets/contratanteProfile.css">
+    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+  <%- include('./partials/header') %>
+    
+<main> 
+  <div class="nav-profile-container">
+<div class="btn-trocarAcc-box">
+<button class="btn-trocarAcc"><a href="/profile">Trocar Trabalhador</a></button>
+</div>
+
+<div class="favoritos-icon">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+
+<div class="mensagens-icon">
+<span class="material-symbols-sharp">
+mail
+</span>
+</div>
+  </div>
+
+  <div class="paiDeTodos">
+
+<div class="trampo-container"> 
+<div class="trampoBox">
+<h1 class="seus-trampos">Trampos Solicitados</h1>
+<p class="nenhumTrampoTxt">Parece que você não solicitou nenhum trampo ainda</p>
+</div> 
+
+<div class="addTrampoBox">
+<a class="add-trampo" href="/trampos">Procurar Trampos</a>
+</div>
+
+</div>
+
+<div class="perfil-container"> 
+
+ <button id="editBtn" type="submit" class="edit-profile-button"><a href="editProfile"><i class="material-icons" id="edit-icon">edit</i></a></button>
+
+<div class="foto-container">
+  <form action="/register" method="post"
+  enctype="multipart/form-data">
+  <input type="file" style="display: none;"  name="userImage" id="inputAvatar" accept="image/*">
+  <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p>
+  </label>
+  </div>
+</form>
+
+<h2 id="nome">Fulano de Souza</h2>
+  </div>
+  
+
+</div>
+
+
+
+
+</main>
+<%- include('./partials/footer') %>
+  </body>
+</html>
+  

@@ -11,6 +11,9 @@ const profileRouter = require('./routes/profile');
 const entrarRouter = require('./routes/entrar');
 const tramposRouter = require('./routes/trampos');
 const editProfileRouter = require('./routes/editProfile');
+const profileContratanteRouter = require('./routes/profileContratante');
+const addTrampoRouter = require('./routes/addTrampo');
+
 
 const app = express();
 
@@ -31,7 +34,8 @@ app.use('/profile', profileRouter);
 app.use('/entrar', entrarRouter); 
 app.use('/trampos', tramposRouter); 
 app.use('/editProfile', editProfileRouter); 
-
+app.use('/profileContratante', profileContratanteRouter); 
+app.use('/addTrampo', addTrampoRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -18,76 +18,325 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 <body>
     <%- include('./partials/header') %>
-
-    <div class="container-trampos">
-<div class="detalhes-box">
-
-   <div class="input-box">
-<form action="#">
-<input class="procurar-trampos" type="search" placeholder="Oque você precisa?">
-
-<div class="radio-container">
-<div class="presencial-box">
-<label class="labelPresencial" for="presencial">Presencial</label>
-<input name="trabalho" id="presencial" type="radio">
+<main>
+<div class="search-result-text-box">
+<h1 class="search-result-text">Resultados para: "xxxxxxxx"</h1>
 </div>
 
-<div class="remoto-box">
-<label class="labelRemoto" for="remoto">Remoto</label>
-<input name="trabalho" id="remoto" type="radio">
-</div>
-</div>
-</form>
-</div> 
+ <div class="container-paiDeTodos-trampos">
+<div class="nav-category-container">
 
-<div class="procurar-box">
-<button type="submit" class="procurarBtn">Procurar</button>
+<div class="optionBox">
+   <form  name="orcamentos" action="#">
+<select name="orcamentos" id="orcamentos">
+  <option value="todasOrcamentos" >Todos Orçamentos</option>
+  <option value="alto">Orçamento Alto</option>
+  <option value="medio">Orçamento Médio</option>
+  <option value="baixo">Orçamento Baixo</option>
+</select>
+   </form>
+         </div>
+
+ <div class="optionBox">
+   <form  name="categorias" action="#">
+<select name="categorias" id="category">
+  <option value="todasCategorias" >Todas Categorias</option>
+  <option value="desenvolvedor">Desenvolvedor</option>
+  <option value="delivery">Delivery</option>
+  <option value="jardinagem">Jardinagem</option>
+  <option value="manutenção">Manutenção</option>
+</select>
+   </form>
+         </div>
+
+ <div class="optionBox">
+   <form name="servicos" action="#">
+<select name="servicos" id="servicos">
+  <option value="todosServicos" >Opções de Serviços</option>
+  <option value="desenvolvedor">Desenvolvedor</option>
+  <option value="delivery">Delivery</option>
+  <option value="jardinagem">Jardinagem</option>
+  <option value="manutenção">Manutenção</option>
+</select>
+   </form>
+         </div>
+
+
+ <div class="optionBox">
+   <form name="inicio" action="#">
+<select name="inicio" id="inicio">
+  <option value="Inicio">Quando começar?</option>
+  <option value="desenvolvedor">Inicio Imediato</option>
+  <option value="delivery">Fazer Avaliação</option>
+  <option value="jardinagem">Combinar data de inicio</option>>
+</select>
+   </form>
+         </div>
+              </div>
+
+<div class="toggle-buttons">
+
+  <div class="toggle-presencial-box">
+<input type="checkbox" id="presencial">
+<label for="presencial" class="toggle-presencial"></label>
+</div>
+<p class="text-toggle">Trampo Presencial</p>
+
+  <div class="toggle-remoto-box">
+<input type="checkbox" id="remoto">
+<label for="remoto" class="toggle-remoto"></label>
+</div>
+<p class="text-toggle">Trampo Remoto</p>
+</div>
+    </div>
+                        <!--  AREA DOS ANUNCIOS -->
+<div class="anuncios-container">
+<div class="title-anuncios">
+<h3>Conheça nossos trabalhadores:</h3>
+
+</div>
+
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
 </div>
 </div>
 
- <div class="users-box">
-
-<div class="users-box1">
-<div class="users">
-<img id="user" src="/images/Usuario EX.png" alt="Usuario">
-<a class="user-name" href="#">Nome de Usuario</a>
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
+</div>
 </div>
 
-<div class="users">
-<img id="user" src="/images/Usuario EX.png" alt="Usuario">
-<a class="user-name" href="#">Nome de Usuario</a>
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
+</div>
+</div>
+
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
 </div>
 </div>
 
-<div class="users-box2">
-<div class="users">
-<img id="user" src="/images/Usuario EX.png" alt="Usuario">
-<a class="user-name" href="#">Nome de Usuario</a>
-</div>      
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
+</div>
+</div>
 
-<div class="users">
-<img id="user" src="/images/Usuario EX.png" alt="Usuario">
-<a class="user-name" href="#">Nome de Usuario</a>
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
 </div>
 </div>
 
-<div class="users-box3">
-<div class="users">
-<img id="user" src="/images/Usuario EX.png" alt="Usuario">
-<a class="user-name" href="#">Nome de Usuario</a>
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
+</div>
+</div>
 </div>
 
-<div class="users">
-<img id="user" src="/images/Usuario EX.png" alt="Usuario">
-<a class="user-name" href="#">Nome de Usuario</a>
+<div class="workers-card">
+  <div class="work-image-box">
+<img src="/images/cozinheiroImage.jpg" alt="Work">
+  </div>
+    <div class="description-worker">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    </div>
+      <div class="worker-profile">
+        <div class="worker-imageProfile">
+          <img src="/images/imageModelo1.jpg" alt="Profile">
+        </div>
+        <div class="worker-name">
+        <h3>Fulano de Souza</h3>
+      </div>
+      </div>
+    <hr>
+<div class="fav-price-box">
+  <div class="favIcon-box">
+<span class="material-symbols-outlined">
+favorite
+</span>
+</div>
+<div class="price-box">
+  <h3 class="price">R$150,00</h3>
 </div>
 </div>
- </div>
 </div>
 
+
+
+
+</div>
+  </main>
 <%- include('./partials/footer') %>
 </body>
 </html>

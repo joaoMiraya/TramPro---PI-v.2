@@ -44,7 +44,7 @@ label.logo{
 
 .search-text{
   background-color: aliceblue;
-  width: 52vh;
+  width: 40vw;
   height: 40px;
   border-radius: 5px;
  border-style: none;
@@ -176,7 +176,13 @@ padding-left: 50px;
     font-size: 16px;
   }
 }
-@media (max-width:1074px){
+@media (max-width:1400px){
+  .search-text{
+  min-width: 300px;
+  width: 75%;  
+  } 
+}
+@media (max-width:1100px){
   .checkbtn{
     display: block;
   }

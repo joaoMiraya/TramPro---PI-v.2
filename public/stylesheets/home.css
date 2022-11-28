@@ -2,6 +2,7 @@ body{
 overflow-x: hidden;
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
 
 .first-vp{
@@ -233,11 +234,11 @@ text-align: center;
 justify-content: center;
 align-items: center;
 transition: .8s;
-cursor: pointer;
 }  
 .classes-servico img{
 width: 350px;
 height: 200px;
+cursor: pointer;
 }         
 .classes-servico img:hover{
 opacity: .7;
@@ -255,6 +256,7 @@ justify-content: center;
 width: 300px;
 height: 100px;
 text-align: center;
+margin: 20px;
 }
 .servicos-title{
 color: rgb(49, 49, 49);
@@ -318,6 +320,135 @@ transition: .6s;
 }
 .btn-preFooter:hover{
 background-color: #FDB139;
+}
+                   /*  CAIXA MODAL  */
+.subtitle-modal{
+font-family: 'Roboto', sans-serif;
+color:#06293D;
+font-size: 1.5rem;
+}
+.close-modal-btn{
+position:absolute;
+top: 0;
+left: 0;
+margin: 5px 10px;
+border:none;
+background-color: #EEF1E8;
+color: #000;
+font-family: 'Roboto', sans-serif;
+font-size: 1.5rem;
+cursor: pointer;
+transition: .4s;
+}    
+.close-modal-btn:hover{
+color: #f00;
+}
+.modal-container{
+width: 100vw;
+height: 100vh;
+background: rgba(0, 0, 0, .5);
+position: fixed;
+z-index: 999;
+top: 0;
+left: 0;
+display: none;
+justify-content: center;
+align-items: center;
+}
+.modal-container.mostrar{
+display: flex;
+}
+
+.modal{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #EEF1E8;
+padding: 30px;
+min-width: 300px;
+width: 30%;
+position: relative;
+border-radius: 5px 70px;
+box-shadow: 5px 0px 15px 0px;
+}
+@keyframes modal{
+from{
+opacity: 0;
+transform: translate3d(0, -60px, 0);
+}
+to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+}
+
+.mostrar .modal{
+  animation: modal .3s;
+}
+
+.email-modal-box,
+.senha-modal-box{
+margin: 10px;
+}
+.email-modal-box input,
+.senha-modal-box input{
+border: none;
+border-bottom: 1px solid #47B5FF;
+font-size: 18px;
+outline: none;
+background-color: #EEF1E8;
+}
+.email-modal-box label,
+.senha-modal-box label{
+color: #062439;
+font-weight: bold;
+}
+.email-modal-box,
+.senha-modal-box{
+
+padding: 5px;
+}
+
+.button-login-modal{
+margin-left: 20%;
+margin-top: 10px;
+background-color:#1D6758;
+border: none;
+border-radius: 8px;
+padding: 10px 20%;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+cursor: pointer;
+transition: .4s;
+}
+.button-login-modal:hover{
+background-color: #3F8263;
+}
+.button-cadastrar-modal{
+margin-left: 15%;
+background-color:#F55253;
+border: none;
+border-radius: 8px;
+padding: 10px 20%;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+cursor: pointer;
+transition: .4s;
+}
+.button-cadastrar-modal:hover{
+ background-color: #FDB139;
+}
+.hr-modal-ou{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+hr {
+margin: 20px 10px;
+width: 40%;
 }
                                       /*   MEDIA QUERIES */
  

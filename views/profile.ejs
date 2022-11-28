@@ -18,15 +18,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-<script src="/javascripts/addPicture.js"></script>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 
   <%- include('./partials/header') %>
     
 <main> 
+  <div class="nav-profile-container">
+<div class="btn-trocarAcc-box">
+<button class="btn-trocarAcc"><a href="/profileContratante">Trocar Contratante</a></button>
+</div>
+
+<div class="mensagens-icon">
+<span class="material-symbols-sharp">
+mail
+</span>
+</div>
+  </div>
+
   <div class="paiDeTodos">
 
 <div class="trampo-container"> 
@@ -36,7 +49,7 @@
 </div> 
 
 <div class="addTrampoBox">
-<a class="add-trampo" href="#">Adicionar Trampos</a>
+<a class="add-trampo" href="addTrampo">Adicionar Trampos</a>
 </div>
 
 </div>
