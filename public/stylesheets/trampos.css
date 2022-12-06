@@ -43,10 +43,9 @@ font-weight: bold;
 }
 .toggle-buttons{
 display: flex;
-
-margin-left: 50px;
-margin-top: 30px;
+align-items: center;
 justify-content: flex-start;
+margin-top: 30px;
 }
 .toggle-presencial-box,
 .toggle-remoto-box{
@@ -185,6 +184,11 @@ height: 30px;
 .worker-name h3{
 font-size: 15px;
 cursor: pointer;
+transition: .4s;
+}
+.worker-name h3:hover{
+border-bottom: 1px solid #ff0000;
+color: #47B5FF;
 }
 hr{
 color: black;

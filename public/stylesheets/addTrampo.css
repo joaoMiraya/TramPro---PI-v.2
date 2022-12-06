@@ -52,7 +52,7 @@ justify-content: center;
 align-items: center;
 }
 .btn-salvar{
-background-color: #F55253;
+background-color: #143F6A;
 color: #fff;
 font-weight: bold;
 padding: 8px 40px;
@@ -64,5 +64,5 @@ transition: .5s;
 margin-top: 40px;
 }
 .btn-salvar:hover{
-background-color: #FDB139;
+background-color: #47B5FF;
 }

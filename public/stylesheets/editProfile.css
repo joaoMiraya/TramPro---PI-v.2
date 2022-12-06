@@ -77,15 +77,16 @@ margin-top: 20px;
 color: #6a6a6a;
 }
 .material-symbols-outlined{
-color: #fff;
+color: #6a6a6a;
 transition: .4s;
 cursor: pointer;
-background-color: #143F6A;
-border-radius: 50%;
-padding: 5px;
+
 }
 .material-symbols-outlined:hover{
 color: #47B5FF;
+background-color: #143F6A;
+border-radius: 50%;
+padding: 5px;
 }
 .btn-salvar-box{
 display: flex;
