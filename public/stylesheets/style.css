@@ -5,11 +5,11 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-
+  font-family: 'Roboto Mono', sans-serif;
 }
 
 body{
- font-family: 'Roboto', sans-serif;
+
   background-color: gainsboro;
   width: 100vw;
   height: 100vh;
@@ -53,14 +53,19 @@ label.logo{
  outline: none;
  
 }
-
-#search-icon{
-  color: aliceblue;
-  background-color: rgb(72, 207, 174);
+.search-btn{
+ background-color: rgb(72, 207, 174);
   border-radius: 5px;
   padding: 8px;
+  border: none;
   position: relative;
-  right: 7px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+
+}
+#search-icon{
+  color: aliceblue;
 }
 
 nav{

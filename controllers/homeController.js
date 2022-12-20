@@ -1,4 +1,4 @@
-var path = require('path');
+/* var path = require('path');
 
 const homeController = {
     index: (req, res) =>{
@@ -7,4 +7,4 @@ const homeController = {
     }
 };
 
-module.exports = homeController;
+module.exports = homeController; */

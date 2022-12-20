@@ -1,12 +1,11 @@
-const path = require('path');
-const multer = require('multer');
+
 const express = require('express');
 const router = express.Router();
 
-const mainController = require('../controllers/mainController');  
+const editProfileController = require('../controllers/editProfileController');  
 
 
 
-router.get('/', mainController.editProfile);
+router.get('/', editProfileController.editProfile);
 
 module.exports = router;

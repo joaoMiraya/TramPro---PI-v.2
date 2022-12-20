@@ -8,8 +8,10 @@
     <a href="/"><label class="logo"><i id="tram-logo">Tram</i><b>Pro</b></label></a>
 
     <div class="search-box">
-    <input class="search-text" type="search" placeholder="Qual serviço está precisando?">                                  
-        <a class="search-btn" href="#"><i class="material-icons" id="search-icon">search</i></a>
+      <form action="/search" method="GET" class="search-form">
+    <input class="search-text" name="keywords" type="text" placeholder="Qual serviço está precisando?">                                  
+        <button type="submit" class="search-btn"><i class="material-icons" id="search-icon">search</i></button>
+      </form>
       </div>
 
       <ul>

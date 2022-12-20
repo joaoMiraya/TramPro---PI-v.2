@@ -1,0 +1,31 @@
+{
+"servicos": [
+{
+    "id": 1,
+    "image": "imageModelo1.jpg",
+    "name": "Desenvolvedor",
+    "price": "200",
+    "discount": "0",
+    "category": "valor-alto",
+    "description": "gdsgsgsdg."
+   },
+   {
+    "id": 2,
+    "image": "imageModelo2.jpg",
+    "name": "Motoboy",
+    "price": "150",
+    "discount": "0",
+    "category": "valor-medio",
+    "description": "sgdgsdgsd."
+   },
+   {
+    "id": 3,
+    "image": "imageModelo3.jpg",
+    "name": "Jardineiro",
+    "price": "100",
+    "discount": "0",
+    "category": "valor-baixo",
+    "description": "Mdgsgsgsg."
+   }
+
+]}
