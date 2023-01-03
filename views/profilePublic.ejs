@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TramPro</title>
+    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+                            <!-- css links -->
+    <link rel="stylesheet" href="/stylesheets/swiperCSS.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/profilePublic.css">
+                            <!-- swiper css -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,0" />
+</head>
+<%- include('./partials/header') %>
+<body>
+<div class="container-main">
+
+<div class="perfil">
+
+    <span class="material-symbols-outlined chatIcon">
+        chat_bubble
+        </span>
+
+    <div class="informacoes-pessoais">
+        <div class="name">
+            <h4> Fulano de Souza</h4>
+            </div>
+        <div class="foto">
+        <img src="/images/imageModelo1.jpg" width="250px" height="300px" alt=" foto do usuario">
+       </div>
+                 <div class="profissao">
+            <p>Jardineiro</p>
+                      </div>    
+                      <div class="see-more" id="see-more">
+                        <span id="see-more-icon" class="material-symbols-outlined">
+                            expand_more
+                            </span>
+                      </div>
+<div id="descricao-box" class="hidden">
+    <div class="descricao">
+        <h3>Descrição</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+    </div>
+</div>
+    </div>
+
+</div>
+<div class="servicos-oferecidos">
+
+<div class="servicos-checked">  
+<h3>Trampos já feitos por Fulano de Souza</h3>
+
+<div class="icon-checked-box">
+<div class="servicoEicon">
+<span class="material-symbols-outlined">
+check_box
+</span>
+<h4>Jardinagem</h4> 
+</div>
+<div class="data-servico">
+    <h4>08/07/2022</h4>
+</div>
+</div>
+
+<div class="icon-checked-box">
+<div class="servicoEicon">
+<span class="material-symbols-outlined">
+check_box
+</span>
+<h4>Jardinagem</h4> 
+</div>
+<div class="data-servico">
+    <h4>18/06/2022</h4>
+</div>
+</div>
+
+<div class="icon-checked-box">
+<div class="servicoEicon">
+<span class="material-symbols-outlined">
+check_box
+</span>
+<h4>Jardinagem</h4> 
+</div>
+<div class="data-servico">
+    <h4>04/05/2022</h4>
+</div>
+</div>
+
+<div class="icon-checked-box">
+<div class="servicoEicon">
+<span class="material-symbols-outlined">
+check_box
+</span>
+<h4>Jardinagem</h4> 
+</div>
+<div class="data-servico">
+    <h4>08/04/2022</h4>
+</div>
+</div>
+</div>
+
+<div class="contratar-button">
+    <a href="/pagamento">CONTRATAR</a>
+</div>
+</div>
+</div>
+
+<%- include('./partials/footer') %>
+
+<script src="/javascripts/seeMoreProfile.js"></script>
+</body>
+</html>

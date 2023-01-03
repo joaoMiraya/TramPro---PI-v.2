@@ -3,7 +3,7 @@
 {
     "id": 1,
     "image": "imageModelo1.jpg",
-    "name": "Desenvolvedor",
+    "name": "desenvolvedor",
     "price": "200",
     "discount": "0",
     "category": "valor-alto",
@@ -12,7 +12,7 @@
    {
     "id": 2,
     "image": "imageModelo2.jpg",
-    "name": "Motoboy",
+    "name": "motoboy",
     "price": "150",
     "discount": "0",
     "category": "valor-medio",
@@ -21,7 +21,7 @@
    {
     "id": 3,
     "image": "imageModelo3.jpg",
-    "name": "Jardineiro",
+    "name": "jardineiro",
     "price": "100",
     "discount": "0",
     "category": "valor-baixo",

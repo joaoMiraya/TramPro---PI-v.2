@@ -1,0 +1,129 @@
+.container-main{
+display: flex;
+justify-content: space-around;
+margin-top: 50px;
+flex-wrap: wrap;
+}
+.informacoes-pessoais{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.name{
+margin: 8px 0px;
+}
+.perfil{
+display: flex;
+margin: 30px;
+background-color: #a3a3a34b;
+padding: 15px 15px 0px 15px;
+position: relative;
+border-radius: 3px;
+}
+.chatIcon{
+position: absolute;
+top: 6px;
+right: 6px;
+cursor: pointer;
+color: #062439;
+}
+.foto{
+display: flex;
+justify-content: center;
+align-items: center;
+min-width: 250px;
+min-height: 300px;
+border-radius: 50%;
+overflow: hidden;
+}
+.profissao{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+padding: 15px;
+}
+.profissao{
+margin-top: 15px;
+text-align: center;
+font-size: 18px;
+}
+.see-more{
+display: flex;
+justify-content: center;
+background-color: rgba(255, 255, 255, 0.493);
+border-radius: 4px;
+cursor: pointer;
+margin: 15px 0px;
+width: 90%;
+padding: 2px;
+transition: .4s;
+}
+.see-more:hover{
+background-color:#FFF;
+}
+.see-more span{
+color:#6A6A6A;
+} 
+.descricao{
+width: 300px;
+letter-spacing: 1px;
+padding: 5px;
+}
+.descricao h3{
+text-align: center;
+padding: 8px 0px;
+color: #6A6A6A;
+
+}
+.descricao p {
+color: #8b8b8b;
+}
+.hidden{
+display: none;
+}
+
+.servicos-oferecidos{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+background-color: #a3a3a34b;
+max-height: 500px;
+border-radius: 3px;
+padding: 8px;
+color: #474646;
+}
+.servicos-oferecidos h3{
+background-color: #062439;
+padding: 10px;
+border-radius: 3px;
+color: #FFF;
+}
+.icon-checked-box{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 15px;
+}
+.servicoEicon{
+display: flex;
+align-items: center;
+}
+.contratar-button{
+width: 60%;
+background-color: #062439ef;
+text-decoration: none;
+text-align: center;
+padding: 8px;
+border-radius: 3px;
+transition: .4s;
+cursor: pointer;
+}
+.contratar-button:hover{
+background-color: #062439;
+
+}
+.contratar-button a {
+    color: #FFF;
+    letter-spacing: 2px;
+}

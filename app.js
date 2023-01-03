@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
@@ -14,6 +15,7 @@ const editProfileRouter = require('./routes/editProfile');
 const profileContratanteRouter = require('./routes/profileContratante');
 const addTrampoRouter = require('./routes/addTrampo');
 const pagamentoRouter = require('./routes/pagamento');
+const profilePublicRouter = require('./routes/profilePublic');
 
 
 const app = express();
@@ -38,6 +40,7 @@ app.use('/editProfile', editProfileRouter);
 app.use('/profileContratante', profileContratanteRouter); 
 app.use('/addTrampo', addTrampoRouter); 
 app.use('/pagamento', pagamentoRouter); 
+app.use('/profilePublic', profilePublicRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

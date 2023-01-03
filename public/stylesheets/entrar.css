@@ -1,8 +1,21 @@
 section{
- background-color: rgb(63, 130, 99);
+background:linear-gradient(45deg, #143F6A, #06293D,#256D85, #47B5FF, #3F8263);
  padding: 30px;
-}
+ animation: colors 10s ease infinite;
+ background-size: 150% 150%;
 
+}
+@keyframes colors{
+    0%{
+      background-position: 0% 33%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 33%;
+    }
+    }
 .container-principal{
 margin-top: 50px;
 padding-bottom: 50px;

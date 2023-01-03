@@ -16,6 +16,7 @@ res.render('index')
   search: (req, res) => {
     let search = req.query.keywords;
     let servicosToSearch = servicos.filter(servico => servico.name.toLowerCase().includes(search));
+    
     res.render('results', {
         servicos: servicosToSearch,
         search,
