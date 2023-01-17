@@ -6,22 +6,22 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 
-const mainRouter = require('./routes/main');
-const usersRouter = require('./routes/users');
-const profileRouter = require('./routes/profile');
-const entrarRouter = require('./routes/entrar');
-const tramposRouter = require('./routes/trampos');
-const editProfileRouter = require('./routes/editProfile');
-const profileContratanteRouter = require('./routes/profileContratante');
-const addTrampoRouter = require('./routes/addTrampo');
-const pagamentoRouter = require('./routes/pagamento');
-const profilePublicRouter = require('./routes/profilePublic');
+const mainRouter = require('./src/routes/main');
+const usersRouter = require('./src/routes/users');
+const profileRouter = require('./src/routes/profile');
+const entrarRouter = require('./src/routes/entrar');
+const tramposRouter = require('./src/routes/trampos');
+const editProfileRouter = require('./src/routes/editProfile');
+const profileContratanteRouter = require('./src/routes/profileContratante');
+const addTrampoRouter = require('./src/routes/addTrampo');
+const pagamentoRouter = require('./src/routes/pagamento');
+const profilePublicRouter = require('./src/routes/profilePublic');
 
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

@@ -93,7 +93,7 @@ nav ul li a{
   transition: .5s;
 }
 .nav-btn.active, .nav-btn:hover{
-  color: rgb(72, 207, 174);
+ opacity: 0.7;
 }
 .checkbtn{
   font-size: 30px;
