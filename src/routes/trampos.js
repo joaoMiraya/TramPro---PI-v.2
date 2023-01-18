@@ -6,6 +6,6 @@ const tramposController = require('../controllers/tramposController');
 
 
 
-router.get('/', tramposController.trampos);
+router.get('/', tramposController.index);
 
 module.exports = router;

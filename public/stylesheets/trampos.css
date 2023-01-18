@@ -229,9 +229,8 @@ border: none;
 font-weight: bold;
 color: #FFF;
 border: none;
-outline: none;
-list-style: none;
 cursor: pointer;
+border-bottom: none;
 }
 
 
