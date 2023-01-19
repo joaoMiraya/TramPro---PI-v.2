@@ -5,6 +5,10 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
+const logMiddleware = require('./src/middlewares/log');
+
+
+
 
 const mainRouter = require('./src/routes/main');
 const usersRouter = require('./src/routes/users');
@@ -35,7 +39,7 @@ app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/profile', profileRouter); 
 app.use('/entrar', entrarRouter); 
-app.use('/trampos', tramposRouter); 
+app.use('/servico', tramposRouter); 
 app.use('/editProfile', editProfileRouter); 
 app.use('/profileContratante', profileContratanteRouter); 
 app.use('/addTrampo', addTrampoRouter); 

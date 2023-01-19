@@ -440,6 +440,7 @@ transition: .4s;
 }
 .button-cadastrar-modal:hover{
  background-color: #FDB139;
+ color: #FFF
 }
 .hr-modal-ou{
 display: flex;

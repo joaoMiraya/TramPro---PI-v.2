@@ -8,6 +8,24 @@ const servicoRequest = {
         ...def,
         method: 'get',
         url: `${url}/` 
+    }),
+    getServicos: (id) => axios({
+        ...def,
+        method: 'get',
+        url: `${url}/${id}` 
+    }),
+    getServicos: (servico) => axios({
+        ...def,
+        method: 'post',
+        data: {
+            ...servico
+        },
+        url: `${url}/` 
+    }),
+    getServicos: (id) => axios({
+        ...def,
+        method: 'delete',
+        url: `${url}/${id}` 
     })
 }
 
