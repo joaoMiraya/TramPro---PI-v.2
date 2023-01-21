@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 <body>
-    <%- include('./partials/header') %>
+  <%- include('./partials/header') %>
 <main>
 <div class="search-result-text-box">
 <h1 class="search-result-text">Resultados para: "xxxxxxxx"</h1>
@@ -101,14 +101,15 @@
 
 </div>
 
+<% services.forEach(function(service){ %>
+
 <div class="workers-card">
-    <p class="profissao">#</p>
+    <p class="profissao"> <%= service.nome %> </p>
   <div class="work-image-box">
 <img src="/images/cozinheiroImage.jpg" alt="Work">
   </div>
     <div class="description-worker">
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+    <p> <%= service.descricao %></p>
     </div>
       <div class="worker-profile">
         <div class="worker-imageProfile">
@@ -126,7 +127,7 @@ favorite
 </span>
 </div>
 <div class="price-box">
-  <h3 class="price">R$150,00</h3>
+  <h3 class="price"><%= 'R$' + service.valor_servico + ',00' %></h3>
 </div>
 </div>
 <a href="/pagamento"><div class="contratar-box">
@@ -134,105 +135,9 @@ favorite
 </div></a>
 </div>
 
-<div class="workers-card">
-  <p class="profissao">#</p>
-<div class="work-image-box">
-<img src="/images/cozinheiroImage.jpg" alt="Work">
-</div>
-  <div class="description-worker">
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-  </div>
-    <div class="worker-profile">
-      <div class="worker-imageProfile">
-        <img src="/images/imageModelo1.jpg" alt="Profile">
-      </div>
-      <div class="worker-name">
-     <a href="/profilePublic"><h3>Fulano de Souza</h3></a>
-    </div>
-    </div>
-  <hr>
-<div class="fav-price-box">
-<div class="favIcon-box">
-<span class="material-symbols-outlined">
-favorite
-</span>
-</div>
-<div class="price-box">
-<h3 class="price">R$150,00</h3>
-</div>
-</div>
-<a href="/pagamento"><div class="contratar-box">
-<button class="contratar-btn" type="submit">Contratar</button>
-</div></a>
-</div>
 
-<div class="workers-card">
-  <p class="profissao">#</p>
-<div class="work-image-box">
-<img src="/images/cozinheiroImage.jpg" alt="Work">
-</div>
-  <div class="description-worker">
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-  </div>
-    <div class="worker-profile">
-      <div class="worker-imageProfile">
-        <img src="/images/imageModelo1.jpg" alt="Profile">
-      </div>
-      <div class="worker-name">
-     <a href="/profilePublic"><h3>Fulano de Souza</h3></a>
-    </div>
-    </div>
-  <hr>
-<div class="fav-price-box">
-<div class="favIcon-box">
-<span class="material-symbols-outlined">
-favorite
-</span>
-</div>
-<div class="price-box">
-<h3 class="price">R$150,00</h3>
-</div>
-</div>
-<a href="/pagamento"><div class="contratar-box">
-<button class="contratar-btn" type="submit">Contratar</button>
-</div></a>
-</div>
 
-<div class="workers-card">
-  <p class="profissao">#</p>
-<div class="work-image-box">
-<img src="/images/cozinheiroImage.jpg" alt="Work">
-</div>
-  <div class="description-worker">
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-  </div>
-    <div class="worker-profile">
-      <div class="worker-imageProfile">
-        <img src="/images/imageModelo1.jpg" alt="Profile">
-      </div>
-      <div class="worker-name">
-     <a href="/profilePublic"><h3>Fulano de Souza</h3></a>
-    </div>
-    </div>
-  <hr>
-<div class="fav-price-box">
-<div class="favIcon-box">
-<span class="material-symbols-outlined">
-favorite
-</span>
-</div>
-<div class="price-box">
-<h3 class="price">R$150,00</h3>
-</div>
-</div>
-<a href="/pagamento"><div class="contratar-box">
-<button class="contratar-btn" type="submit">Contratar</button>
-</div></a>
-</div>
-
+<% }) %>
 
 </div>
   </main>

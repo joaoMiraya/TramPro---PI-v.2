@@ -1,12 +1,44 @@
 const path = require('path');
 const fs = require('fs');
+const { validationResult } = require('express-validator');
+
+
+const User = require('../../User')
+
+const def = require('../requests/default');
 
 
 const entrarController = {
-    entrar: (req, res) =>{
+    register: (req, res) =>{
        res.render('entrar')
-       
     },
+    processRegister: (req, res) =>{
+      const resultValidations =  validationResult(req);
+
+      if(resultValidations.errors.lenght > 0) {
+        return res.render('entrar', {
+            errors: resultValidations.mapped(),
+            oldData: req.body
+        })
+      }
+return res.send('Ok, as validações estão corretas')
+      
+    },
+
+login: (req, res) => {
+return res.render('entrar')
+},
+loginProcess: (req, res) => {
+return res.render('entrar')
+},
+profile: (req, res) => {
+return res.render('profile')
+},
+logout: (req, res) => {
+     res.clearCookie('entrar')
+},
+
+
     login: (req, res) =>{
         let user = req.body.user;
         let pass = req.body.password;

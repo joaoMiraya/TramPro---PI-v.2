@@ -9,8 +9,17 @@
     <title>Error 404</title>
 </head>
 <body>
- 
+
     <h1> Ops, algo deu errado!</h1>
+
+    
+
+	<h1><%= message %></h1>
+	<h2><%= error.status %></h2>
+	<p>Error trying to access to: <b><%= path %></b></p>
+	<pre><i><%= error.stack %></i></pre>
+
+
     <a class="returnError" href="/">Retornar ao inicio</a>
 
     <div class="errorContainer">

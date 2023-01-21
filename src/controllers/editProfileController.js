@@ -1,4 +1,4 @@
-const path = require('path');
+/* const path = require('path');
 const fs = require('fs');
 
 const editProfile = {
@@ -7,4 +7,4 @@ const editProfile = {
 }
 }
 
-module.exports = editProfile;
+module.exports = editProfile; */

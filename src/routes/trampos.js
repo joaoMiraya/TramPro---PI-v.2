@@ -10,16 +10,7 @@ const tramposController = require('../controllers/tramposController');
 
 const verifyUserLogged = require('../middlewares/verifyUserLogged')
 
-var storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, '../public/images/avatars')
-    },
-    filename: function(req, file, cb) {
-        cb(null, file.filename + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
 
-const upload = multer({storage: storage})
 
 
 
@@ -27,6 +18,10 @@ const upload = multer({storage: storage})
 router.get('/', tramposController.index);
 
 router.get('/detail/:id/', tramposController.detail);
+
+router.delete('/delete/:id', tramposController.destroy)
+
+router.get('/servico/profilePublic', tramposController.profilePublic);
 
 
 

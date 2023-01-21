@@ -4,25 +4,29 @@
      "id": 1,
      "username": "Diogenes",
      "password": "123344",
-     "profissao": "Motoboy"
+     "profissao": "Motoboy",
+     "email": "dio@gmail.com"
     },
     {
      "id": 2,
      "username": "Jonatas",
      "password": "004441",
-     "profissao": "Cozinheiro"
+     "profissao": "Cozinheiro",
+     "email": "jonata@gmail.com"
     },
     {
        "id": 3,
        "username": "Manuela",
        "password": "458871",
-       "profissao": "Jardineiro"
+       "profissao": "Jardineiro",
+       "email": "manu@gmail.com"
     },
       {
        "id": 4,
        "username": "Carlos",
        "password": "4545571",
-       "profissao": "Desenvolvedor"
+       "profissao": "Desenvolvedor",
+       "email": "carlos@gmail.com"
     }
    ]}
 

@@ -60,47 +60,88 @@
 
 <div class="cadastro-container">
     <fieldset><legend>Faça seu Cadastro</legend>
-<form action="#" method="post">
+<form action="/entrar/register" enctype="multipart/form-data" method="post">
 
  <div class="inputBox">
 <label for="nome" class="nomeLabel labelGeral">Nome:</label>
-<input type="text" name="nome" id="nome" class="nomeInput input-entrar" required>
+<input value="<%= locals.oldData ? oldData.nome : null %>" type="text" name="nome"
+ id="nome" class="nomeInput input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.nome) { %>
+    <div> <%= errors.nome.msg %>  </div>
+    <% } %>
 
  <div class="inputBox">
 <label for="sobrenome" class="sobrenome labelGeral">Sobrenome:</label>
-<input type="text" name="sobrenome" id="sobrenome" class="sobrenome input-entrar" required>
+<input value="<%= locals.oldData ? oldData.sobrenome : null %>" type="text" name="sobrenome"
+ id="sobrenome" class="sobrenome input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.sobrenome) { %>
+    <div> <%= errors.sobrenome.msg %>  </div>
+    <% } %>
 
  <div class="inputBox">
 <label for="cpf" class="cpf labelGeral">CPF:</label>
-<input type="text" name="cpf" id="cpf" class="cpf input-entrar" required>
+<input value="<%= locals.oldData ? oldData.cpf : null %>" type="text" name="cpf"
+ id="cpf" class="cpf input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.cpf) { %>
+    <div> <%= errors.cpf.msg %>  </div>
+    <% } %>
+
 
 <div class="inputBox">
 <label for="telefone" class="telefoneLabel labelGeral">Telefone:</label>
-<input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar" required>
+<input value="<%= locals.oldData ? oldData.telefone : null %>" type="number" name="telefone"
+ id="telefone" class="telefoneInput input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.telefone) { %>
+    <div> <%= errors.telefone.msg %>  </div>
+    <% } %>
 
 <div class="inputBox">
 <label for="email" class="emailLabel labelGeral">E-mail:</label>
-<input type="email" name="email" id="email" class="emailInput input-entrar" required>
+<input value="<%= locals.oldData ? oldData.email : null %>"  type="email" name="email" 
+id="email" class="emailInput input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.email) { %>
+    <div> <%= errors.email.msg %>  </div>
+    <% } %>
 
 <div class="inputBox">
 <label for="confirm-email" class="confirm-emailLabel labelGeral">Confirme seu E-mail:</label>
-<input type="email" name="confirm-email" id="confirm-email" class="confirm-emailInput input-entrar" required>
+<input value="<%= locals.oldData ? oldData.confirm-email : null %>"  type="email" name="confirm-email" 
+id="confirm-email" class="confirm-emailInput input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.sconfirm-emailnha) { %>
+    <div> <%= errors.confirm-email.msg %>  </div>
+    <% } %>
 
 <div class="inputBox">
 <label for="senha" class="senhaLabel labelGeral">Senha:</label>
-<input type="password" name="senha" id="senha" class="senhaInput input-entrar" required>
+<input value="<%= locals.oldData ? oldData.senha : null %>" type="password" name="senha"
+ id="senha" class="senhaInput input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.senha) { %>
+    <div> <%= errors.senha.msg %>  </div>
+    <% } %>
 
 <div class="inputBox">
 <label for="confirm-password" class="confirm-passwordlLabel labelGeral">Confirme sua Senha:</label>
-<input type="password" name="confirm-password" id="confirm-password" class="confirm-passwordInput input-entrar" required>
+<input value="<%= locals.oldData ? oldData.confirm-password : null %>" type="password" name="confirm-password" 
+id="confirm-password" class="confirm-passwordInput input-entrar" required>
 </div>
+
+<% if(locals.errors && errors.confirm-password) { %>
+<div> <%= errors.confirm-password.msg %>  </div>
+<% } %>
 
 <div class="generoGrupo">
 <div class="generoInput">
@@ -118,10 +159,12 @@
 <input type="radio" id="others" name="genero">
 </div>
 </div>
-</form>
+
 </fieldset>
 
 <button class="cadastrarBtn" type="submit">Cadastrar</button>
+</form>
+
 </div>
 </div>
 </section>

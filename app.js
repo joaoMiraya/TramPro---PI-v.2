@@ -15,8 +15,9 @@ const usersRouter = require('./src/routes/users');
 const profileRouter = require('./src/routes/profile');
 const entrarRouter = require('./src/routes/entrar');
 const tramposRouter = require('./src/routes/trampos');
-const editProfileRouter = require('./src/routes/editProfile');
+/* const editProfileRouter = require('./src/routes/editProfile'); */
 const profileContratanteRouter = require('./src/routes/profileContratante');
+const fotoRouter = require('./src/routes/profile');
 const addTrampoRouter = require('./src/routes/addTrampo');
 const pagamentoRouter = require('./src/routes/pagamento');
 const profilePublicRouter = require('./src/routes/profilePublic');
@@ -40,7 +41,8 @@ app.use('/users', usersRouter);
 app.use('/profile', profileRouter); 
 app.use('/entrar', entrarRouter); 
 app.use('/servico', tramposRouter); 
-app.use('/editProfile', editProfileRouter); 
+app.post('/foto', fotoRouter); 
+/* app.use('/editProfile', editProfileRouter);  */
 app.use('/profileContratante', profileContratanteRouter); 
 app.use('/addTrampo', addTrampoRouter); 
 app.use('/pagamento', pagamentoRouter); 

@@ -1,20 +1,15 @@
-
 const express = require('express');
 const router = express.Router();
 
-const { body } = require('express-validator');
 
-const validacoes = [
-    body('email').notEmpty(),
-    body('senha').notEmpty(),
-    body('senha').notEmpty(),
-]
-
+const validations = require('../middlewares/validationMiddleware')
 
 const entrarController = require('../controllers/entrarController');  
 
 
+router.get('/',entrarController.register);
 
-router.get('/',entrarController.entrar);
+router.post('/', validations, entrarController.processRegister);
+
 
 module.exports = router;

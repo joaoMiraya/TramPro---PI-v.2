@@ -3,32 +3,38 @@ const def = require('./default');
 
 const url = 'servico'
 
-const servicoRequest = {
-    getServicos: () => axios({
+const serviceRequest = {
+    getServices: () => axios({
         ...def,
         method: 'get',
         url: `${url}/` 
     }),
-    getServicos: (id) => axios({
+    getClassService: (classe_servico) => axios({
+        ...def,
+        method: 'get',
+        url: `${url}?classe_servico=${classe_servico}` 
+    }),
+    getService: (id) => axios({
         ...def,
         method: 'get',
         url: `${url}/${id}` 
     }),
-    getServicos: (servico) => axios({
+    createService: (service) => axios({
         ...def,
         method: 'post',
-        data: {
-            ...servico
+        data:{
+            ...service
         },
         url: `${url}/` 
     }),
-    getServicos: (id) => axios({
+     deleteService: (id) => axios({
         ...def,
         method: 'delete',
-        url: `${url}/${id}` 
+        url: `${url}/${id}`  
     })
+
 }
 
 
 
-module.exports = servicoRequest;
+module.exports = serviceRequest;

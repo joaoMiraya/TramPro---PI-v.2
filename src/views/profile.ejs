@@ -56,16 +56,19 @@ mail
 
 <div class="perfil-container"> 
 
- <button id="editBtn" type="submit" class="edit-profile-button"><a href="editProfile"><i class="material-icons" id="edit-icon">edit</i></a></button>
+<div class="edit-icon">
+<a href="/profile/edit/"><i class="material-icons" id="edit-icon">edit</i></a>
+</div>
 
+
+  <form action="/foto" method="POST" enctype="multipart/form-data">
 <div class="foto-container">
-  <form action="/register" method="post"
-  enctype="multipart/form-data">
-  <input type="file" style="display: none;"  name="userImage" id="inputAvatar" accept="image/*">
-  <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p>
-  </label>
-  </div>
+  <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar"">
+  <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
+   </div>
+   <button type="submit">Enivar</button>
 </form>
+
 
 <h2 id="nome">Fulano de Souza</h2>
 <p id="profissao">Entregador</p>
