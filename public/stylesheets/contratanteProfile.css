@@ -36,7 +36,7 @@ transition: .5s;
 }
 .favoritos-icon .material-symbols-outlined:hover{
 color: #47B5FF;
-background-color: #062439;
+background-color: #06243946;
 border-radius: 50%;
 padding: 4px 3px;
 
@@ -49,7 +49,7 @@ transition: .5s;
 }
 .mensagens-icon .material-symbols-sharp:hover{
 color: #47B5FF;
-background-color: #062439;
+background-color: #06243946;
 border-radius: 50%;
 padding: 5px;
 }
@@ -120,8 +120,8 @@ padding: 5px;
 .foto-container{
 display: flex;
 background-color:gainsboro;
-width: 70%;
-height: 70%;
+width: 250px;
+height: 250px;
 border-radius: 50%;
 text-align: center;
 justify-content: center;
@@ -150,4 +150,22 @@ transition: .4s;
 }
 #edit-icon:hover{
 color: #47B5FF;
+}
+.enviarBtnBox{
+display: flex;
+justify-content: center;
+margin: 10px 0px;
+}
+.enviarBtn{
+border: none;
+background-color: #062439;
+padding: 4px 24px;
+border-radius: 3px;
+color: #FFF;
+cursor: pointer;
+transition: .5s ease;
+
+}
+.enviarBtn:hover{
+    background-color: #062439e5; 
 }

@@ -49,7 +49,7 @@ mail
 </div> 
 
 <div class="addTrampoBox">
-<a class="add-trampo" href="addTrampo">Adicionar Trampos</a>
+<a class="add-trampo" href="/profile/addTrampo">Adicionar Trampos</a>
 </div>
 
 </div>
@@ -63,10 +63,12 @@ mail
 
   <form action="/foto" method="POST" enctype="multipart/form-data">
 <div class="foto-container">
-  <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar"">
+  <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar">
   <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
    </div>
-   <button type="submit">Enivar</button>
+   <div class="enviarBtnBox">
+   <button class="enviarBtn" type="submit">Salvar</button>
+  </div>
 </form>
 
 

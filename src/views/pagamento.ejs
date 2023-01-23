@@ -110,19 +110,19 @@
     </div>
         </div>
 
-
+       
 <div class="revisao-do-servico">
     <div class="descricaoNome">
-        <p>  nome </p>
+        <p> </p>
     </div>
 <div class="foto-nome">
 <img class="imgDoServico" src="/images/comidaImage.jpg" width="250px" height="155px" alt="foto do Serviços">
 </div>
-<p class="nome">Nome do Serviço</p>
+<p class="nome"> <%= service.nome %> </p>
 <hr>
 <div class="descricao">
     <div class="txt-descricao">
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    <p> <%= service.descricao %> </p>
     </div>
 </div>
 
@@ -132,7 +132,7 @@
 </div>
 
 <div class="valor">  
-    <p>R$ 150,00 </p>
+    <p>R$ <%= service.valor_servico + ',00' %> </p>
     </div>
     
 </div>
@@ -142,6 +142,7 @@
 </div>
 
 </div>
+
 
 </div>
     </main>

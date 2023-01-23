@@ -64,14 +64,18 @@ mail
 
  <button id="editBtn" type="submit" class="edit-profile-button"><a href="editProfile"><i class="material-icons" id="edit-icon">edit</i></a></button>
 
-<div class="foto-container">
-  <form action="/register" method="post"
-  enctype="multipart/form-data">
-  <input type="file" style="display: none;"  name="userImage" id="inputAvatar" accept="image/*">
-  <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p>
-  </label>
-  </div>
-</form>
+
+
+ <form action="/fotoCont" method="POST" enctype="multipart/form-data">
+  <div class="foto-container">
+    <input type="file" style="display: none;"  name="imageContProfile" id="inputAvatar">
+    <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
+     </div>
+     <div class="enviarBtnBox">
+     <button class="enviarBtn" type="submit">Salvar</button>
+    </div>
+  </form>
+  
 
 <h2 id="nome">Fulano de Souza</h2>
   </div>

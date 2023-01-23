@@ -26,63 +26,54 @@
 <body>
 
   <%- include('./partials/header') %>
+<main>
+  <div class="container">
+    <div class="passoApasso">
+<h1 class="PassoTitle">Passo a Passo</h1>
 
-  <main>
-<div class="container-PaideTodos">
-<div class="passoApasso-box">
+<div class="passo1">
+    <h3>Primeiro passo</h3>
+    <p>Selecione uma imagem demonstrativa de seu serviço</p>
+</div>
 
-        <div class="passo-1-box">
-    <div class="passo-1">
-<h3 class="title">Passo a Passo</h3>
-<p>Faça um pequeno texto que descreva sua capacitação, <br>
-oque você faz de melhor e quanto tempo você tem de experiência.</p>
+<div class="passo2">
+        <h3>Segundo passo</h3>
+    <p>Selecione uma categoria que corresponda ao seu serviço</p>
+</div>
+
+<div class="passo3">
+        <h3>Terceiro passo</h3>
+    <p>Faça uma boa descrição de você e do serviço que oferece...Venda seu peixe</p>
+</div>
+
     </div>
-<div class="passo1-content">
-<form action="#" method="post">
- <textarea class="form descreva" name="text" id="text" placeholder="Descreva suas habilidades"></textarea>
+
+<div class="form-box">
+<form action="/profile/fotoService" method="POST" enctype="multipart/form-data">
+    <div class="serviceImageBox">
+        <input type="file" name="serviceImage" id="serviceImage">
+    </div>
+
+    <div class="categoriaBox">
+        <select name="categorias" id="category">
+            <option value="todasCategorias" >Todas Categorias</option>
+            <option value="desenvolvedor">Desenvolvedor</option>
+            <option value="delivery">Delivery</option>
+            <option value="jardinagem">Jardinagem</option>
+            <option value="manutenção">Manutenção</option>
+          </select>
+    </div>
+    <div class="descricaoBox">
+        <textarea name="serviceDescricao" id="serviceDescricao" cols="50" rows="5" placeholder="Faça uma descrição"></textarea>
+    </div>
+
+    <button type="submit">Salvar</button>
 </form>
 </div>
-        </div>
 
-        <div class="passo-2-box">
-    <div class="passo-2">
-<p>Defina uma categoria principal e uma <br>
-    sub-categoria do seu ramo, seja o mais preciso possivel.</p>
-    </div>
-<div class="passo2-content">
-<a class="btn" href="#">Sub-Categoria</a>
-<a class="btn" href="#">Categoria</a>
-</div>
-        </div>
-
-<div class="passo-3-box">
-    <div class="passo-3">
-<p>Por fim adicione palavras-chave que descreva <br>
-    o seu ramo e com oque você deseja trabalhar!!!</p>
-    </div>
-<div class="passo3-content">
-<form action="/contact" method="post">
- <textarea class="form palavras-chave" name="text" id="text" placeholder="Adicione palavras chave"></textarea>
-</form>
-</div>
-</div>
-
-<div class="btn-salvar-box">
-<a href="#"><button class="btn-salvar">Salvar</button></a>
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-
+  </div>
+</main>
 <%- include('./partials/footer') %>
+
 </body>
 </html>

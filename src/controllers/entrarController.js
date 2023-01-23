@@ -3,9 +3,9 @@ const fs = require('fs');
 const { validationResult } = require('express-validator');
 
 
-const User = require('../../User')
-
+const serviceRequest = require('../requests/servicosRequest')
 const def = require('../requests/default');
+
 
 
 const entrarController = {

@@ -1,27 +1,22 @@
 const axios = require('axios');
-const def = require('./default');
+const def = require('def');
 const path = require('path');
 
 
-const url = 'servico'
+const url = 'trabalhador'
 
-const serviceRequest = {
-    getServices: () => axios({
+const workerRequest = {
+    getWorkers: () => axios({
         ...def,
         method: 'get',
         url: `${url}/` 
     }),
-    getClassService: (classe_servico) => axios({
-        ...def,
-        method: 'get',
-        url: `${url}?classe_servico=${classe_servico}` 
-    }),
-    getService: (id) => axios({
+    getWorker: (id) => axios({
         ...def,
         method: 'get',
         url: `${url}/${id}` 
     }),
-    createService: (service) => axios({
+    createWorker: (service) => axios({
         ...def,
         method: 'post',
         data:{
@@ -29,7 +24,7 @@ const serviceRequest = {
         },
         url: `${url}/` 
     }),
-     deleteService: (id) => axios({
+     deleteWorker: (id) => axios({
         ...def,
         method: 'delete',
         url: `${url}/${id}`  
@@ -39,4 +34,4 @@ const serviceRequest = {
 
 
 
-module.exports = serviceRequest;
+module.exports = workerRequest;

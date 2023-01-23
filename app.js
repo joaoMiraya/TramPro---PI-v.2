@@ -10,15 +10,11 @@ const logMiddleware = require('./src/middlewares/log');
 
 
 
-const mainRouter = require('./src/routes/main');
-const usersRouter = require('./src/routes/users');
+const mainRouter = require('./src/routes/main');;
 const profileRouter = require('./src/routes/profile');
 const entrarRouter = require('./src/routes/entrar');
 const tramposRouter = require('./src/routes/trampos');
-/* const editProfileRouter = require('./src/routes/editProfile'); */
 const profileContratanteRouter = require('./src/routes/profileContratante');
-const fotoRouter = require('./src/routes/profile');
-const addTrampoRouter = require('./src/routes/addTrampo');
 const pagamentoRouter = require('./src/routes/pagamento');
 const profilePublicRouter = require('./src/routes/profilePublic');
 
@@ -37,16 +33,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use('/', mainRouter);
-app.use('/users', usersRouter);
 app.use('/profile', profileRouter); 
+app.post('/foto', profileRouter); 
+app.post('/fotoService', profileRouter); 
+app.post('/fotoCont', profileContratanteRouter); 
+app.use('/profileContratante', profileContratanteRouter); 
+app.use('/profilePublic', profilePublicRouter); 
 app.use('/entrar', entrarRouter); 
 app.use('/servico', tramposRouter); 
-app.post('/foto', fotoRouter); 
-/* app.use('/editProfile', editProfileRouter);  */
-app.use('/profileContratante', profileContratanteRouter); 
-app.use('/addTrampo', addTrampoRouter); 
 app.use('/pagamento', pagamentoRouter); 
-app.use('/profilePublic', profilePublicRouter); 
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

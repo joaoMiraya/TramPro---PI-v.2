@@ -2,8 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 
-const servicosFilePath = path.join(__dirname, '../data/servicosDataBase.json');
-const servicos = JSON.parse(fs.readFileSync(servicosFilePath, 'utf-8'));
+const serviceRequest = require('../requests/servicosRequest')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -11,14 +10,24 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
   index: (req, res) =>{
-res.render('index')
+    serviceRequest.getServices().
+    then(servicesReturned => {
+     services = servicesReturned.data
+        res.render('index', {
+          services,
+          toThousand
+        })
+          })
+    .catch(error => {
+      res.render('error', {error})
+    })
     },
   search: (req, res) => {
     let search = req.query.keywords;
-    let servicosToSearch = servicos.filter(servico => servico.name.toLowerCase().includes(search));
+    let serviceToSearch = serviceRequest.filter(service => service.nome.toLowerCase().includes(search));
     
     res.render('results', {
-        servicos: servicosToSearch,
+        services: serviceToSearch,
         search,
         toThousand
     })
