@@ -38,7 +38,8 @@
 
 <div class="passo2">
         <h3>Segundo passo</h3>
-    <p>Selecione uma categoria que corresponda ao seu serviço</p>
+    <p>Selecione uma categoria que corresponda ao seu serviço, <br>
+         o preço e também se é presencial ou remoto</p>
 </div>
 
 <div class="passo3">
@@ -53,7 +54,7 @@
     <div class="serviceImageBox">
         <input type="file" name="serviceImage" id="serviceImage">
     </div>
-
+<div class="categoriaPrecoBox">
     <div class="categoriaBox">
         <select name="categorias" id="category">
             <option value="todasCategorias" >Todas Categorias</option>
@@ -62,6 +63,19 @@
             <option value="jardinagem">Jardinagem</option>
             <option value="manutenção">Manutenção</option>
           </select>
+    </div>
+
+<div class="remoto_presencial">
+    <select name="categorias" id="category">
+        <option value="presencial">Presencial</option>
+        <option value="remoto">Remoto</option>
+      </select>
+    </div>
+
+    <div class="precoBox">
+        <label for="preco">Qual o valor do seu serviço?</label>
+        <input maxlength="3" type="text" name="preco" id="preco">
+      </div>
     </div>
     <div class="descricaoBox">
         <textarea name="serviceDescricao" id="serviceDescricao" cols="50" rows="5" placeholder="Faça uma descrição"></textarea>

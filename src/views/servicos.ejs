@@ -116,7 +116,7 @@
           <img src="/images/imageModelo1.jpg" alt="Profile">
         </div>
         <div class="worker-name">
-       <a href="/profilePublic"><h3>Fulano de Souza</h3></a>
+       <a href="/profilePublic/detail/<%= service.id %>"><h3> <%= service.Trabalhador.nome + ' ' + service.Trabalhador.sobrenome %> </h3></a>
       </div>
       </div>
     <hr>
@@ -130,7 +130,7 @@ favorite
   <h3 class="price"><%= 'R$' + service.valor_servico + ',00' %></h3>
 </div>
 </div>
-  <a href="/servico/detail/<%= service.id %>"><div class="contratar-box">
+  <a href="/pagamento/detail/<%= service.id %>"><div class="contratar-box">
 <button class="contratar-btn" type="submit">Contratar</button>
 </div></a>
 </div>

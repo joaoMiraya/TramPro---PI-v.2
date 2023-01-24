@@ -172,9 +172,13 @@ width: 230px;
 height: 200px;
 }
 .description-worker{
+display:none;
 text-align: center;
 color: rgb(63, 58, 58);
 margin: 5px 0;
+}
+.workers-card:hover > .description-worker{
+    display: flex;
 }
 .worker-profile{
 margin-top: 15px;

@@ -26,7 +26,7 @@ const mainController = {
     let search = req.query.keywords;
     let serviceToSearch = serviceRequest.filter(service => service.nome.toLowerCase().includes(search));
     
-    res.render('results', {
+    res.render('servicos', {
         services: serviceToSearch,
         search,
         toThousand

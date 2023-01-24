@@ -52,6 +52,27 @@ main{
 padding-bottom: 70px;
 }
 
+.categoriaPrecoBox{
+display: flex;
+align-items: center;
+}
+.categoriaBox{
+margin-top: 15px;
+}
+.remoto_presencial{
+margin-top: 15px;
+outline: none;
+margin-left: 15px;
+}
+.precoBox{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.precoBox input{
+    width: 50px;
+    outline: none;
+}
 
 @media (max-width:610px) {
     .PassoTitle{

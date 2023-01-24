@@ -17,12 +17,6 @@ const verifyUserLogged = require('../middlewares/verifyUserLogged')
 
 router.get('/', tramposController.index);
 
-router.get('/detail/:id/', tramposController.detail);
-
 router.delete('/delete/:id', tramposController.destroy)
-
-router.get('/servico/profilePublic', tramposController.profilePublic);
-
-
 
 module.exports = router;

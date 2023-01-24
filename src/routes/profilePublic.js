@@ -1,11 +1,11 @@
-
 const express = require('express');
 const router = express.Router();
 
-const tramposController = require('../controllers/tramposController');
+const profilePublicController = require('../controllers/profilePublicController');  
 
 
 
-router.get('/', tramposController.profilePublic);
+router.get('/', profilePublicController.index);
+router.get('/detail/:id/', profilePublicController.detail);
 
 module.exports = router;
