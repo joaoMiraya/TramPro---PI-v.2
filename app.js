@@ -6,11 +6,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const logMiddleware = require('./src/middlewares/log');
+const session = require('express-session');
 
 
 
-
-const mainRouter = require('./src/routes/main');;
+const mainRouter = require('./src/routes/main');
 const profileRouter = require('./src/routes/profile');
 const entrarRouter = require('./src/routes/entrar');
 const tramposRouter = require('./src/routes/trampos');
@@ -33,14 +33,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(logMiddleware);
+app.use(session({secret: "TramPro Inc"})) // Indicação de uso de session a nivel de aplicação
+app.use(function(req, res, next) {
+  res.locals.userLogged = req.session.userLogged;
+  next();
+});
 
-app.use('/', mainRouter);
-app.use('/profile', profileRouter); 
+
+
+
+
+
+
 app.post('/foto', profileRouter); 
 app.post('/fotoService', profileRouter); 
 app.post('/fotoCont', profileContratanteRouter); 
+
+app.use('/', mainRouter);
+app.use('/profile', profileRouter); 
 app.use('/profileContratante', profileContratanteRouter); 
 app.use('/profilePublic', profilePublicRouter); 
+
+app.use('/login', entrarRouter); 
 app.use('/entrar', entrarRouter); 
 app.use('/servico', tramposRouter); 
 app.use('/pagamento', pagamentoRouter); 

@@ -38,22 +38,30 @@
 
 <div class="passo2">
         <h3>Segundo passo</h3>
-    <p>Selecione uma categoria que corresponda ao seu serviço, <br>
-         o preço e também se é presencial ou remoto</p>
+    <p>Qual o nome do seu serviço? Assim que irão te procurar</p>
 </div>
 
 <div class="passo3">
         <h3>Terceiro passo</h3>
-    <p>Faça uma boa descrição de você e do serviço que oferece...Venda seu peixe</p>
+    <p>Selecione uma categoria que corresponda ao seu serviço, <br>
+        o preço, se é presencial ou remoto e faça uma boa descrição <br>
+         de você e do serviço que oferece...Venda seu peixe</p>
 </div>
 
     </div>
 
 <div class="form-box">
-<form action="/profile/fotoService" method="POST" enctype="multipart/form-data">
+  
+<form action="/fotoService" method="POST" enctype="multipart/form-data">
     <div class="serviceImageBox">
-        <input type="file" name="serviceImage" id="serviceImage">
+        <input type="file" name="image" id="serviceImage">
     </div>
+    
+    <div class="nomeServicoBox">
+        <label for="nome">Qual o nome do seu serviço?</label>
+        <input type="text" name="nome" id="nomeServico">
+      </div>
+   
 <div class="categoriaPrecoBox">
     <div class="categoriaBox">
         <select name="categorias" id="category">
@@ -66,7 +74,7 @@
     </div>
 
 <div class="remoto_presencial">
-    <select name="categorias" id="category">
+    <select name="estilo" id="category">
         <option value="presencial">Presencial</option>
         <option value="remoto">Remoto</option>
       </select>

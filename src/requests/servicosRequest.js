@@ -11,7 +11,7 @@ const serviceRequest = {
         method: 'get',
         url: `${url}/` 
     }),
-    getClassService: (classe_servico) => axios({
+    getClassServices: (classe_servico) => axios({
         ...def,
         method: 'get',
         url: `${url}?classe_servico=${classe_servico}` 

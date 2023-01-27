@@ -11,13 +11,17 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const tramposController = {
     index: (req, res) =>{
-        serviceRequest.getServices().
-        then(servicesReturned => {
+        serviceRequest.getServices()
+        .then(servicesReturned => {
          services = servicesReturned.data
             res.render('servicos', {
                 services,
                 toThousand
             })
+        }),
+        workerRequest.getWorkers()
+        .then(workersReturned => {
+            workers = workersReturned.data
         })
         .catch(error => {
             res.render('error', {error})

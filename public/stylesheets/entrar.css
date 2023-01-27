@@ -169,3 +169,16 @@ transition: .4s;
 .cadastrarBtn:hover{
 background-color: rgb(72, 207, 174);
 }
+.trabalharOuContratar{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.trabalharOuContratar p {
+color: #062439;
+font-weight:600;
+}
+
+input{
+  cursor: pointer;
+}

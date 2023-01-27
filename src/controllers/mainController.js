@@ -17,6 +17,10 @@ const mainController = {
           services,
           toThousand
         })
+          }),
+          serviceRequest.getClassServices()
+          .then(classServicesReturned => {
+            classServices = classServicesReturned.data
           })
     .catch(error => {
       res.render('error', {error})
@@ -24,14 +28,15 @@ const mainController = {
     },
   search: (req, res) => {
     let search = req.query.keywords;
-    let serviceToSearch = serviceRequest.filter(service => service.nome.toLowerCase().includes(search));
-    
+    let serviceToSearch = services.filter(service => service.nome.toLowerCase().includes(search))  ;
+    let classServiceToSearch = services.filter(service => service.classe_servico.toLowerCase().includes(search));
     res.render('servicos', {
-        services: serviceToSearch,
+      services: serviceToSearch,
+      services: classServiceToSearch,
         search,
         toThousand
     })
 }
-}
+};
 
 module.exports = mainController;

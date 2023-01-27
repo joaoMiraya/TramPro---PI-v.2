@@ -24,8 +24,8 @@
 <body>
   <%- include('./partials/header') %>
 <main>
-<div class="search-result-text-box">
-<h1 class="search-result-text">Resultados para: "xxxxxxxx"</h1>
+<!-- <div class="search-result-text-box">
+<h1 class="search-result-text">Resultados para: ""</h1>
 </div>
 
  <div class="container-paiDeTodos-trampos">
@@ -65,18 +65,6 @@
 </select>
    </form>
          </div>
-
-
- <div class="optionBox">
-   <form name="inicio" action="#">
-<select name="inicio" id="inicio">
-  <option value="Inicio">Quando começar?</option>
-  <option value="desenvolvedor">Inicio Imediato</option>
-  <option value="delivery">Fazer Avaliação</option>
-  <option value="jardinagem">Combinar data de inicio</option>>
-</select>
-   </form>
-         </div>
               </div>
 
 <div class="toggle-buttons">
@@ -93,11 +81,15 @@
 </div>
 <p class="text-toggle">Trampo Remoto</p>
 </div>
-    </div>
+    </div> -->
                         <!--  AREA DOS ANUNCIOS -->
+
+
+                     
+                                           
 <div class="anuncios-container">
 <div class="title-anuncios">
-<h3>Conheça os profissionais disponíveis:</h3>
+<h3>Conheça os profissionais disponíveis:  </h3>
 
 </div>
 
@@ -106,7 +98,7 @@
 <div class="workers-card">
     <p class="profissao"> <%= service.nome %> </p>
   <div class="work-image-box">
-<img src="/images/cozinheiroImage.jpg" alt="Work">
+<img src="/images/<%= service.imagem + '.jpg' %>" alt="Work">
   </div>
     <div class="description-worker">
     <p> <%= service.descricao %></p>
@@ -122,7 +114,7 @@
     <hr>
 <div class="fav-price-box">
   <div class="favIcon-box">
-<span class="material-symbols-outlined">
+<span class="material-symbols-outlined"> 
 favorite
 </span>
 </div>
@@ -138,6 +130,8 @@ favorite
 
 
 <% }) %>
+
+
 
 </div>
   </main>

@@ -16,11 +16,11 @@ const workerRequest = {
         method: 'get',
         url: `${url}/${id}` 
     }),
-    createWorker: (service) => axios({
+    createWorker: (worker) => axios({
         ...def,
         method: 'post',
         data:{
-            ...service
+            ...worker
         },
         url: `${url}/` 
     }),

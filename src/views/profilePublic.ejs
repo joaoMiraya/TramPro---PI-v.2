@@ -40,14 +40,15 @@
 
     <div class="informacoes-pessoais">
         <div class="name">
-            <h4> <%= service.nome %> </h4>
+            <h4> Nome do trabalhador </h4>
             </div>
         <div class="foto">
         <img src="/images/imageModelo1.jpg" width="250px" height="300px" alt=" foto do usuario">
        </div>
                  <div class="profissao">
-            <p>Jardineiro</p>
-                      </div>    
+                     <p><%= service.nome %></p>
+                      </div>   
+
                       <div class="see-more" id="see-more">
                         <span id="see-more-icon" class="material-symbols-outlined">
                             expand_more
@@ -62,7 +63,7 @@
 <div id="descricao-box" class="hidden">
     <div class="descricao">
         <h3>Descrição</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+        <p><%= service.descricao %></p>
     </div>
 </div>
     </div>
@@ -78,52 +79,17 @@
 <span class="material-symbols-outlined">
 check_box
 </span>
-<h4>Jardinagem</h4> 
+<h4><%= service.nome %></h4> 
 </div>
 <div class="data-servico">
     <h4>08/07/2022</h4>
 </div>
 </div>
 
-<div class="icon-checked-box">
-<div class="servicoEicon">
-<span class="material-symbols-outlined">
-check_box
-</span>
-<h4> <% service.nome %> </h4> 
-</div>
-<div class="data-servico">
-    <h4>18/06/2022</h4>
-</div>
-</div>
-
-<div class="icon-checked-box">
-<div class="servicoEicon">
-<span class="material-symbols-outlined">
-check_box
-</span>
-<h4>Jardinagem</h4> 
-</div>
-<div class="data-servico">
-    <h4>04/05/2022</h4>
-</div>
-</div>
-
-<div class="icon-checked-box">
-<div class="servicoEicon">
-<span class="material-symbols-outlined">
-check_box
-</span>
-<h4>Jardinagem</h4> 
-</div>
-<div class="data-servico">
-    <h4>08/04/2022</h4>
-</div>
-</div>
 </div>
 
 <div class="contratar-button">
-    <a href="/pagamento">CONTRATAR</a>
+    <a href="/pagamento/detail/<%= service.id %>">CONTRATAR</a>
 </div>
 </div>
 </div>
