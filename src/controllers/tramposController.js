@@ -2,26 +2,28 @@ const path = require('path');
 const fs = require('fs');
 const {validationResult} = require('express-validator');
 
-const serviceRequest = require('../requests/servicosRequest');
+const serviceRequest = require('../requests/serviceRequest');
 
-const workerRequest = require('../requests/trabalhadorRequest');
+const workerRequest = require('../requests/usersRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
+                                /*  VER OS REQUEST CERTINHO SO ALTEREI NOME */
 
 const tramposController = {
     index: (req, res) =>{
         serviceRequest.getServices()
         .then(servicesReturned => {
-         services = servicesReturned.data
+        let services = servicesReturned.data
             res.render('servicos', {
                 services,
                 toThousand
             })
         }),
-        workerRequest.getWorkers()
-        .then(workersReturned => {
-            workers = workersReturned.data
+        workerRequest.getUsers()
+        .then(usersReturned => {
+        let workers = usersReturned.data
         })
         .catch(error => {
             res.render('error', {error})

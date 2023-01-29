@@ -25,23 +25,23 @@ const fileUpload = multer({ storage: storage })
 
                    /*  STORAGE FOR SERVICE */
 
-/* const Servicestorage = multer.diskStorage({
+const Servicestorage = multer.diskStorage({
     destination: function (req, file, cb)  {
        cb(null, __dirname + '../../../public' + '/images/servicesImg');
     },
     filename: (req, file, cb) => {
-        cb(null, file.filename + '-' + Date.now() + path.extname(file.originalname));
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     },      
 });
 
-const ServicefileUpload = multer({ storage: Servicestorage }) */
+const ServicefileUpload = multer({ storage: Servicestorage })
 
 
                           /*   CRIAR SERVICO */
 
-router.get('/addTrampo', /* verifyUserLogged, */ profileController.addTrampo);
+router.get('/addTrampo', verifyUserLogged, profileController.addTrampo);
 
-/* router.post('/fotoService', ServicefileUpload.single('image'),[
+ router.post('/fotoService', ServicefileUpload.any(),[
 check('nome').isEmpty().withMessage('Defina um nome para seu serviço'),
 check('categorias').isEmpty().withMessage('Escolha uma categoria'),
 check('estilo').isEmpty().withMessage('Defina se o seu serviço é presencial ou remoto'),
@@ -55,11 +55,11 @@ body('preco').isEmpty().withMessage('Preencha este campo com o valor cobrado pel
 }),
 check('serviceDescricao').isEmpty().withMessage('Insira a desrição do seu serviço, não poupe detalhes')
 ], profileController.store)
- */
 
 
 
-router.get('/',/*  verifyUserLogged,  */profileController.profile);
+
+router.get('/', verifyUserLogged, profileController.profile);
 
 router.get('/edit', profileController.edit)
 

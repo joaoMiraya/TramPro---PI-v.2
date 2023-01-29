@@ -1,0 +1,12 @@
+.container-result{
+display: flex;
+justify-content: center;
+}
+.search-result-text-box{
+background-color: #EEF1E8;
+padding: 25px;
+border-radius: 3px;
+}
+.search-result-text{
+    color: #c5b87f;
+}

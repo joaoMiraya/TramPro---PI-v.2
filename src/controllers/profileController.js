@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const {validationResult} = require('express-validator')
 
-const serviceRequest = require('../requests/servicosRequest')
-
+const serviceRequest = require('../requests/serviceRequest')
+const usersRequest = require('../requests/usersRequest');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
@@ -11,7 +11,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const profileController = {
     profile: (req, res) =>{
-       res.render('profile')
+      res.render('profile', {
+        userLogged: req.session.userLogged
+      });
     },
     foto: (req, res) => {
         console.log(req.file)
@@ -21,7 +23,7 @@ const profileController = {
         res.render('addTrampo')
     },
     store: (req, res) => {
-    let image;
+    let image = [];
         if(req.files[0] != undefined){
             image = req.files[0].filename
         } else {

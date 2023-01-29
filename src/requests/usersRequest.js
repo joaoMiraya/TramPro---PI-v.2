@@ -1,35 +1,35 @@
 const axios = require('axios');
-const def = require('./default');
+const def = require('./default')
 const path = require('path');
 
 
-const url = 'servico'
+const url = 'usuarios'
 
-const serviceRequest = {
-    getServices: () => axios({
+const userRequest = {
+    getUsers: () => axios({
         ...def,
         method: 'get',
         url: `${url}/` 
     }),
-    getClassServices: (classe_servico) => axios({
-        ...def,
-        method: 'get',
-        url: `${url}?classe_servico=${classe_servico}` 
-    }),
-    getService: (id) => axios({
+    getUser: (id) => axios({
         ...def,
         method: 'get',
         url: `${url}/${id}` 
     }),
-    createService: (service) => axios({
+    getUserByEmail: (email) => axios({
+        ...def,
+        method: 'get',
+        url: `${url}?email=${email}` 
+    }),
+    createUser: (user) => axios({
         ...def,
         method: 'post',
         data:{
-            ...service
+            ...user
         },
         url: `${url}/` 
     }),
-     deleteService: (id) => axios({
+     deleteUser: (id) => axios({
         ...def,
         method: 'delete',
         url: `${url}/${id}`  
@@ -39,4 +39,4 @@ const serviceRequest = {
 
 
 
-module.exports = serviceRequest;
+module.exports = userRequest;

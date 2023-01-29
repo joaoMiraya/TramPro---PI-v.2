@@ -24,11 +24,8 @@
 <body>
   <%- include('./partials/header') %>
 <main>
-<!-- <div class="search-result-text-box">
-<h1 class="search-result-text">Resultados para: ""</h1>
-</div>
 
- <div class="container-paiDeTodos-trampos">
+<!--  <div class="container-paiDeTodos-trampos">
 <div class="nav-category-container">
 
 <div class="optionBox">
@@ -98,17 +95,17 @@
 <div class="workers-card">
     <p class="profissao"> <%= service.nome %> </p>
   <div class="work-image-box">
-<img src="/images/<%= service.imagem + '.jpg' %>" alt="Work">
+<img src="/images/servicesImg/<%= service.imagem + '.jpg' %>" alt="WorkImage">
   </div>
     <div class="description-worker">
     <p> <%= service.descricao %></p>
     </div>
       <div class="worker-profile">
         <div class="worker-imageProfile">
-          <img src="/images/imageModelo1.jpg" alt="Profile">
+          <img src="/images/profiles/<%= service.Usuario.foto + '.jpg' %>"alt="Profile">
         </div>
         <div class="worker-name">
-       <a href="/profilePublic/detail/<%= service.id %>"><h3> <%= service.Trabalhador.nome + ' ' + service.Trabalhador.sobrenome %> </h3></a>
+       <a href="/profilePublic/detail/<%= service.id %>"><h3> <%= service.Usuario.nome + ' ' + service.Usuario.sobrenome %> </h3></a>
       </div>
       </div>
     <hr>
@@ -119,7 +116,7 @@ favorite
 </span>
 </div>
 <div class="price-box">
-  <h3 class="price"><%= 'R$' + service.valor_servico + ',00' %></h3>
+  <h3 class="price"><%= 'R$' + service.valor + ',00' %></h3>
 </div>
 </div>
   <a href="/pagamento/detail/<%= service.id %>"><div class="contratar-box">

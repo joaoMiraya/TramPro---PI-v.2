@@ -141,14 +141,14 @@
   <span class="overlay"></span>
   
   <div class="card-image">
-  <img src="/images/imageModelo1.jpg" alt="user-image" class="card-img">
+  <img src="/images/profiles/<%= service.Usuario.foto + '.jpg' %>" alt="user-image" class="card-img">
   </div>
   </div>
   
   <div class="card-content">
     <h2 class="name"> <%= service.nome %> </h2>
     <p class="description"> <%= service.descricao %> </p>
-  <a href="/servico/detail/<%= service.id %>"><button class="button">Saber mais</button> </a>
+  <a href="/profilePublic/detail/<%= service.id %>"><button class="button">Saber mais</button> </a>
   </div>
     </div>
 

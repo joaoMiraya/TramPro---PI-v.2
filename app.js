@@ -34,7 +34,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(logMiddleware);
-app.use(session({secret: "TramPro Inc"})) // Indicação de uso de session a nivel de aplicação
+app.use(session({secret: "TramPro Inc",
+                  resave:false,
+                  saveUninitialized:false})) // Indicação de uso de session a nivel de aplicação
 app.use(function(req, res, next) {
   res.locals.userLogged = req.session.userLogged;
   next();
@@ -46,6 +48,7 @@ app.use(function(req, res, next) {
 
 
 
+app.post('/register', entrarRouter); 
 app.post('/foto', profileRouter); 
 app.post('/fotoService', profileRouter); 
 app.post('/fotoCont', profileContratanteRouter); 

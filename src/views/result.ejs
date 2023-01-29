@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TramPro</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/result.css">
+    <link rel="stylesheet" href="/stylesheets/trampos.css">
+    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <%- include('./partials/header') %>
+
+
+    <div class="search-result-text-box">
+        <h1 class="search-result-text"> Resultados para: "<%= search %> "</h1>
+        </div>
+        <div class="container-result">
+            
+    <% services.forEach(function(service){ %>
+
+        <div class="workers-card">
+            <p class="profissao"> <%= service.nome %> </p>
+          <div class="work-image-box">
+        <img src="/images/servicesImg/<%= service.imagem + '.jpg' %>" alt="WorkImage">
+          </div>
+            <div class="description-worker">
+            <p> <%= service.descricao %></p>
+            </div>
+              <div class="worker-profile">
+                <div class="worker-imageProfile">
+                  <img src="/images/imageModelo1.jpg" alt="Profile">
+                </div>
+                <div class="worker-name">
+               <a href="/profilePublic/detail/<%= service.id %>"><h3> <%= service.Usuario.nome + ' ' + service.Usuario.sobrenome %> </h3></a>
+              </div>
+              </div>
+            <hr>
+        <div class="fav-price-box">
+          <div class="favIcon-box">
+        <span class="material-symbols-outlined"> 
+        favorite
+        </span>
+        </div>
+        <div class="price-box">
+          <h3 class="price"><%= 'R$' + service.valor + ',00' %></h3>
+        </div>
+        </div>
+          <a href="/pagamento/detail/<%= service.id %>"><div class="contratar-box">
+        <button class="contratar-btn" type="submit">Contratar</button>
+        </div></a>
+        </div>
+        
+        
+        
+        <% }) %>
+        
+    </div>
+        
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

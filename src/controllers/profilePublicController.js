@@ -1,11 +1,14 @@
 const path = require('path');
 const fs = require('fs');
 
-const serviceRequest = require('../requests/servicosRequest');
+const serviceRequest = require('../requests/serviceRequest');
 
-const workerRequest = require('../requests/trabalhadorRequest');
+const workerRequest = require('../requests/usersRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+ /*  VER OS REQUEST CERTINHO SO ALTEREI NOME */
+
 
 const profilePublicController = {
     index: (req, res) =>{

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { check } = require('express-validator');
 
 
 const validations = require('../middlewares/validationMiddleware')
@@ -11,7 +12,7 @@ router.get('/' , entrarController.index);
 
 router.post('/', validations, entrarController.login);
 
-router.post('/', validations, entrarController.register);
+router.post('/register', validations, entrarController.register);
 
 
 module.exports = router;
