@@ -33,8 +33,9 @@
         </div>
         <div class="container-result">
             
-    <% services.forEach(function(service){ %>
+<% if(services.length > 0){ %>
 
+    <% services.forEach(function(service){ %>
         <div class="workers-card">
             <p class="profissao"> <%= service.nome %> </p>
           <div class="work-image-box">
@@ -45,7 +46,7 @@
             </div>
               <div class="worker-profile">
                 <div class="worker-imageProfile">
-                  <img src="/images/imageModelo1.jpg" alt="Profile">
+                  <img src="/images/profiles/<%= service.Usuario.foto + '.jpg' %>" alt="Profile">
                 </div>
                 <div class="worker-name">
                <a href="/profilePublic/detail/<%= service.id %>"><h3> <%= service.Usuario.nome + ' ' + service.Usuario.sobrenome %> </h3></a>
@@ -66,14 +67,15 @@
         <button class="contratar-btn" type="submit">Contratar</button>
         </div></a>
         </div>
-        
-        
-        
-        <% }) %>
-        
-    </div>
-        
 
+        <% })} else { %>
+          <div class="error-box">
+            <h1 class="error-mesage"> Não há serviços disponiveis para <%= search %> </h1>
+            </div>
+            <% } %>
+
+    </div>
+       
     <%- include('./partials/footer') %>
 
 </body>

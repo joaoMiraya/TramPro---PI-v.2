@@ -1,6 +1,8 @@
+
 .container-result{
 display: flex;
 justify-content: center;
+padding-bottom: 170px;
 }
 .search-result-text-box{
 background-color: #EEF1E8;
@@ -9,4 +11,12 @@ border-radius: 3px;
 }
 .search-result-text{
     color: #c5b87f;
+}
+.error-box{
+background-color: rgba(235, 100, 100, 0.719);
+padding: 50px 150px;
+border-radius: 10px;
+}
+.error-mesage{
+color: #FFF;
 }

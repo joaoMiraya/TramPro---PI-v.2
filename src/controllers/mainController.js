@@ -28,17 +28,14 @@ const mainController = {
   await serviceRequest.getServices().
     then(servicesReturned => {
    services = servicesReturned.data
-          }).catch(error => {
-            res.render('error', {error})
           })
-  let search = req.query.keywords.toLowerCase().trim();
-    let serviceToSearch = services.filter(services => services.nome.toLowerCase().includes(search));
-       res.render('result', {
-      services: serviceToSearch,
-     search,
-        toThousand
-    })
-  
+    let search = req.query.keywords.toLowerCase().trim();
+    let serviceToSearch = services.filter(services => services.nome.toLowerCase().includes(search))
+    res.render('result', {
+          services: serviceToSearch,
+  search,
+     toThousand
+ })
 }
 };
 

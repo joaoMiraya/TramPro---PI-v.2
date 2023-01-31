@@ -102,25 +102,29 @@ padding: 5px;
     }
 
                     /* INPUT FILE  */
-
+.addFotoTxt{
+font-family: 'Roboto', sans-serif;
+color: #aab0b6;
+cursor: pointer;
+}
 .foto-container{
 display: flex;
+justify-content: center;
+align-items: center;    
 background-color:gainsboro;
 width: 250px;
 height: 250px;
 border-radius: 50%;
 text-align: center;
-justify-content: center;
 flex-direction: column;
+overflow: hidden;
 }
-.foto-container:hover{
-    background-color: #54585c;
-    border: none;
+.imagemUser{
+display: flex;
+align-items: center;
 }
-.addFotoTxt{
-font-family: 'Roboto', sans-serif;
-color: #aab0b6;
-cursor: pointer;
+.imagemUser:hover {
+    display: none;
 }
 
 .material-icons{
@@ -151,4 +155,29 @@ transition: .5s ease;
 }
 .enviarBtn:hover{
     background-color: #062439e5; 
+}
+.trampos-ativo{
+margin-top: 15px;
+padding: 5px 10px;
+text-align: center;
+background-color: #3f82638c;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 3px;
+}
+.trampos-ativo p {
+font-size: 20px;
+font-family: roboto;
+color: #062439;
+}
+.delete-icon,
+.editService{
+color: #6A6A6A;
+margin-left: 5px;
+cursor: pointer;
+transition: .4s;
+}
+.delete-icon:hover{
+color: #ff4747;
 }

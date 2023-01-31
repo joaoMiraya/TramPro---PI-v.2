@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -45,7 +47,21 @@ mail
 <div class="trampo-container"> 
 <div class="trampoBox">
 <h1 class="seus-trampos">Seus Trampos </h1>
-<p class="nenhumTrampoTxt">Parece que você não tem nenhum trampo ativo ainda</p>
+
+<!-- <p class="nenhumTrampoTxt">Parece que você não tem nenhum trampo ativo ainda</p>
+ -->
+<div class="trampos-ativo">
+  <div>
+      <p>Motoqueiro</p>
+  </div>
+  <div class="deleteEditBox"> 
+  <span class="material-symbols-rounded delete-icon">
+    delete
+    </span>
+    <i class="material-icons editService">edit</i>
+  </div>
+</div>
+
 </div> 
 
 <div class="addTrampoBox">
@@ -62,17 +78,19 @@ mail
 
 
   <form action="/foto" method="POST" enctype="multipart/form-data">
-<div class="foto-container">
-  <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar">
-  <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
-   </div>
+   <div class="foto-container">
+   <img class="imagemUser" width="400px" height="400px" src="/images/profiles/<%= userLogged.foto + '.jpg' %>" alt="imagem-do-usuario">
+   <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar">
+   <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
+     </div>
+
    <div class="enviarBtnBox">
    <button class="enviarBtn" type="submit">Salvar</button>
   </div>
 </form>
 
 
-<h2 id="nome"> <%= userLogged.nome %> </h2>
+<h2 id="nome"> <%= userLogged.nome + ' ' + userLogged.sobrenome %> </h2>
 <p id="cidade"><%= userLogged.cidade %></p>
   </div>
   

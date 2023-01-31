@@ -4,7 +4,7 @@ const {validationResult} = require('express-validator');
 
 const serviceRequest = require('../requests/serviceRequest');
 
-const workerRequest = require('../requests/usersRequest');
+const usersRequest = require('../requests/usersRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -21,9 +21,9 @@ const tramposController = {
                 toThousand
             })
         }),
-        workerRequest.getUsers()
+        usersRequest.getUsers()
         .then(usersReturned => {
-        let workers = usersReturned.data
+        let users = usersReturned.data
         })
         .catch(error => {
             res.render('error', {error})

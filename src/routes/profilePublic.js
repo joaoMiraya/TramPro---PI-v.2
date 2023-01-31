@@ -5,7 +5,6 @@ const profilePublicController = require('../controllers/profilePublicController'
 
 
 
-router.get('/', profilePublicController.index);
 router.get('/detail/:id/', profilePublicController.detail);
 
 module.exports = router;

@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const serviceRequest = require('../requests/serviceRequest');
 
-const workerRequest = require('../requests/usersRequest');
+const usersRequest = require('../requests/usersRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -31,6 +31,14 @@ const profilePublicController = {
             let service = serviceReturn.data;
             res.render('profilePublic', {
                 service,
+                toThousand
+            })
+        })
+        usersRequest.getUser(id).
+        then(userReturn => {
+            let user = userReturn.data;
+            res.render('profilePublic', {
+                user,
                 toThousand
             })
         })
