@@ -7,42 +7,25 @@ const usersRequest = require('../requests/usersRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
- /*  VER OS REQUEST CERTINHO SO ALTEREI NOME */
 
 
 const profilePublicController = {
-    index: (req, res) =>{
-        serviceRequest.getServices().
-        then(servicesReturned => {
-         services = servicesReturned.data
-            res.render('profilePublic', {
-                services,
-                toThousand
-            })
-        })
-        .catch(error => {
-            res.render('error', {error})
-        })
-    },
     detail: (req, res) => {
         let id = req.params.id
-        serviceRequest.getService(id).
-        then(serviceReturn => {
-            let service = serviceReturn.data;
-            res.render('profilePublic', {
-                service,
-                toThousand
-            })
-        })
-        usersRequest.getUser(id).
+      serviceRequest.getService(id).
+         then(serviceReturn => {
+            let services = serviceReturn.data;
+       usersRequest.getUser(services.id_usuarios).
         then(userReturn => {
-            let user = userReturn.data;
+            let users = userReturn.data;
             res.render('profilePublic', {
-                user,
+                services,
+                users,
                 toThousand
             })
         })
-        .catch(error => {
+    })
+      .catch(error => {
             res.render('error', {error})
         })
     },       

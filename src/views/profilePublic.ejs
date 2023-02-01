@@ -38,16 +38,16 @@
     <span class="material-symbols-outlined chatIcon">
         chat_bubble
         </span>
-
+ 
     <div class="informacoes-pessoais">
         <div class="name">
-            <h4> Nome do trabalhador </h4>
+            <h4> <%= users.nome + ' ' + users.sobrenome %></h4>
             </div>
         <div class="foto">
-        <img src="/images/imageModelo1.jpg" width="250px" height="300px" alt=" foto do usuario">
+        <img src="/images/profiles/<%= users.foto + '.jpg' %>" width="250px" height="300px" alt=" foto do usuario">
        </div>
                  <div class="profissao">
-                     <p><%= service.nome %></p>
+                     <p><%= services.nome %></p>
                       </div>   
 
                       <div class="see-more" id="see-more">
@@ -64,7 +64,7 @@
 <div id="descricao-box" class="hidden">
     <div class="descricao">
         <h3>Descrição</h3>
-        <p><%= service.descricao %></p>
+        <p><%= services.descricao %></p>
     </div>
 </div>
     </div>
@@ -75,14 +75,14 @@
 <div class="servicos-oferecidos">
 
 <div class="servicos-checked">  
-<h3>Trampos já feitos por </h3>
+<h3>Trampos já feitos por <%= users.nome + ' ' + users.sobrenome %></h3>
 
 <div class="icon-checked-box">
 <div class="servicoEicon">
 <span class="material-symbols-outlined">
 check_box
 </span>
-<h4><%= service.nome %></h4> 
+<h4><%= services.nome %></h4> 
 </div>
 <div class="data-servico">
     <h4>08/07/2022</h4>
@@ -92,7 +92,7 @@ check_box
 </div>
 
 <div class="contratar-button">
-    <a href="/pagamento/detail/<%= service.id %>">CONTRATAR</a>
+    <a href="/pagamento/detail/<%= services.id %>">CONTRATAR</a>
 </div>
 </div>
 </div>

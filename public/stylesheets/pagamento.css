@@ -225,3 +225,7 @@ cursor: pointer;
 .finalizar-btn:hover{
 background-color: #3F8263;
 }
+.stripePayment{
+display:flex;
+justify-content: center;
+}

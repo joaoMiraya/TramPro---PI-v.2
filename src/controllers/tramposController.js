@@ -9,13 +9,14 @@ const usersRequest = require('../requests/usersRequest');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
-                                /*  VER OS REQUEST CERTINHO SO ALTEREI NOME */
 
 const tramposController = {
     index: (req, res) =>{
         serviceRequest.getServices()
         .then(servicesReturned => {
         let services = servicesReturned.data
+        
+        console.log(services)
             res.render('servicos', {
                 services,
                 toThousand

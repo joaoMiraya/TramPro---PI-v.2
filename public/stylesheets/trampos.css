@@ -1,8 +1,4 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
+
 body{
 overflow-x:hidden;
 }
@@ -237,9 +233,9 @@ background-color:#1D6758 ;
 border: none;
 font-weight: bold;
 color: #FFF;
-border: none;
 cursor: pointer;
-border-bottom: none;
+outline: none;
+list-style: none;
 }
 
 

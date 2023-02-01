@@ -10,6 +10,7 @@ const session = require('express-session');
 
 
 
+
 const mainRouter = require('./src/routes/main');
 const profileRouter = require('./src/routes/profile');
 const entrarRouter = require('./src/routes/entrar');
@@ -17,14 +18,32 @@ const tramposRouter = require('./src/routes/trampos');
 const profilePublicRouter = require('./src/routes/profilePublic');
 const profileContratanteRouter = require('./src/routes/profileContratante');
 const pagamentoRouter = require('./src/routes/pagamento');
-
+const chatRouter = require('./src/routes/chat');
 
 
 
 const app = express();
 
+              /*   CONFIG DO CHAT */
+
+const server = require('http').createServer(app)
+const io = require('socket.io')(server);
+
+let messages = [];
+
+io.on('connection', socket => {
+console.log(`Socket Conectado: ${socket.id}`)
+
+socket.on('sendMessage', data =>{
+  messages.push(data)
+})
+});
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -43,11 +62,6 @@ app.use(function(req, res, next) {
 });
 
 
-
-
-
-
-
 app.post('/register', entrarRouter); 
 app.post('/foto', profileRouter); 
 app.post('/fotoService', profileRouter); 
@@ -62,6 +76,7 @@ app.use('/login', entrarRouter);
 app.use('/entrar', entrarRouter); 
 app.use('/servico', tramposRouter); 
 app.use('/pagamento', pagamentoRouter); 
+app.use('/chat', chatRouter); 
 
 
 
@@ -81,5 +96,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3030, ()=> console.log('Servidor rodando na porta 3030'))
+server.listen(3030, ()=> console.log('Servidor rodando na porta 3030'))
 module.exports = app;

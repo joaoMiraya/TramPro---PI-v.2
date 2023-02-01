@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-
-const serviceRequest = require('../requests/serviceRequest')
+const serviceRequest = require('../requests/serviceRequest');
+const { Script } = require('vm');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -30,13 +30,19 @@ const mainController = {
    services = servicesReturned.data
           })
     let search = req.query.keywords.toLowerCase().trim();
-    let serviceToSearch = services.filter(services => services.nome.toLowerCase().includes(search))
+    let serviceToSearch = services.filter(services => services.nome.toLowerCase().includes(search)) 
     res.render('result', {
           services: serviceToSearch,
-  search,
-     toThousand
- })
-}
-};
+              search,
+                    toThousand
+        })
+        }
+        };
+
+
+
+
+
+
 
 module.exports = mainController;

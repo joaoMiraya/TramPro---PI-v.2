@@ -113,16 +113,16 @@
        
 <div class="revisao-do-servico">
     <div class="descricaoNome">
-        <p> NOME DO TRABALHADOR> </p>
+        <p> <%= users.nome + ' ' + users.sobrenome %> </p>
     </div>
 <div class="foto-nome">
-<img class="imgDoServico" src="/images/servicesImg/ <%= service.imagem %>" width="250px" height="155px" alt="foto do Serviços">
+<img class="imgDoServico" src="/images/servicesImg/<%= services.imagem + '.jpg' %>" width="250px" height="155px" alt="foto do Serviços">
 </div>
-<p class="nome"> <%= service.nome %> </p>
+<p class="nome"> <%= services.nome %> </p>
 <hr>
 <div class="descricao">
     <div class="txt-descricao">
-    <p> <%= service.descricao %> </p>
+    <p> <%= services.descricao %> </p>
     </div>
 </div>
 
@@ -132,16 +132,29 @@
 </div>
 
 <div class="valor">  
-    <p>R$ <%= service.valor + ',00' %> </p>
+    <p>R$ <%= services.valor + ',00' %> </p>
     </div>
     
 </div>
 
-<div class="comprar">
-    <button type="submit" class="finalizar-btn">Finalizar</button>
+<div class="stripePayment">
+<form action="payment" method="POST">
+    <script
+     src="//checkout.stripe.com/v2/checkout.js"
+     class="stripe-button"
+     data-key="<%= key %>"
+     data-amount="<%= services.valor + '00' %>"
+     data-currency="BRL"
+     data-name="<%= services.nome %>"
+     data-description=" <%= services.descricao %>"
+     data-locale="auto">
+    </script>
+</form>
+</div>
 </div>
 
-</div>
+
+
 
 
 </div>

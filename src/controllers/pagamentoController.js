@@ -1,32 +1,37 @@
 const path = require('path');
 const fs = require('fs');
 
-const userRequest = require('../requests/usersRequest')
+const usersRequest = require('../requests/usersRequest')
 const serviceRequest = require('../requests/serviceRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
- /*  VER OS REQUEST CERTINHO SO ALTEREI NOME */
+          /* STRIPE API KEYS */
+
+const chavePublicavel = "pk_test_51MW9qkGQrwfM9QMce9AhUYHk9bNaVQp9uF5svt8Eq9QK5TY1i0jM17bUqhDI3h1oKcCMsDEoOaNcFG0JUMCYPPXy00ezjUgmuF";
+const chaveSecreta = "sk_test_51MW9qkGQrwfM9QMcUS9DBlyMxSUjgqq1uEG5eNrn0Wus5BJbOB9hGfWVYEEJs3LMsZQdGyEBExQPSURhGx3su5Th00NmXJWL0k";
+
 
 const pagamentoController = {
     index: (req, res) => {
-        let service = [];
-        let usuarios = [];
-
-        let id = req.params.id
-        serviceRequest.getService(id).
-        then(serviceReturn => {
-         service = serviceReturn.data;
+         let id = req.params.id
+      serviceRequest.getService(id).
+         then(serviceReturn => {
+            let services = serviceReturn.data;
+       usersRequest.getUser(services.id_usuarios).
+        then(userReturn => {
+            let users = userReturn.data;
+         /*    console.log(users); */
+            console.log(services);
             res.render('pagamento', {
-                service,
+                services,
+                users,
+                key: chavePublicavel,
                 toThousand
             })
-        }),
-        userRequest.getUsers()
-        .then(userReturn => {
-            usuarios = userReturn.data;
         })
-        .catch(error => {
+    })
+      .catch(error => {
             res.render('error', {error})
         })
     },
