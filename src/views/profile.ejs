@@ -47,20 +47,26 @@ mail
 <div class="trampoBox">
 <h1 class="seus-trampos">Seus Trampos </h1>
 
-<!-- <p class="nenhumTrampoTxt">Parece que você não tem nenhum trampo ativo ainda</p>
- -->
-<div class="trampos-ativo">
-  <div>
-      <p>Motoqueiro</p>
-  </div>
-  <div class="deleteEditBox"> 
-  <span class="material-symbols-rounded delete-icon">
-    delete
-    </span>
-    <i class="material-icons editService">edit</i>
-  </div>
-</div>
 
+
+ 
+ <% if(services != null){ %>
+
+  <div class="trampos-ativo">
+    <div>
+        <p><%= services.nome %></p>
+    </div>
+    <div class="deleteEditBox"> 
+    <span class="material-symbols-rounded delete-icon">
+      delete
+      </span>
+      <i class="material-icons editService">edit</i>
+    </div>
+  </div>
+  <% } else { %>
+    <p class="nenhumTrampoTxt">Parece que você não tem nenhum trampo ativo ainda</p>
+
+ <% }  %>
 </div> 
 
 <div class="addTrampoBox">

@@ -11,10 +11,39 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const profileController = {
     profile: (req, res) =>{
-      res.render('profile', {
-        userLogged: req.session.userLogged
-      });
-    },
+let userLogged = req.session.userLogged;
+let services = [];
+let users = [];
+serviceRequest.getService(userLogged.id).
+         then(serviceReturn => {
+            return serviceReturn;
+         })
+         .then(services =>{
+            usersRequest.getUser(userLogged.id).
+            then(userReturn => {
+                let users = userReturn.data;
+          res.render('profile', {
+            userLogged,
+            services,
+            users
+                })
+         })
+         .catch(error => {
+            console.log(userLogged)
+ /*            let services = null;
+            usersRequest.getUser(userLogged.id).
+            then(userReturn => {
+                let users = userReturn.data;
+          res.render('profile', {
+            userLogged,
+            services,
+            users
+                })
+         }) */
+        })
+      
+         })
+        },  
     foto: (req, res) => {
         console.log(req.file)
    res.send('Foto alterada')

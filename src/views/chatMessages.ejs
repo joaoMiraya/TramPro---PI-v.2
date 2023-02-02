@@ -35,17 +35,16 @@
 <div class="contatos-msg">
     <span></span>
 <div class="imagem-ctt">
-    <img width="50px" height="50px" src="/images/cozinheiroImage.jpg" alt="User-Image">
+    <img width="50px" height="50px" src="/images/profiles/<%= users.foto + '.jpg' %>" alt="User-Image">
 </div>
-<p>Nome do usuario</p>
-</div>
-
+<p><%= users.nome + ' ' + users.sobrenome %> </p>
 </div>
 
+</div>
+<form id="chat">
 <div class="container-central">
-
+  
     <div class="campo-de-mensagens">
-        <form id="chat">
         <div class="messages">
 
       </div>
@@ -67,22 +66,35 @@
 <br>
 <%- include('./partials/footer') %>
 
+
+
 <script type="text/javascript">
     var socket = io('http://localhost:3030');
-
     function renderMessage(message) {
         $('.messages').append('<div class="message">' + message.message + '</div>')
     }
 
+    socket.on('previousMesssages', function(messages){
+        for(message of messages){
+            renderMessage(message)
+        }
+    })
+
+      socket.on('receivedMessage', function(message){
+        renderMessage(message);
+      })
+
+
     $('#chat').submit(function(event){
         event.preventDefault();
         
-       
+    
         var message = $('input[name=message]').val();
         
         if(message.length){
             var messageObject ={
-            
+                
+               
                 message: message
             };
 

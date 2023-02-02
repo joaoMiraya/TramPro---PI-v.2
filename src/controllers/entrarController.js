@@ -36,10 +36,14 @@ const entrarController = {
             }
         else {
             let errors = [];
-        errors.push('Usuario não encontrado')
+        errors.push('Senha incorreta')
         res.render('entrar', {errors, userFinded })
         
         }
+      } else {
+        let errors = [];
+        errors.push('Usuário não encontrado')
+        res.render('entrar', {errors, userFinded })
       }
     },
     register: (req, res) =>{
@@ -58,18 +62,6 @@ const entrarController = {
     }) .then(userCreated => {
       res.redirect('/')
     })
-    .catch(err => {
-        res.status(500).json(console.log(err));
-    })
-        const resultValidations =  validationResult(req);
-        if(resultValidations.errors.lenght > 0) {
-          return res.render('entrar', {
-              errors: resultValidations.mapped(),
-              oldData: req.body
-          })
-          
-        }
-       return res.redirect('/') 
       } 
 };
 

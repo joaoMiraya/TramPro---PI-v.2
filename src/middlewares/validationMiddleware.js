@@ -14,7 +14,7 @@ const validations = [
     check('telefone').notEmpty().withMessage('Preencha este campo').bail().trim(),
     check('email').notEmpty().withMessage('Preencha este campo').bail().trim().bail().normalizeEmail().bail().isEmail().withMessage('Digite um Email valido'),
     check('confirmEmail').notEmpty().withMessage('Preencha este campo').bail().trim().bail().normalizeEmail().bail().isEmail().withMessage('Digite um Email valido'),
-    check('senha').notEmpty().withMessage('Tem que escrever uma senha').bail().isLength({min: 8}).withMessage('A senha precisa ter 8 caracteres'),
+    check('senha').notEmpty().withMessage('Tem que escrever uma senha').bail().isLength({min: 6}).withMessage('A senha precisa ter 6 caracteres'),
     check('confirmPassword').notEmpty().withMessage('Tem que escrever uma senha').bail().isLength({min: 8}).withMessage('A senha precisa ter 8 caracteres'),
 ];
 

@@ -28,7 +28,7 @@ const profilePublicController = {
       .catch(error => {
             res.render('error', {error})
         })
-    },       
+    }
 };
 
 module.exports = profilePublicController;

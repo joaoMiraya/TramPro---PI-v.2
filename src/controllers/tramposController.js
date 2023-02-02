@@ -14,9 +14,7 @@ const tramposController = {
     index: (req, res) =>{
         serviceRequest.getServices()
         .then(servicesReturned => {
-        let services = servicesReturned.data
-        
-        console.log(services)
+        let services = servicesReturned.data;
             res.render('servicos', {
                 services,
                 toThousand

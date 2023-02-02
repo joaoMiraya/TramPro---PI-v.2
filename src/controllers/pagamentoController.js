@@ -21,8 +21,6 @@ const pagamentoController = {
        usersRequest.getUser(services.id_usuarios).
         then(userReturn => {
             let users = userReturn.data;
-         /*    console.log(users); */
-            console.log(services);
             res.render('pagamento', {
                 services,
                 users,
@@ -35,6 +33,9 @@ const pagamentoController = {
             res.render('error', {error})
         })
     },
+    payment: (req, res) => {
+    res.redirect('/')
+    }
 };
 
 

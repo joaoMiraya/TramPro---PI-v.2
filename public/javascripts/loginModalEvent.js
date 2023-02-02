@@ -1,5 +1,6 @@
 const largura = window.innerWidth;
 
+
 setTimeout(() => {
 if (largura < 1100){
 function initModal(e){
@@ -16,4 +17,3 @@ initModal('modal-cadastro')
 }
 }, 5000);
 
- 

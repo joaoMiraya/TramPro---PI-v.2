@@ -9,6 +9,8 @@ const pagamentoController = require('../controllers/pagamentoController');
 
 router.get('/detail/:id/', pagamentoController.index);
 
+router.get('/pagamento/detail/payment', pagamentoController.payment);
+
 
 
 

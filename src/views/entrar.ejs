@@ -41,12 +41,21 @@
 
 <button type="submit" class="entrarBtn">Entrar</button>
 </form>
+<div class="error-box">
+<% if(typeof errors!='undefined'){ %>
+    <ul>
+        <% for (let i=0; i < errors.length;i++){ %>
+                <li style="color: red"><%= errors[i] %>
+        <% } %>
+    </ul>
+<% } %>
+</div>
 </fieldset>
 
 <a class="esqueciSenha" href="#"><p>Esqueci minha senha!</p></a>
     <br><br>
 
-    <div class="gmail-login">
+<!--     <div class="gmail-login">
     <a class="gmail-login" href="#"><h3 class="text-login gmail">Entre com o <strong class="g-color">G</strong><strong class="m-color">m</strong><strong class="a-color">a</strong><strong class="i-color">i</strong><strong class="l-color">l</strong></h3>
     <img src="/images/gmail-icon.png" class="iconLogin-gmail" alt="login-gmail" width="50px" height="50px"> </a>
     </div>
@@ -56,7 +65,7 @@
     <img src="/images/facebook-icon-login.png" class="iconLogin-face" alt="login-facebook" width="50px" height="50px"> </a>
     </div>      
     <br>
-    
+     -->
 </div>
 
                                         <!-- AREA DO CADASTRO -->
@@ -121,11 +130,11 @@
     <label for="cpf" class="cpf labelGeral">CPF:</label>
     <input type="text" name="cpf" id="cpf" class="cpf input-entrar" required>
     </div>
-</fieldset>
+
 
 <button class="cadastrarBtn" type="submit">Cadastrar</button>
 </form>
-
+</fieldset>
 </div>
 </div>
 </section>
