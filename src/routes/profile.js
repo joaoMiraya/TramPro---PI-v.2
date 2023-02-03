@@ -41,7 +41,9 @@ const ServicefileUpload = multer({ storage: Servicestorage })
 
 router.get('/addTrampo', verifyUserLogged, profileController.addTrampo);
 
- router.post('/fotoService', ServicefileUpload.any(),[
+router.post('/addTrampo', verifyUserLogged, profileController.createTrampo);
+
+ router.post('/createTrampo', ServicefileUpload.any(),[
 check('nome').isEmpty().withMessage('Defina um nome para seu serviço'),
 check('categorias').isEmpty().withMessage('Escolha uma categoria'),
 check('estilo').isEmpty().withMessage('Defina se o seu serviço é presencial ou remoto'),
@@ -54,18 +56,22 @@ body('preco').isEmpty().withMessage('Preencha este campo com o valor cobrado pel
     }
 }),
 check('serviceDescricao').isEmpty().withMessage('Insira a desrição do seu serviço, não poupe detalhes')
-], profileController.store)
+], profileController.createTrampo)
 
 
 
 
 router.get('/', verifyUserLogged, profileController.profile);
 
-router.get('/edit', profileController.edit)
+router.get('/formEdit', profileController.formEdit)
+router.put('/edit', profileController.edit)
 
+router.delete('/delete/:id', profileController.delete)
+
+router.put('/fotoEdit', profileController.fotoEdit)
 router.post('/foto', fileUpload.any(), profileController.foto);
 
-
+router.get('/logout', profileController.logout)
 
 
 module.exports = router;

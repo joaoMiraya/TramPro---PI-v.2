@@ -23,10 +23,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 
-  <%- include('./partials/header') %>
+  <% if(!userLogged){ %>
+    <%- include('./partials/header') %>
+  <% } else { %>
+    <%- include('./partials/headerLogged') %>
+    
+  <% } %>
     
 <main> 
   <div class="nav-profile-container">
@@ -39,6 +45,11 @@
 mail
 </span>
 </div>
+<div class="logoutBox">
+ <a href="/profile/logout"><span class="material-symbols-outlined">
+    logout
+    </span></a> 
+</div>
   </div>
 
   <div class="paiDeTodos">
@@ -46,27 +57,34 @@ mail
 <div class="trampo-container"> 
 <div class="trampoBox">
 <h1 class="seus-trampos">Seus Trampos </h1>
-
-
-
  
- <% if(services != null){ %>
+<% if(services.length > 0){ %>
+  <% services.forEach(function(service){ %>
 
   <div class="trampos-ativo">
-    <div>
-        <p><%= services.nome %></p>
+    <div class="serviceNameBox">
+        <p> <%= service.nome %></p>
     </div>
-    <div class="deleteEditBox"> 
-    <span class="material-symbols-rounded delete-icon">
+   <div class="deleteEditBox"> 
+    <form action="/profile/delete <%= services.id %>">
+    <button class="button-service" type="submit"><span class="material-symbols-rounded delete-icon">
       delete
-      </span>
-      <i class="material-icons editService">edit</i>
+      </span></button>
+    </form>
+    <form action="/profile/editService">
+      <button class="button-service" type="submit"><i class="material-icons editService">edit</i></button>
+    </form>
     </div>
-  </div>
-  <% } else { %>
-    <p class="nenhumTrampoTxt">Parece que você não tem nenhum trampo ativo ainda</p>
 
+    <% }) %>
+  </div>
+
+  <% } else { %>
+    <div class="nenhumTrampo-box">
+    <p class="nenhumTrampoTxt">Parece que você não tem nenhum trampo ativo ainda</p>
+  </div>
  <% }  %>
+
 </div> 
 
 <div class="addTrampoBox">
@@ -78,13 +96,13 @@ mail
 <div class="perfil-container"> 
 
 <div class="edit-icon">
-<a href="/profile/edit/"><i class="material-icons" id="edit-icon">edit</i></a>
+<a href="/profile/formEdit/"><i class="material-icons" id="edit-icon">edit</i></a>
 </div>
 
 
   <form action="/foto" method="POST" enctype="multipart/form-data">
    <div class="foto-container">
-   <img class="imagemUser" width="400px" height="400px" src="/images/profiles/<%= userLogged.foto + '.jpg' %>" alt="imagem-do-usuario">
+   <img class="imagemUser" src="/images/profiles/<%= userLogged.foto + '.jpg' %>" alt="imagem-do-usuario">
    <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar">
    <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
      </div>

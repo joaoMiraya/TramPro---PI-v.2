@@ -46,7 +46,7 @@ label.logo{
   background-color: aliceblue;
   width: 40vw;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
  border-style: none;
  font-size: 18px;
  padding: 5px;

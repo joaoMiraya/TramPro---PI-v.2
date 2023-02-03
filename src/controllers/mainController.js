@@ -25,12 +25,13 @@ const mainController = {
     },
   search: async (req, res)  => {
     let services = [];
-  await serviceRequest.getServices().
-    then(servicesReturned => {
+  await serviceRequest.getServices()
+    .then(servicesReturned => {
    services = servicesReturned.data
           })
     let search = req.query.keywords.toLowerCase().trim();
-    let serviceToSearch = services.filter(services => services.nome.toLowerCase().includes(search)) 
+    let serviceToSearch = services.filter(services => services.nome.toLowerCase().includes(search))
+    .concat(services.filter(services => services.classe.toLowerCase().includes(search)))
     res.render('result', {
           services: serviceToSearch,
               search,

@@ -29,31 +29,12 @@
 </head>
 
 <body>
+  <% if(!userLogged){ %>
+  <%- include('./partials/header') %>
+<% } else { %>
+  <%- include('./partials/headerLogged') %>
   
-  <nav id="nav">
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-
-  <a href="/"><label class="logo"><i id="tram-logo">Tram</i><b>Pro</b></label></a>
-
-  <div class="search-box">
-    <form action="/search" method="GET" class="search-form">
-  <input class="search-text" name="keywords" type="text" placeholder="Qual serviço está precisando?">                                  
-      <button type="submit" class="search-btn"><i class="material-icons" id="search-icon">search</i></button>
-    </form>
-    </div>
-
-    <ul>
-      <li><a id="profileNav" class="nav-btn" href="/profile">Perfil</a></li>
-      <li><a class="nav-btn" href="/servico">Trampos</a></li>
-      <li><a class="nav-btn" href="/entrar">Entrar</a></li>
-    </ul>
-  </nav>
-
-  
-
+<% } %>
 <main>
  <section id="section-test" class="first-vp">
     <div class="container-main-desktop"> 
@@ -80,7 +61,7 @@
     <div id="txtSlide1" class="slide s1">
       <h3 class="contratar txtBtn">Você pode contratar<br>alguem para o seu negócio</h3>
       <div class="contratarBtnBox">
-  <a href="/entrar"><button class="carrosselBtn contratarBTN">Contratar</button></a></div> 
+  <a href="/servico"><button class="carrosselBtn contratarBTN">Contratar</button></a></div> 
         </div>
  
   
@@ -232,7 +213,7 @@
 
     <div class="classes-servico">
   <div class="classes-image">
-<a href="/search?keywords=manuntencao"> <img src="/images/manuntencaoImage.jpg" alt="serviços de Manutenção"> </a>
+<a href="/search?keywords=manutencao"> <img src="/images/manuntencaoImage.jpg" alt="serviços de Manutenção"> </a>
   </div>
 <div class="servicos-description">
 <h2 class="servicos-title">Manutenção</h2>
@@ -242,7 +223,7 @@
 
     <div class="classes-servico">
   <div class="classes-image">
- <a href="/search?keywords=jardinagem"><img src="/images/programacao-image.jpg"  alt="serviços de Jardinagem"></a> 
+ <a href="/search?keywords=programacao"><img src="/images/programacao-image.jpg"  alt="serviços de Jardinagem"></a> 
   </div>
 <div class="servicos-description">
 <h2 class="servicos-title">Programação</h2>

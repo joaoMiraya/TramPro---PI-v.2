@@ -21,6 +21,11 @@ const serviceRequest = {
         method: 'get',
         url: `${url}/${id}` 
     }),
+    getUserService: (id) => axios({
+        ...def,
+        method: 'get',
+        url: `${url}/user/${id}` 
+    }),
     createService: (service) => axios({
         ...def,
         method: 'post',

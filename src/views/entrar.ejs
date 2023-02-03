@@ -19,7 +19,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
 </head>
-<%- include('./partials/header') %>
+
+<% if(!userLogged){ %>
+    <%- include('./partials/header') %>
+  <% } else { %>
+    <%- include('./partials/headerLogged') %>
+    
+  <% } %>
+
  <body>
  <section>
 <div class="container-principal">

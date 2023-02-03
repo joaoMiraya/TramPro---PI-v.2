@@ -26,10 +26,12 @@
 </head>
 <body>
 
-
-  
+  <% if(!userLogged){ %>
     <%- include('./partials/header') %>
-
+  <% } else { %>
+    <%- include('./partials/headerLogged') %>
+    
+  <% } %>
 
     <div class="search-result-text-box">
         <h1 class="search-result-text"> Resultados para: "<%= search %> "</h1>

@@ -67,7 +67,7 @@ padding: 5px;
     }
     
     .nenhumTrampoTxt{
-    color: rgb(73, 81, 77);
+    color: #6a6a6a;
     font-size: 13px;
     font-weight: bold;
     margin-top: 10px;
@@ -111,17 +111,25 @@ cursor: pointer;
 display: flex;
 justify-content: center;
 align-items: center;    
-background-color:gainsboro;
-width: 250px;
-height: 250px;
+background-color:#00000081;
+width: 230px;
+height: 230px;
 border-radius: 50%;
 text-align: center;
 flex-direction: column;
 overflow: hidden;
 }
+.imagemUser img{
+    z-index: 9;
+    width: 250px;
+    height: 350px;
+    border-radius: 50%;
+}
 .imagemUser{
 display: flex;
 align-items: center;
+width: 250px;   
+height: 350px;
 }
 .imagemUser:hover {
     display: none;
@@ -166,10 +174,21 @@ justify-content: space-between;
 align-items: center;
 border-radius: 3px;
 }
+.serviceNameBox p {
+font-size: 15px;
+color: #6a6a6a;
+}
 .trampos-ativo p {
 font-size: 20px;
 font-family: roboto;
 color: #062439;
+}
+.nenhumTrampo-box{
+text-align: center;
+background-color: #ff47478a;
+padding: 8px 0px;
+border-radius: 3px;
+margin-top: 15px;
 }
 .delete-icon,
 .editService{
@@ -178,6 +197,24 @@ margin-left: 5px;
 cursor: pointer;
 transition: .4s;
 }
+.editService:hover{
+color: #000000;
+}
 .delete-icon:hover{
 color: #ff4747;
+}
+.logoutBox span{
+    color:#062439;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.logoutBox span:hover{
+    background-color: #06243936;
+    padding: 4px;
+    border-radius: 50%;
+    color: #ff4747;
+}
+.button-service{
+background-color: #3f826300;
+border: none;
 }

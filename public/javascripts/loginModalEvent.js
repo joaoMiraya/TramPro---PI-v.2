@@ -17,3 +17,7 @@ initModal('modal-cadastro')
 }
 }, 5000);
 
+
+
+module.exports = initModal;
+

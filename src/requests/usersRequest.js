@@ -29,6 +29,14 @@ const userRequest = {
         },
         url: `${url}/` 
     }),
+    editUser: (user, id) => axios({
+        ...def,
+        method: 'patch',
+        data: {
+            ...user
+        },
+        url: `${url}/${id}`
+    }),
      deleteUser: (id) => axios({
         ...def,
         method: 'delete',

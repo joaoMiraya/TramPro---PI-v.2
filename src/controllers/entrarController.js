@@ -58,8 +58,8 @@ const entrarController = {
         email: req.body.email,
         senha: req.body.senha,
         cpf: req.body.cpf
-      
-    }) .then(userCreated => {
+    })
+    .then(userCreated => {
       res.redirect('/')
     })
       } 

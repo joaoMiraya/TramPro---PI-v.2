@@ -10,40 +10,30 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const profileController = {
-    profile: (req, res) =>{
-let userLogged = req.session.userLogged;
-let services = [];
-let users = [];
-serviceRequest.getService(userLogged.id).
-         then(serviceReturn => {
-            return serviceReturn;
-         })
-         .then(services =>{
-            usersRequest.getUser(userLogged.id).
-            then(userReturn => {
-                let users = userReturn.data;
-          res.render('profile', {
-            userLogged,
-            services,
-            users
-                })
-         })
-         .catch(error => {
-            console.log(userLogged)
- /*            let services = null;
-            usersRequest.getUser(userLogged.id).
-            then(userReturn => {
-                let users = userReturn.data;
-          res.render('profile', {
-            userLogged,
-            services,
-            users
-                })
-         }) */
-        })
-      
-         })
-        },  
+    profile: async (req, res) =>{
+        let userLogged = req.session.userLogged;
+                
+        let services = await serviceRequest.getUserService(userLogged.id)
+        services = services.data;
+        
+        if (services.length > 0){
+            let users = await usersRequest.getUser(userLogged.id);
+            users = users.data;
+            res.render('profile', {
+                userLogged,
+                services,
+                users
+             })         
+        }else{
+            let users = await usersRequest.getUser(userLogged.id);
+            users = users.data;
+            res.render('profile', {
+                userLogged,
+                services: [],
+                users
+             })    
+        }
+    },  
     foto: (req, res) => {
         console.log(req.file)
    res.send('Foto alterada')
@@ -51,7 +41,23 @@ serviceRequest.getService(userLogged.id).
     addTrampo: (req, res) => {
         res.render('addTrampo')
     },
-    store: (req, res) => {
+    createTrampo: (req, res) => {
+        serviceRequest.createService({
+      presencialOuRemoto: req.body.estilo,
+      nome: req.body.nome,
+      valor: req.body.preco,
+      classe: req.body.categorias,
+      descricao: req.body.serviceDescricao,
+      /* imagem: req.body.serviceImage.field */
+        })
+        .then(serviceCreated => {
+            res.redirect('/')
+          })
+        .catch(error => {
+          res.render('error', {error})
+        })  
+    },
+  /*   store: (req, res) => {
     let image = [];
         if(req.files[0] != undefined){
             image = req.files[0].filename
@@ -69,11 +75,70 @@ serviceRequest.getService(userLogged.id).
         .catch(error => {
             res.render('error', {error});
         })
-    },
-    edit: (req, res) => {
+    }, */
+    formEdit: (req, res) => {
         res.render('editProfile')
     },
+    edit: (req, res) => {
+        let userLogged = req.session.userLogged;
+        let userToEdit = [];
+        usersRequest.getUser(userLogged.id)
+        .then(userReturn => {
+            userToEdit = userReturn.data;
+        })
+        .then(userToEdit =>{
+            usersRequest.editUser(userToEdit, userLogged.id)
+            .then(edited =>{
+                res.redirect('/profile')
+            })
+        })
+        .catch(error => {
+			res.render('error',{error});
+		})
+    },
+    fotoEdit: (req, res) =>{
+        let userLogged = req.session.userLogged;
+        let userToEdit = [];
+        usersRequest.getUser(userLogged.id)
+        .then(userReturn => {
+            userToEdit = userReturn.data;
 
+        let image = [];
+        if(req.files[0]!= undefined){
+            image = req.files[0].filename
+        } else{
+            image = userToEdit.image
+        }
+        userToEdit = {
+            image: image,
+            ...req.body,
+        };
+        return userToEdit
+    })
+    .then(userToEdit =>{
+        usersRequest.editUser(userToEdit, userLogged.id)
+        .then(edited =>{
+            res.redirect('/profile')
+        })
+    })
+    .catch(error => {
+        res.render('error',{error});
+    })
+    },
+    delete: (req, res) => {
+        let userLogged = req.session.userLogged;
+        serviceRequest.deleteService(userLogged.id)
+        .then(serviceDeleted => {
+         res.redirect('/profile')
+        })
+        .catch(error => {
+            res.render('error',{error});
+        })
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/');
+    }
 
 };
 
