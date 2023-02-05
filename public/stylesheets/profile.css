@@ -45,7 +45,6 @@ padding: 5px;
     justify-content: space-around;
     flex-flow: wrap-reverse row-reverse;
     width: 100vw;
-   
 }
 .trampo-container{
     display: flex;
@@ -59,13 +58,11 @@ padding: 5px;
     height: 400px;
     margin-top: 30px;
 }
-
     .seus-trampos{
     text-align: center;
   font-size: 40px;
   color: #062439;
     }
-    
     .nenhumTrampoTxt{
     color: #6a6a6a;
     font-size: 13px;

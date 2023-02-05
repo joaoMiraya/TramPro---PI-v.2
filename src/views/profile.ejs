@@ -66,7 +66,7 @@ mail
         <p> <%= service.nome %></p>
     </div>
    <div class="deleteEditBox"> 
-    <form action="/profile/delete <%= services.id %>">
+    <form action="/profile/delete/<%= service.id %>?_method=DELETE" method="POST">
     <button class="button-service" type="submit"><span class="material-symbols-rounded delete-icon">
       delete
       </span></button>

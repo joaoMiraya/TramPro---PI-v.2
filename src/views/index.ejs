@@ -84,12 +84,14 @@
  <div class="first-vp-mobile">
   
   <div class="search-container-mobile">
+  <form action="/search" method="GET">
     <div class="search-box-mobile">
-      <input class="search-text-mobile" type="search" placeholder="Qual serviço está precisando?">                                  
+      <input class="search-text-mobile" name="keywords"  type="search" placeholder="Qual serviço está precisando?">                                  
            </div>
            <div class="pesquisar-btn">
             <button type="submit" class="search-btnMobile">Pesquisar</button>
            </div>
+          </form>
   </div>   
   
       <div class="container-main-mobile"> 
@@ -264,7 +266,7 @@
 <label for="input-modal-senha">Senha:</label>
 <input name="password" type="password" class="input-modal">
 </div>
-
+<div class="box-modal">
 <button type="submit" class="button-login-modal">Entrar</button>
 </form>
 <div class="hr-modal-ou">
@@ -273,7 +275,7 @@
 <div class="cadastrar-btn-modal-box">
 <a href="/entrar" class="button-cadastrar-modal">Cadastrar</a>
 </div>
-  
+</div>
 </div>
 
 </div>

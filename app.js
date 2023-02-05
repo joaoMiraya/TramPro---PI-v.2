@@ -66,6 +66,7 @@ app.use(function(req, res, next) {
 });
 
 
+
 app.post('/register', entrarRouter); 
 app.post('/foto', profileRouter); 
 app.post('/fotoService', profileRouter); 

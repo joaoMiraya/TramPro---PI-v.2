@@ -41,14 +41,42 @@ const profileController = {
     addTrampo: (req, res) => {
         res.render('addTrampo')
     },
-    createTrampo: (req, res) => {
+
+ createTrampo: (req, res) => {
+  let userLogged = req.session.userLogged;
+  let { estilo, nome, preco, categorias, serviceDescricao } = req.body;
+  if (!estilo || !nome || !preco || !categorias || !serviceDescricao) {
+    return res.render('error', { error: 'Todos os campos são obrigatórios' });
+  }
+
+  let imagem = req.body.fieldname + '-' + Date.now();
+
+  serviceRequest.createService({
+    presencialOuRemoto: estilo,
+    nome: nome,
+    valor: preco,
+    classe: categorias,
+    descricao: serviceDescricao,
+    imagem,
+    id_usuario: userLogged.id
+  })
+    .then(serviceCreated => {
+      res.redirect('/');
+    })
+    .catch(error => {
+      res.render('error', { error });
+    });
+},
+    /* createTrampo: (req, res) => {
+        let userLogged = req.session.userLogged;
         serviceRequest.createService({
-      presencialOuRemoto: req.body.estilo,
-      nome: req.body.nome,
-      valor: req.body.preco,
-      classe: req.body.categorias,
-      descricao: req.body.serviceDescricao,
-      /* imagem: req.body.serviceImage.field */
+        presencialOuRemoto: req.body.estilo,
+        nome: req.body.nome,
+        valor: req.body.preco,
+        classe: req.body.categorias,
+        descricao: req.body.serviceDescricao,
+        imagem: req.body.fieldname + '-' + Date.now(),
+        id_usuario: userLogged.id
         })
         .then(serviceCreated => {
             res.redirect('/')
@@ -56,7 +84,7 @@ const profileController = {
         .catch(error => {
           res.render('error', {error})
         })  
-    },
+    }, */
   /*   store: (req, res) => {
     let image = [];
         if(req.files[0] != undefined){
@@ -126,8 +154,8 @@ const profileController = {
     })
     },
     delete: (req, res) => {
-        let userLogged = req.session.userLogged;
-        serviceRequest.deleteService(userLogged.id)
+        let id = req.params.id;
+        serviceRequest.deleteService(id)
         .then(serviceDeleted => {
          res.redirect('/profile')
         })

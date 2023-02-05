@@ -62,6 +62,9 @@ const entrarController = {
     .then(userCreated => {
       res.redirect('/')
     })
+    .catch(error => {
+      res.render('error', {error})
+    })  
       } 
 };
 
