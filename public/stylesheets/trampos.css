@@ -231,10 +231,11 @@ color: red;
 .contratar-btn{
 background-color:#1D6758 ;
 border: none;
+outline: none;
+text-decoration: none;
 font-weight: bold;
 color: #FFF;
 cursor: pointer;
-outline: none;
 list-style: none;
 }
 

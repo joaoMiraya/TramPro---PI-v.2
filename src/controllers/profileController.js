@@ -48,7 +48,6 @@ const profileController = {
   if (!estilo || !nome || !preco || !categorias || !serviceDescricao) {
     return res.render('error', { error: 'Todos os campos são obrigatórios' });
   }
-
   let imagem = req.body.fieldname + '-' + Date.now();
 
   serviceRequest.createService({
@@ -57,7 +56,7 @@ const profileController = {
     valor: preco,
     classe: categorias,
     descricao: serviceDescricao,
-    imagem,
+    imagem: imagem,
     id_usuario: userLogged.id
   })
     .then(serviceCreated => {

@@ -23,6 +23,6 @@ const fileUpload = multer({ storage: storage })
 
 router.get('/', contratanteController.contratante);
 
-router.post('/fotoCont', fileUpload.single('imageContProfile'), contratanteController.fotoCont);
+router.post('/fotoCont', fileUpload.any(), contratanteController.fotoCont);
 
 module.exports = router;

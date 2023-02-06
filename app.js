@@ -68,9 +68,7 @@ app.use(function(req, res, next) {
 
 
 app.post('/register', entrarRouter); 
-app.post('/foto', profileRouter); 
-app.post('/fotoService', profileRouter); 
-app.post('/fotoCont', profileContratanteRouter); 
+ 
 
 app.use('/', mainRouter);
 app.use('/profile', profileRouter); 

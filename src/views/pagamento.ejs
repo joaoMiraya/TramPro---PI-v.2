@@ -40,11 +40,11 @@
 
 <div class="formas-de-pagamento">
  <div class="text-pagamento-box">
-<h3>Formas de Pagamento</h3>
+<h3>Salvar dados de Pagamento</h3>
 </div>
 <div class="cartao-de-credito-box">
 <div class="cartao-de-credito">
-<input type="radio" id="cartao" name="opcao-pagamento">
+<input type="checkbox" id="cartao" name="opcao-pagamento">
 <label for="opcao-pagamento" id="credito-debito" class="cartao-checkbox">Cartão de Crédito/Débito</label>
 <img class="bandeira-cartao-img" src="/images/mastercard_old_payment_method_card_icon_142735.png" alt="mastercard">
 <img class="bandeira-cartao-img" src="/images/credit_card_visa_payment_method_icon_134914.png" alt="visa">
@@ -56,64 +56,40 @@
     
 <div class="info-cartao">
     <div class="numero-cartao-box">
-    <label for="numero-cartao">Numero do Cartão</label> <br>
-    <input type="text" name="numero-cartao" id="numero-cartao" class="numero-cartao" required>
+    <label for="numeroCartao">Numero do Cartão</label> <br>
+    <input type="text" name="numeroCartao" id="numeroCartao" class="numero-cartao" required>
 </div>
 
 <div class="validade-box">
-    <label for="validade-cartao">Data <br> de Validade</label> <br>
-    <input type="text" name="validade-cartao" id="validade-cartao" class="validade-cartao" required placeholder="MM/AA">
+    <label for="validadeCartao">Data <br> de Validade</label> <br>
+    <input type="text" name="validadeCartao" id="validadeCartao" class="validade-cartao" required placeholder="MM/AA">
 </div>
 
-<div class="codigo-seguranca-box">
-    <label for="codigo-seguranca-cartao">Código <br> de Segurança</label> <br>
-    <input type="text" name="codigo-seguranca-cartao" id="codigo-seguranca-cartao" class="codigo-seguranca-cartao" required>
-</div>
 </div>
 
 <div class="info-usuario-cartao">
 <div class="nome-cartao-box">
-    <label for="nome-cartao">Nome Completo</label> <br>
-    <input type="text" name="nome-cartao" id="nome-cartao" class="nome-cartao" required>
+    <label for="nomeCartao">Nome Completo</label> <br>
+    <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" required>
 </div>
 
 <div class="cpf-cartao-box">
-    <label for="cpf-cartao">CPF</label> <br>
-    <input type="text" name="cpf-cartao" id="cpf-cartao" class="cpf-cartao" required>
+    <label for="cpfCartao">CPF</label> <br>
+    <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" required>
 </div>
 </div>
     </form>
 
-
-</div>
-<div class="paypal">
-    <input type="radio" id="paypal" name="opcao-pagamento">
-    <label for="opcao-pagamento" id="paypalLabel" class="paypal-label">  <img class="paypal-img" src="/images/paypal_payment_method_card_icon_142733.png" alt="paypal"></label>
 </div>
 
-<div class="pix-boleto">
-    <input type="radio" id="pix-boleto" name="opcao-pagamento">
-    <label id="boletoLabel" for="opcao-pagamento">Pix ou Boleto</label>
+<div class="more-info-payment formas-de-pagamento">
+<div class="dataDoServico">
+    <label for="DataServico">Selecione a data que você vai precisar</label>
+<input type="date" name="DataServico" id="DataServico">
 </div>
-<div class="hidden" id="container-boleto">
-<div class="info-usuario-boleto">
-    <div class="nome-boleto-box">
-        <label for="nome-boleto">Nome Completo</label> <br>
-        <input type="text" name="nome-boleto" id="nome-boleto" class="nome-boleto" required>
-    </div>
-    
-    <div class="cpf-boleto-box">
-        <label for="cpf-boleto">CPF</label> <br>
-        <input type="text" name="cpf-boleto" id="cpf-boleto" class="cpf-boleto" required>
-    </div>
-
-    <div class="email-cartao-box">
-        <label for="email-boleto">Digite o E-mail para onde o boleto será enviado</label> <br>
-        <input type="email" name="email-boleto" id="email-boleto" class="email-boleto" placeholder="Digite seu e-mail cadastrado" required>
-    </div>
-
 </div>
-    </div>
+
+
         </div>
 
        
@@ -144,7 +120,7 @@
 </div>
 
 <div class="stripePayment">
-<form action="payment" method="POST">
+<form action="/pagamento/detail/payment" method="POST">
     <script
      src="//checkout.stripe.com/v2/checkout.js"
      class="stripe-button"

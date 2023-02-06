@@ -57,7 +57,7 @@
 
 <div class="form-box">
   
-<form action="/profile/createTrampo" method="POST">
+<form action="/profile/createTrampo" method="POST" enctype="multipart/form-data">
     <div class="serviceImageBox">
         <input type="file" name="serviceImage" id="serviceImage">
     </div>
@@ -96,6 +96,13 @@
 
     <button type="submit">Salvar</button>
 </form>
+<% if(typeof errors!='undefined'){ %>
+    <ul>
+        <% for (let i=0; i < errors.length;i++){ %>
+                <li style="color: red"><%= errors[i] %>
+        <% } %>
+    </ul>
+<% } %>
 </div>
 
   </div>
