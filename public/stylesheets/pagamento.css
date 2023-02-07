@@ -70,7 +70,7 @@ justify-content: space-around;
 align-items:center;
 background-color: #a3a3a34b;
 padding: 8px;
-
+flex-wrap: wrap;
 }
 .validade-box, .codigo-seguranca-box{
 margin-bottom: 13px;
@@ -79,6 +79,9 @@ margin-bottom: 13px;
 color: #6A6A6A;
 text-align: center;
 font-weight: bold;
+}
+.container-cartao{
+flex-wrap: wrap;
 }
 input{
   cursor: pointer;

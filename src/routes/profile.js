@@ -42,7 +42,7 @@ router.get('/addTrampo', verifyUserLogged, profileController.addTrampo);
                           /*   CRIAR SERVICO */
  router.post('/fotoService', ServicefileUpload.any(), profileController.createTrampo)
 
-
+ 
                   /* RENDERIZA PROFILE */
 router.get('/', verifyUserLogged, profileController.profile);
 
@@ -51,13 +51,12 @@ router.get('/formEdit', profileController.formEdit)
 router.put('/edit', profileController.edit)
 
                    /* EDITAR SERVICO */
-router.delete('/profile/edit/:id', profileController.updateTrampo)
+router.get('/edit/:id', profileController.updateTrampo)
 
                    /* DELETA SERVICO */
 router.delete('/delete/:id', profileController.delete)
 
                 /* EDITA FOTO USUARIO */
-router.put('/fotoEdit', profileController.fotoEdit)
 router.post('/foto', fileUpload.any(), profileController.foto);
 
                 /* LOGOUT */

@@ -64,7 +64,10 @@ app.use(function(req, res, next) {
   res.locals.userLogged = req.session.userLogged;
   next();
 });
-
+app.use(function(req, res, next) {
+  res.locals.infoCard = req.session.infoCard;
+  next();
+});
 
 
 
@@ -73,7 +76,6 @@ app.use('/profile', profileRouter);
 app.use('/profileContratante', profileContratanteRouter); 
 app.use('/profilePublic', profilePublicRouter); 
 
-app.use('/login', entrarRouter); 
 app.use('/entrar', entrarRouter); 
 app.use('/servico', tramposRouter); 
 app.use('/pagamento', pagamentoRouter); 

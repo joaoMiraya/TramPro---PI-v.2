@@ -100,7 +100,7 @@ mail
   
     <form action="/foto" method="POST" enctype="multipart/form-data">
      <div class="foto-container">
-     <img class="imagemUser" width="400px" height="400px" src="/images/profiles/<%= userLogged.foto + '.jpg' %>" alt="imagem-do-usuario">
+     <img class="imagemUser" width="400px" height="400px" src="/images/profiles/<%= userLogged.foto %>" alt="imagem-do-usuario">
      <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar">
      <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
        </div>

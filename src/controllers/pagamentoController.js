@@ -43,7 +43,6 @@ const pagamentoController = {
     let id_trabalhador = req.body.idServico;
     let services = await serviceRequest.getService(id_trabalhador)
      services = services.data;
-    console.log(id_trabalhador)
    let hiring = await hiringRequest.createHiring({
     id_servicos: services.id,
     dataServico: req.body.dataServico,

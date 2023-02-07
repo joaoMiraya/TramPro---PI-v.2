@@ -127,7 +127,7 @@
   <span class="overlay"></span>
   
   <div class="card-image">
-  <img src="/images/profiles/<%= service.Usuario.foto + '.jpg' %>" alt="user-image" class="card-img">
+  <img src="/images/profiles/<%= service.Usuario.foto %>" alt="user-image" class="card-img">
   </div>
   </div>
   
@@ -208,7 +208,7 @@
  <a href="/search?keywords=delivery"> <img src="/images/inputAvatar-comidaImage.jpg"  alt="serviços de culinaria"></a>
   </div>
 <div class="servicos-description">
-<h2 class="servicos-title">Alimentação</h2>
+<h2 class="servicos-title">Alimentação/Delivery</h2>
 <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
   </div>
     </div>
@@ -225,7 +225,7 @@
 
     <div class="classes-servico">
   <div class="classes-image">
- <a href="/search?keywords=programacao"><img src="/images/programacao-image.jpg"  alt="serviços de Jardinagem"></a> 
+ <a href="/search?keywords=desenvolvedor"><img src="/images/programacao-image.jpg"  alt="serviços de Jardinagem"></a> 
   </div>
 <div class="servicos-description">
 <h2 class="servicos-title">Programação</h2>
@@ -256,7 +256,7 @@
   <button id="modal-closeButton" class="close-modal-btn">x</button>
   <h3 class="subtitle-modal">Faça o login ou crie uma conta</h3>
 
-  <form action="/login" method="post">
+  <form action="/entrar/login" method="post">
 <div class="email-modal-box">
 <label for="input-modal-email">E-mail:</label>
 <input name="email" type="email" class="input-modal">

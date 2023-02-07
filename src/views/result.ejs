@@ -44,14 +44,14 @@
         <div class="workers-card">
             <p class="profissao"> <%= service.nome %> </p>
           <div class="work-image-box">
-        <img src="/images/servicesImg/<%= service.imagem + '.jpg' %>" alt="WorkImage">
+            <img src="/images/servicesImg/<%= service.imagem %>" alt="WorkImage">
           </div>
             <div class="description-worker">
             <p> <%= service.descricao %></p>
             </div>
               <div class="worker-profile">
                 <div class="worker-imageProfile">
-                  <img src="/images/profiles/<%= service.Usuario.foto + '.jpg' %>" alt="Profile">
+                  <img src="/images/profiles/<%= service.Usuario.foto %>" alt="Profile">
                 </div>
                 <div class="worker-name">
                <a href="/profilePublic/detail/<%= service.id %>"><h3> <%= service.Usuario.nome + ' ' + service.Usuario.sobrenome %> </h3></a>

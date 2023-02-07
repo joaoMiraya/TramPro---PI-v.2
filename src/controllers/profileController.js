@@ -35,8 +35,35 @@ const profileController = {
         }
     },  
     foto: (req, res) => {
-        console.log(req.file)
-   res.send('Foto alterada')
+        let userLogged = req.session.userLogged;
+        let id = userLogged.id;
+        let userToEdit;
+    
+          usersRequest.getUser(id)
+           .then( userReturn =>{
+            userToEdit = userReturn.data;
+            
+        let foto;
+        if(req.files[0]!= undefined){
+            foto = req.files[0].filename
+        } else{
+            foto = userToEdit.foto
+        }
+        userToEdit = {
+            foto: foto,
+            ...req.body,
+        }
+            return userToEdit
+    })
+    .then(userToEdit => {
+        usersRequest.editUser(userToEdit, id)
+        .then(edited => {
+            res.redirect('/profile')
+        })
+    })
+    .catch(error => {
+        res.render('error',{error});
+    }) 
     },
     addTrampo: (req, res) => {
         res.render('addTrampo')
@@ -44,15 +71,17 @@ const profileController = {
 
  createTrampo: (req, res) => {
   let userLogged = req.session.userLogged;
-  let { estilo, nome, preco, categorias, serviceImage, serviceDescricao } = req.body;
+  let { estilo, nome, preco, categorias, serviceDescricao } = req.body;
   if (!estilo || !nome || !preco || !categorias || !serviceDescricao) {
     return res.render('error', { error: 'Todos os campos são obrigatórios' });
   }
   
-  let imagem = req.body.serviceImage.file;
-  let imagemNome = imagem.fieldname + '-' + Date.now();
- 
-
+  let imagem;  
+  if (req.files[0] != undefined){
+       imagem = req.files[0].filename;
+  }else{
+       imagem = 'default-image.png'
+  }
   serviceRequest.createService({
     presencialOuRemoto: estilo,
     nome: nome,
@@ -92,9 +121,10 @@ const profileController = {
 			res.render('error',{error});
 		})
     },
-    fotoEdit: (req, res) =>{
+  /*   fotoEdit: (req, res) =>{
         let userLogged = req.session.userLogged;
-        let userToEdit = [];
+        let id = userLogged.id;
+        let userToEdit;
         usersRequest.getUser(userLogged.id)
         .then(userReturn => {
             userToEdit = userReturn.data;
@@ -106,13 +136,13 @@ const profileController = {
             image = userToEdit.image
         }
         userToEdit = {
-            image: image,
+            foto: image,
             ...req.body,
         };
         return userToEdit
     })
     .then(userToEdit =>{
-        usersRequest.editUser(userToEdit, userLogged.id)
+        usersRequest.editUser(userToEdit, id)
         .then(edited =>{
             res.redirect('/profile')
         })
@@ -120,7 +150,7 @@ const profileController = {
     .catch(error => {
         res.render('error',{error});
     })
-    },
+    }, */
     delete: (req, res) => {
         let id = req.params.id;
         serviceRequest.deleteService(id)

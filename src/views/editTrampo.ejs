@@ -65,12 +65,12 @@
     
     <div class="nomeServicoBox">
         <label for="nome">Qual o nome do seu serviço?</label>
-        <input type="text" name="nome" id="nomeServico" value="<%= service.nome %>">
+        <input type="text" name="nome" id="nomeServico">
       </div>
    
 <div class="categoriaPrecoBox">
     <div class="categoriaBox">
-        <select name="categorias" id="category" value="<%= service.classe %>">
+        <select name="categorias" id="category">
             <option value="todasCategorias" >Todas Categorias</option>
             <option value="desenvolvedor">Desenvolvedor</option>
             <option value="delivery">Delivery</option>
@@ -80,7 +80,7 @@
     </div>
 
 <div class="remoto_presencial">
-    <select name="estilo" id="category" value="<%= service.presencialOuRemoto %>">
+    <select name="estilo" id="category" >
         <option value="presencial">Presencial</option>
         <option value="remoto">Remoto</option>
       </select>
@@ -88,7 +88,7 @@
 
     <div class="precoBox">
         <label for="preco">Qual o valor do seu serviço?</label>
-        <input maxlength="3" type="text" name="preco" id="preco" value="<%= service.preco %>">
+        <input maxlength="3" type="text" name="preco" id="preco">
       </div>
     </div>
     <div class="descricaoBox">
