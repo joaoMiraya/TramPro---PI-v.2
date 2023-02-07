@@ -33,9 +33,8 @@ const Servicestorage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     },      
 });
-
 const ServicefileUpload = multer({ storage: Servicestorage })
-
+            
 
                           /* RENDERIZA O ADDTRAMPO */
 router.get('/addTrampo', verifyUserLogged, profileController.addTrampo);
@@ -50,6 +49,9 @@ router.get('/', verifyUserLogged, profileController.profile);
                 /* EDITA USUARIO */
 router.get('/formEdit', profileController.formEdit)
 router.put('/edit', profileController.edit)
+
+                   /* EDITAR SERVICO */
+router.delete('/profile/edit/:id', profileController.updateTrampo)
 
                    /* DELETA SERVICO */
 router.delete('/delete/:id', profileController.delete)

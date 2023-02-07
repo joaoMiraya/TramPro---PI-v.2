@@ -44,11 +44,14 @@ const profileController = {
 
  createTrampo: (req, res) => {
   let userLogged = req.session.userLogged;
-  let { estilo, nome, preco, categorias, serviceDescricao } = req.body;
+  let { estilo, nome, preco, categorias, serviceImage, serviceDescricao } = req.body;
   if (!estilo || !nome || !preco || !categorias || !serviceDescricao) {
     return res.render('error', { error: 'Todos os campos são obrigatórios' });
   }
-  let imagem = req.body.fieldname + '-' + Date.now();
+  
+  let imagem = req.body.serviceImage.file;
+  let imagemNome = imagem.fieldname + '-' + Date.now();
+ 
 
   serviceRequest.createService({
     presencialOuRemoto: estilo,
@@ -60,49 +63,15 @@ const profileController = {
     id_usuarios: userLogged.id
   })
     .then(serviceCreated => {
-      res.redirect('/');
+      res.redirect('/profile');
     })
     .catch(error => {
       res.render('error', { error, message:"Erro ao criar serviço" });
     });
 },
-    /* createTrampo: (req, res) => {
-        let userLogged = req.session.userLogged;
-        serviceRequest.createService({
-        presencialOuRemoto: req.body.estilo,
-        nome: req.body.nome,
-        valor: req.body.preco,
-        classe: req.body.categorias,
-        descricao: req.body.serviceDescricao,
-        imagem: req.body.fieldname + '-' + Date.now(),
-        id_usuario: userLogged.id
-        })
-        .then(serviceCreated => {
-            res.redirect('/')
-          })
-        .catch(error => {
-          res.render('error', {error})
-        })  
-    }, */
-  /*   store: (req, res) => {
-    let image = [];
-        if(req.files[0] != undefined){
-            image = req.files[0].filename
-        } else {
-            image  = 'default-image.jpg'
-        }
-        let newService = {
-            image: image,
-            ...req.body,
-        }
-        serviceRequest.createService(newService)
-        .then(serviceReturn => {
-            res.redirect('/profile')
-        })
-        .catch(error => {
-            res.render('error', {error});
-        })
-    }, */
+    updateTrampo: (req, res) => {
+        res.render('editTrampo')
+    },
     formEdit: (req, res) => {
         res.render('editProfile')
     },

@@ -71,13 +71,10 @@ mail
       delete
       </span></button>
     </form>
-    <form action="/profile/editService">
-      <button class="button-service" type="submit"><i class="material-icons editService">edit</i></button>
-    </form>
+     <a href="/profile/edit/<%= service.id %>"><i class="material-icons editService">edit</i></a>
     </div>
-
-    <% }) %>
   </div>
+  <% }) %>
 
   <% } else { %>
     <div class="nenhumTrampo-box">
