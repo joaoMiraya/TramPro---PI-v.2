@@ -54,10 +54,35 @@ mail
 
   <div class="paiDeTodos">
 
-<div class="trampo-container"> 
-<div class="trampoBox">
+<div class="contrato-container"> 
+<div class="contratoBox">
 <h1 class="seus-trampos">Trampos Solicitados</h1>
-<p class="nenhumTrampoTxt">Parece que você não solicitou nenhum trampo ainda</p>
+
+<% if(services.length > 0){ %>
+  <% services.forEach(function(service){ %>
+
+    <div class="contrato-ativo">
+      <div class="serviceNameBox">
+          <p> <%= service.nome %></p>
+      </div>
+     <div class="deleteEditBox"> 
+      <form action="/profile/delete/<%= service.id %>?_method=DELETE" method="POST">
+      <button class="button-service" type="submit"><span class="material-symbols-rounded delete-icon">
+        delete
+        </span></button>
+      </form>
+      <form action="/profile/editService">
+        <button class="button-service" type="submit"><i class="material-icons editService">edit</i></button>
+      </form>
+      </div>
+  
+      <% }) %>
+    </div>
+    <% } else { %>
+      <div class="nenhumContrato-box">
+        <p class="nenhumTrampoTxt">Parece que você não solicitou nenhum trampo ainda</p>
+      </div>
+      <% }  %>
 </div> 
 
 <div class="addTrampoBox">

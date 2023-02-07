@@ -18,13 +18,14 @@ const pagamentoController = {
         res.cookie('cartaoInfo', req.body.numeroCartao, { maxAge: 9999999999} )
         console.log(req.cookies.cartaoInfo)
          let id = req.params.id
-      serviceRequest.getService(id).
-         then(serviceReturn => {
+      serviceRequest.getService(id)
+      .then(serviceReturn => {
             let services = serviceReturn.data;
-       usersRequest.getUser(services.id_usuarios).
-        then(userReturn => {
+       usersRequest.getUser(services.id_usuarios)
+       .then(userReturn => {
             let users = userReturn.data;
             res.render('pagamento', {
+                idServico: req.params.id,
                 services,
                 users,
                 key: chavePublicavel,
@@ -36,11 +37,14 @@ const pagamentoController = {
             res.render('error', {error})
         })
     },
-    payment: (req, res) => {
+    payment: async (req, res) => {
     let userLogged = req.session.userLogged;
     let id_contratante = userLogged.id;
-    let id_trabalhador = req.params.id;
-    hiringRequest.createHiring({
+    let id_trabalhador = req.body.idServico;
+    let services = await serviceRequest.getService(id_trabalhador)
+     services = services.data;
+    console.log(id_trabalhador)
+   let hiring = await hiringRequest.createHiring({
     id_servicos: services.id,
     dataServico: req.body.dataServico,
     dataPagamento: Date.now(),

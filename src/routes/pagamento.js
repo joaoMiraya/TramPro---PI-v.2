@@ -10,7 +10,7 @@ const pagamentoController = require('../controllers/pagamentoController');
 
 router.get('/detail/:id/', verifyUserLogged, pagamentoController.index);
 
-router.get('/pagamento/detail/payment', pagamentoController.payment);
+router.post('/', pagamentoController.payment);
 
 
 

@@ -16,7 +16,11 @@ const hiringRequest = {
         method: 'get',
         url: `${url}/${id}` 
     }),
- 
+    getUserHiring: (id) => axios({
+        ...def,
+        method: 'get',
+        url: `${url}/user/${id}` 
+    }),
     createHiring: (hiring) => axios({
         ...def,
         method: 'post',

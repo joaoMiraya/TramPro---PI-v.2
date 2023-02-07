@@ -67,8 +67,6 @@ app.use(function(req, res, next) {
 
 
 
-app.post('/register', entrarRouter); 
- 
 
 app.use('/', mainRouter);
 app.use('/profile', profileRouter); 

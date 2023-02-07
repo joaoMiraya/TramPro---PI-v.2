@@ -57,13 +57,13 @@ const profileController = {
     classe: categorias,
     descricao: serviceDescricao,
     imagem: imagem,
-    id_usuario: userLogged.id
+    id_usuarios: userLogged.id
   })
     .then(serviceCreated => {
       res.redirect('/');
     })
     .catch(error => {
-      res.render('error', { error });
+      res.render('error', { error, message:"Erro ao criar serviço" });
     });
 },
     /* createTrampo: (req, res) => {

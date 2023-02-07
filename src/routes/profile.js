@@ -41,7 +41,7 @@ const ServicefileUpload = multer({ storage: Servicestorage })
 router.get('/addTrampo', verifyUserLogged, profileController.addTrampo);
 
                           /*   CRIAR SERVICO */
- router.post('/createTrampo', ServicefileUpload.any(), profileController.createTrampo)
+ router.post('/fotoService', ServicefileUpload.any(), profileController.createTrampo)
 
 
                   /* RENDERIZA PROFILE */

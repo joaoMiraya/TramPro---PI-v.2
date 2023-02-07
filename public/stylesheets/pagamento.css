@@ -75,7 +75,7 @@ padding: 8px;
 .validade-box, .codigo-seguranca-box{
 margin-bottom: 13px;
 }
-.validade-box, .codigo-seguranca-box, .numero-cartao-box label{
+.validade-box, .securityCode-box, .numero-cartao-box label{
 color: #6A6A6A;
 text-align: center;
 font-weight: bold;
@@ -172,8 +172,12 @@ font-size: 20px;
 color: brown;
 font-size: 20px;
 }
-
-.finalizar-btn{
+.button-payment {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+.button-payment button{
 outline: none;
 border: none;
 background-color: #1D6758;
@@ -182,14 +186,19 @@ transition: .4s;
 font-size: 25px;
 font-weight: bold;
 padding: 10px;
-width: 80%;
+width: 40%;
 color: #fff;
 cursor: pointer;
+margin: 15px;
 }
 .finalizar-btn:hover{
 background-color: #3F8263;
 }
-.stripePayment{
-display:flex;
-justify-content: center;
+.dataDoServico{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.dataDoServico label{
+  margin-right: 40px;
 }

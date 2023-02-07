@@ -52,42 +52,49 @@
 </div>
 
 <div class="hidden" id="container-cartao">
-<form action="#">
+ <form action="/pagamento" method="POST">
+        <input type="hidden" name="idServico" value="<%= idServico %>">
+        <div class="info-cartao">
+            <div class="numero-cartao-box">
+            <label for="numeroCartao">Numero do Cartão</label> <br>
+            <input type="text" name="numeroCartao" id="numeroCartao" class="numero-cartao" required>
+            </div>
+
+            <div class="validade-box">
+                <label for="validadeCartao">Data <br> de Validade</label> <br>
+                <input type="text" name="validadeCartao" id="validadeCartao" class="validade-cartao" required placeholder="MM/AA">
+            </div>
+            
+            <div class="securityCode-box">
+                <label for="cvv">CVV</label> <br>
+                <input type="text" name="cvv" id="cvv" class="validade-cartao" required>
+            </div>
+
+        </div>
+
+        <div class="info-usuario-cartao">
+            <div class="nome-cartao-box">
+                <label for="nomeCartao">Nome Completo</label> <br>
+                <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" required>
+            </div>
+
+            <div class="cpf-cartao-box">
+                <label for="cpfCartao">CPF</label> <br>
+                <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" required>
+            </div>
+            <div class="dataDoServico">
+                <label for="DataServico">Selecione a data que você vai precisar</label>
+                <input type="date" name="dataServico" id="DataServico">
+            </div>
+        </div>
     
-<div class="info-cartao">
-    <div class="numero-cartao-box">
-    <label for="numeroCartao">Numero do Cartão</label> <br>
-    <input type="text" name="numeroCartao" id="numeroCartao" class="numero-cartao" required>
-</div>
-
-<div class="validade-box">
-    <label for="validadeCartao">Data <br> de Validade</label> <br>
-    <input type="text" name="validadeCartao" id="validadeCartao" class="validade-cartao" required placeholder="MM/AA">
-</div>
-
-</div>
-
-<div class="info-usuario-cartao">
-<div class="nome-cartao-box">
-    <label for="nomeCartao">Nome Completo</label> <br>
-    <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" required>
-</div>
-
-<div class="cpf-cartao-box">
-    <label for="cpfCartao">CPF</label> <br>
-    <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" required>
-</div>
-</div>
+            <div class="button-payment">
+                <button type="submit">Finalizar</button>
+            </div>
     </form>
-
 </div>
 
-<div class="more-info-payment formas-de-pagamento">
-<div class="dataDoServico">
-    <label for="DataServico">Selecione a data que você vai precisar</label>
-<input type="date" name="DataServico" id="DataServico">
-</div>
-</div>
+
 
 
         </div>
@@ -119,8 +126,9 @@
     
 </div>
 
-<div class="stripePayment">
-<form action="/pagamento/detail/payment" method="POST">
+<!-- <div class="stripePayment">
+<form action="/pagamento" method="POST">
+
     <script
      src="//checkout.stripe.com/v2/checkout.js"
      class="stripe-button"
@@ -132,7 +140,7 @@
      data-locale="auto">
     </script>
 </form>
-</div>
+</div> -->
 </div>
 
 
