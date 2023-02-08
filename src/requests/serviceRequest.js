@@ -34,6 +34,14 @@ const serviceRequest = {
         },
         url: `${url}/` 
     }),
+    editService: (service, id) => axios({
+        ...def,
+        method: 'patch',
+        data: {
+            ...service
+        },
+        url: `${url}/${id}`
+    }),
      deleteService: (id) => axios({
         ...def,
         method: 'delete',

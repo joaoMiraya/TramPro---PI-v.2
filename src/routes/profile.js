@@ -50,8 +50,9 @@ router.get('/', verifyUserLogged, profileController.profile);
 router.get('/formEdit', profileController.formEdit)
 router.put('/edit', profileController.edit)
 
-                   /* EDITAR SERVICO */
-router.get('/edit/:id', profileController.updateTrampo)
+           /*RENDERIZA O FORM / EDITAR SERVICO */
+router.get('/editService/:id', profileController.editServiceForm)
+router.put('/editService/updateTrampo/:id', ServicefileUpload.any(), profileController.updateTrampo)
 
                    /* DELETA SERVICO */
 router.delete('/delete/:id', profileController.delete)

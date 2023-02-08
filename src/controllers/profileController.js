@@ -98,8 +98,47 @@ const profileController = {
       res.render('error', { error, message:"Erro ao criar serviço" });
     });
 },
+editServiceForm: (req, res) => {
+        let id = req.params.id;
+        let service;
+        serviceRequest.getService(id)
+        .then(serviceReturn =>{
+        service = serviceReturn.data; 
+        res.render('editTrampo', {
+            service
+        })
+        })    
+    },
     updateTrampo: (req, res) => {
-        res.render('editTrampo')
+        let id = req.params.id;
+        let serviceToEdit;
+     serviceRequest.getService(id)
+    .then(serviceReturn => {
+        serviceToEdit = serviceReturn.data;
+
+        let imagem;  
+        if (req.files[0] != undefined){
+             imagem = req.files[0].filename;
+        }else{
+             imagem = 'default-image.png'
+        }
+
+      let { estilo, nome, preco, categorias, serviceDescricao } = req.body;
+  if (!estilo || !nome || !preco || !categorias || !serviceDescricao) {
+    return res.render('error', { error: 'Todos os campos são obrigatórios' });
+  }
+            return serviceToEdit;
+    })
+    .then(serviceToEdit => {
+        serviceRequest.editService(serviceToEdit, id)
+        .then(edited => {
+            res.redirect('/profile')
+        })
+    })
+    .catch(error => {
+        res.render('error',{error});
+    })
+ 
     },
     formEdit: (req, res) => {
         res.render('editProfile')
@@ -121,36 +160,6 @@ const profileController = {
 			res.render('error',{error});
 		})
     },
-  /*   fotoEdit: (req, res) =>{
-        let userLogged = req.session.userLogged;
-        let id = userLogged.id;
-        let userToEdit;
-        usersRequest.getUser(userLogged.id)
-        .then(userReturn => {
-            userToEdit = userReturn.data;
-
-        let image = [];
-        if(req.files[0]!= undefined){
-            image = req.files[0].filename
-        } else{
-            image = userToEdit.image
-        }
-        userToEdit = {
-            foto: image,
-            ...req.body,
-        };
-        return userToEdit
-    })
-    .then(userToEdit =>{
-        usersRequest.editUser(userToEdit, id)
-        .then(edited =>{
-            res.redirect('/profile')
-        })
-    })
-    .catch(error => {
-        res.render('error',{error});
-    })
-    }, */
     delete: (req, res) => {
         let id = req.params.id;
         serviceRequest.deleteService(id)
