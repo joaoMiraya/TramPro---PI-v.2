@@ -75,12 +75,12 @@
         <div class="info-usuario-cartao">
             <div class="nome-cartao-box">
                 <label for="nomeCartao">Nome Completo</label> <br>
-                <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" required>
+                <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" value="<%= userLogged.nome + ' ' + userLogged.sobrenome %>" required>
             </div>
 
             <div class="cpf-cartao-box">
                 <label for="cpfCartao">CPF</label> <br>
-                <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" required>
+                <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" value="<%= userLogged.cpf %>" required>
             </div>
             <div class="dataDoServico">
                 <label for="DataServico">Selecione a data que você vai precisar</label>
@@ -126,21 +126,7 @@
     
 </div>
 
-<!-- <div class="stripePayment">
-<form action="/pagamento" method="POST">
 
-    <script
-     src="//checkout.stripe.com/v2/checkout.js"
-     class="stripe-button"
-     data-key="<%= key %>"
-     data-amount="<%= services.valor + '00' %>"
-     data-currency="BRL"
-     data-name="<%= services.nome %>"
-     data-description=" <%= services.descricao %>"
-     data-locale="auto">
-    </script>
-</form>
-</div> -->
 </div>
 
 

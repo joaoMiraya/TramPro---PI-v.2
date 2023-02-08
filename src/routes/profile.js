@@ -46,9 +46,9 @@ router.get('/addTrampo', verifyUserLogged, profileController.addTrampo);
                   /* RENDERIZA PROFILE */
 router.get('/', verifyUserLogged, profileController.profile);
 
-                /* EDITA USUARIO */
+                /* RENDERIZA O FORM / EDITA USUARIO */
 router.get('/formEdit', profileController.formEdit)
-router.put('/edit', profileController.edit)
+router.put('/formEdit/edit/:id', profileController.edit)
 
            /*RENDERIZA O FORM / EDITAR SERVICO */
 router.get('/editService/:id', profileController.editServiceForm)

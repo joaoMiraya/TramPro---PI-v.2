@@ -125,12 +125,9 @@ favorite
   <h3 class="price"><%= 'R$' + service.valor + ',00' %></h3>
 </div>
 </div>
-  <a href="/pagamento/detail/<%= service.id %>"><div class="contratar-box">
-<button class="contratar-btn" type="submit">Contratar</button>
-</div></a>
+<a href="/pagamento/detail/<%= service.id %>">
+<div class="contratar-box contratar-btn">Contratar</div></a>
 </div>
-
-
 
 <% }) %>
 

@@ -109,12 +109,10 @@ editServiceForm: (req, res) => {
         })
         })    
     },
-    updateTrampo: (req, res) => {
+    updateTrampo: async (req, res) => {
         let id = req.params.id;
-        let serviceToEdit;
-     serviceRequest.getService(id)
-    .then(serviceReturn => {
-        serviceToEdit = serviceReturn.data;
+        let serviceToEdit = await serviceRequest.getService(id)
+        serviceToEdit = serviceToEdit.data;
 
         let imagem;  
         if (req.files[0] != undefined){
@@ -122,43 +120,51 @@ editServiceForm: (req, res) => {
         }else{
              imagem = 'default-image.png'
         }
-
-      let { estilo, nome, preco, categorias, serviceDescricao } = req.body;
-  if (!estilo || !nome || !preco || !categorias || !serviceDescricao) {
-    return res.render('error', { error: 'Todos os campos são obrigatórios' });
-  }
-            return serviceToEdit;
-    })
-    .then(serviceToEdit => {
-        serviceRequest.editService(serviceToEdit, id)
-        .then(edited => {
+       serviceToEdit = {
+        imagem: imagem,
+        nome: req.body.nome,
+        classe: req.body.categorias,
+        estilo: req.body.estilo,
+        preco: req.body.preco,
+        descricao: req.body.serviceDescricao,
+       }
+      let edited = await  serviceRequest.editService(serviceToEdit, id)
+              edited = edited.data
             res.redirect('/profile')
-        })
-    })
-    .catch(error => {
-        res.render('error',{error});
-    })
- 
     },
     formEdit: (req, res) => {
-        res.render('editProfile')
-    },
-    edit: (req, res) => {
         let userLogged = req.session.userLogged;
-        let userToEdit = [];
-        usersRequest.getUser(userLogged.id)
-        .then(userReturn => {
-            userToEdit = userReturn.data;
+        let id = userLogged.id;
+        let user;
+        usersRequest.getUser(id)
+        .then(userReturn =>{
+            user = userReturn.data; 
+        res.render('editProfile', {
+            user
         })
-        .then(userToEdit =>{
-            usersRequest.editUser(userToEdit, userLogged.id)
-            .then(edited =>{
+        }) 
+    },
+    edit: async (req, res) => {
+        let userLogged = req.session.userLogged;
+        let id = userLogged.id;
+     let userToEdit = await usersRequest.getUser(id)
+            userToEdit = userToEdit.data;
+            
+            userToEdit = {
+                nome: req.body.nome,
+                sobrenome: req.body.sobrenome,
+                cidade: req.body.cidade,
+                rua: req.body.rua,
+                numero: req.body.numero,
+                cep: req.body.cep,
+                telefone: req.body.telefone,
+                email: req.body.email,
+                senha: req.body.senha,
+                cpf: req.body.cpf
+            }
+        let edited = await usersRequest.editUser(userToEdit, id)
+                edited = edited.data;
                 res.redirect('/profile')
-            })
-        })
-        .catch(error => {
-			res.render('error',{error});
-		})
     },
     delete: (req, res) => {
         let id = req.params.id;

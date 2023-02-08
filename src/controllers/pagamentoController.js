@@ -15,8 +15,7 @@ const chaveSecreta = "sk_test_51MW9qkGQrwfM9QMcUS9DBlyMxSUjgqq1uEG5eNrn0Wus5BJbO
 
 const pagamentoController = {
     index: (req, res) => {
-        res.cookie('cartaoInfo', req.body.numeroCartao, { maxAge: 9999999999} )
-        console.log(req.cookies.cartaoInfo)
+        let userLogged = req.session.userLogged;
          let id = req.params.id
       serviceRequest.getService(id)
       .then(serviceReturn => {
@@ -28,7 +27,7 @@ const pagamentoController = {
                 idServico: req.params.id,
                 services,
                 users,
-                key: chavePublicavel,
+                userLogged,
                 toThousand
             })
         })

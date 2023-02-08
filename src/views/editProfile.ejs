@@ -34,53 +34,53 @@
 <main>
   <div class="editProfile-container">
 <div class="editProfile-information">
-  <form action="/profile/edit/<%= userLogged.id %>?_method=PUT" method="POST">
+  <form action="/profile/formEdit/edit/<%= userLogged.id %>?_method=PUT" method="POST">
   <fieldset><legend>Edite suas informações</legend>
 
 
 <div class="inputBox-editProfile">
 <label for="nome" class="nomeLabel labelGeral">Nome: </label>
-<input type="text" name="nome" id="nome" class="nomeInput input-entrar" required>
+<input type="text" name="nome" id="nome" class="nomeInput input-entrar"  value="<%=userLogged.nome %>" required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="sobrenome" class="sobrenomeLabel labelGeral">Sobrenome: </label>
-<input type="text" name="sobrenome" id="sobrenome" class="sobrenomeInput input-entrar" required>
+<input type="text" name="sobrenome" id="sobrenome" class="sobrenomeInput input-entrar" value="<%=userLogged.sobrenome %>"  required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="cidade" class="cpfLabel labelGeral">Cidade: </label>
-<input type="text" name="cidade" id="cidade" class="cidadeInput input-entrar" required>
+<input type="text" name="cidade" id="cidade" class="cidadeInput input-entrar" value="<%=userLogged.cidade %>"  required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="rua" class="telefoneLabel labelGeral">Rua: </label>
-<input type="text" name="rua" id="rua" class="ruaInput input-entrar" required>
+<input type="text" name="rua" id="rua" class="ruaInput input-entrar" value="<%=userLogged.rua %>"  required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="numero" class="emailLabel labelGeral">Numero da Casa: </label>
-<input type="number" name="numero" id="numero" class="numeroInput input-entrar" required>
+<input type="number" name="numero" id="numero" class="numeroInput input-entrar" value="<%=userLogged.numero %>"  required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="cep" class="confirm-emailLabel labelGeral">CEP: </label>
-<input type="number" name="cep" id="cep" class="cepInput input-entrar" required>
+<input type="number" name="cep" id="cep" class="cepInput input-entrar" value="<%=userLogged.cep %>"  required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="telefone" class="senhaLabel labelGeral">Telefone: </label>
-<input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar" required>
+<input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar" value="<%=userLogged.telefone %>"  required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="email" class="confirm-passwordlLabel labelGeral">Email: </label>
-<input type="email" name="email" id="email" class="emailInput input-entrar" required>
+<input type="email" name="email" id="email" class="emailInput input-entrar" value="<%=userLogged.email %>" required>
 </div>
 
 <div class="inputBox-editProfile">
 <label for="senha" class="confirm-passwordlLabel labelGeral">Senha: </label>
-<input type="password" name="senha" id="senha" class="senhaInput input-entrar" required>
+<input type="password" name="senha" id="senha" class="senhaInput input-entrar" value="<%= user.senha %>" required>
 </div>
 
 
