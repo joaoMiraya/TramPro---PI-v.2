@@ -7,12 +7,6 @@ const hiringRequest = require('../requests/hiringRequest');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-          /* STRIPE API KEYS */
-
-const chavePublicavel = "pk_test_51MW9qkGQrwfM9QMce9AhUYHk9bNaVQp9uF5svt8Eq9QK5TY1i0jM17bUqhDI3h1oKcCMsDEoOaNcFG0JUMCYPPXy00ezjUgmuF";
-const chaveSecreta = "sk_test_51MW9qkGQrwfM9QMcUS9DBlyMxSUjgqq1uEG5eNrn0Wus5BJbOB9hGfWVYEEJs3LMsZQdGyEBExQPSURhGx3su5Th00NmXJWL0k";
-
-
 const pagamentoController = {
     index: (req, res) => {
         let userLogged = req.session.userLogged;
@@ -46,9 +40,9 @@ const pagamentoController = {
     id_servicos: services.id,
     dataServico: req.body.dataServico,
     dataPagamento: Date.now(),
-    numeroCartao: req.body.numeroCartao,
+    numeroCartao: req.body.numeroCartao.trim().slice(-4),
     nomeCartao: req.body.nomeCartao,
-    dataValidade: req.body.validadeCartao ,
+    dataValidade: req.body.validadeCartao,
     id_contratante: id_contratante,
     })
     res.redirect('/')

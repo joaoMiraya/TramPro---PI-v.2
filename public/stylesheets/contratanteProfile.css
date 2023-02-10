@@ -61,7 +61,7 @@ padding: 5px;
     width: 100vw;
    
 }
-.trampo-container{
+.contrato-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,11 +70,20 @@ padding: 5px;
     border: 1px solid rgb(185, 185, 185);
     padding: 10px;
     width: 330px;
-    height: 400px;
+    min-height: 400px;
     margin-top: 30px;
 }
-
-    .seus-trampos{
+.contrato-ativo{
+    margin-top: 15px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #3f82638c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+        }
+    .seus-contrato{
     text-align: center;
   font-size: 30px;
   color: #062439;
@@ -114,7 +123,6 @@ padding: 5px;
         align-items: center;
         flex-direction: column;
     }
-
                     /* INPUT FILE  */
 
 .foto-container{

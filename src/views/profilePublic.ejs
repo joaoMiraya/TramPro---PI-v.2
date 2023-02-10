@@ -49,14 +49,16 @@
     <div class="informacoes-pessoais">
         <div class="name">
             <h4> <%= users.nome + ' ' + users.sobrenome %></h4>
-            </div>
+            </div>          
         <div class="foto">
         <img src="/images/profiles/<%= users.foto %>" width="250px" height="300px" alt=" foto do usuario">
        </div>
                  <div class="profissao">
                      <p><%= services.nome %></p>
                       </div>   
-
+                      <div class="cidade">
+                        <h4><%= users.cidade %></h4>
+                    </div>
                       <div class="see-more" id="see-more">
                         <span id="see-more-icon" class="material-symbols-outlined">
                             expand_more

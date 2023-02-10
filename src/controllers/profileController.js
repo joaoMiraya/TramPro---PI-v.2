@@ -125,7 +125,7 @@ editServiceForm: (req, res) => {
         nome: req.body.nome,
         classe: req.body.categorias,
         estilo: req.body.estilo,
-        preco: req.body.preco,
+        valor: req.body.preco,
         descricao: req.body.serviceDescricao,
        }
       let edited = await  serviceRequest.editService(serviceToEdit, id)

@@ -64,10 +64,7 @@ app.use(function(req, res, next) {
   res.locals.userLogged = req.session.userLogged;
   next();
 });
-app.use(function(req, res, next) {
-  res.locals.infoCard = req.session.infoCard;
-  next();
-});
+
 
 
 

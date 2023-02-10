@@ -77,13 +77,19 @@
                 <label for="nomeCartao">Nome Completo</label> <br>
                 <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" value="<%= userLogged.nome + ' ' + userLogged.sobrenome %>" required>
             </div>
-
+            
             <div class="cpf-cartao-box">
                 <label for="cpfCartao">CPF</label> <br>
                 <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" value="<%= userLogged.cpf %>" required>
             </div>
+
+          <!--   <div class="nome-cartao-box">
+                <label for="nomeTrabalhador">Nome do Trabalhador</label> <br>
+                <input type="text" name="nomeTrabalhador" id="nomeTrabalhador" class="nome-cartao" value="<%= users.nome + ' ' + users.sobrenome %> " required>
+            </div> -->
+
             <div class="dataDoServico">
-                <label for="DataServico">Selecione a data que você vai precisar</label>
+                <label for="DataServico">Selecione a data que você vai precisar</label> <br>
                 <input type="date" name="dataServico" id="DataServico">
             </div>
         </div>
