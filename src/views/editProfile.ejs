@@ -1,101 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TramPro</title>
-    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/editProfile.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TramPro</title>
+  <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/editProfile.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap"
+    rel="stylesheet">
 </head>
 
 <% if(!userLogged){ %>
   <%- include('./partials/header') %>
-<% } else { %>
-  <%- include('./partials/headerLogged') %>
-  
-<% } %>
+    <% } else { %>
+      <%- include('./partials/headerLogged') %>
 
-<body>
-  
+        <% } %>
 
-<main>
-  <div class="editProfile-container">
-<div class="editProfile-information">
-  <form action="/profile/formEdit/edit/<%= userLogged.id %>?_method=PUT" method="POST">
-  <fieldset><legend>Edite suas informações</legend>
+          <body>
 
 
-<div class="inputBox-editProfile">
-<label for="nome" class="nomeLabel labelGeral">Nome: </label>
-<input type="text" name="nome" id="nome" class="nomeInput input-entrar"  value="<%=userLogged.nome %>" required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="sobrenome" class="sobrenomeLabel labelGeral">Sobrenome: </label>
-<input type="text" name="sobrenome" id="sobrenome" class="sobrenomeInput input-entrar" value="<%=userLogged.sobrenome %>"  required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="cidade" class="cpfLabel labelGeral">Cidade: </label>
-<input type="text" name="cidade" id="cidade" class="cidadeInput input-entrar" value="<%=userLogged.cidade %>"  required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="rua" class="telefoneLabel labelGeral">Rua: </label>
-<input type="text" name="rua" id="rua" class="ruaInput input-entrar" value="<%=userLogged.rua %>"  required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="numero" class="emailLabel labelGeral">Numero da Casa: </label>
-<input type="number" name="numero" id="numero" class="numeroInput input-entrar" value="<%=userLogged.numero %>"  required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="cep" class="confirm-emailLabel labelGeral">CEP: </label>
-<input type="number" name="cep" id="cep" class="cepInput input-entrar" value="<%=userLogged.cep %>"  required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="telefone" class="senhaLabel labelGeral">Telefone: </label>
-<input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar" value="<%=userLogged.telefone %>"  required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="email" class="confirm-passwordlLabel labelGeral">Email: </label>
-<input type="email" name="email" id="email" class="emailInput input-entrar" value="<%=userLogged.email %>" required>
-</div>
-
-<div class="inputBox-editProfile">
-<label for="senha" class="confirm-passwordlLabel labelGeral">Senha: </label>
-<input type="password" name="senha" id="senha" class="senhaInput input-entrar" value="<%= user.senha %>" required>
-</div>
+            <main>
+              <div class="editProfile-container">
+                <div class="editProfile-information">
+                  <form action="/profile/formEdit/edit/<%= userLogged.id %>?_method=PUT" method="POST">
+                    <fieldset>
+                      <legend>Edite suas informações</legend>
 
 
-<div class="btn-salvar-box">
-  <button type="submit" class="btn-salvar">Salvar</button>
-  </div>
-</fieldset>
-</form>
-</div>
+                      <div class="inputBox-editProfile">
+                        <label for="nome" class="nomeLabel labelGeral">Nome: </label>
+                        <input type="text" name="nome" id="nome" class="nomeInput input-entrar"
+                          value="<%=userLogged.nome %>" required>
+                      </div>
 
-</div>
-  
-</main>
+                      <div class="inputBox-editProfile">
+                        <label for="sobrenome" class="sobrenomeLabel labelGeral">Sobrenome: </label>
+                        <input type="text" name="sobrenome" id="sobrenome" class="sobrenomeInput input-entrar"
+                          value="<%=userLogged.sobrenome %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="cidade" class="cpfLabel labelGeral">Cidade: </label>
+                        <input type="text" name="cidade" id="cidade" class="cidadeInput input-entrar"
+                          value="<%=userLogged.cidade %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="rua" class="telefoneLabel labelGeral">Rua: </label>
+                        <input type="text" name="rua" id="rua" class="ruaInput input-entrar"
+                          value="<%=userLogged.rua %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="numero" class="emailLabel labelGeral">Numero da Casa: </label>
+                        <input type="number" name="numero" id="numero" class="numeroInput input-entrar"
+                          value="<%=userLogged.numero %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="cep" class="confirm-emailLabel labelGeral">CEP: </label>
+                        <input type="number" name="cep" id="cep" class="cepInput input-entrar"
+                          value="<%=userLogged.cep %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="telefone" class="senhaLabel labelGeral">Telefone: </label>
+                        <input type="number" name="telefone" id="telefone" class="telefoneInput input-entrar"
+                          value="<%=userLogged.telefone %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="email" class="confirm-passwordlLabel labelGeral">Email: </label>
+                        <input type="email" name="email" id="email" class="emailInput input-entrar"
+                          value="<%=userLogged.email %>" required>
+                      </div>
+
+                      <div class="inputBox-editProfile">
+                        <label for="senha" class="confirm-passwordlLabel labelGeral">Senha: </label>
+                        <input type="password" name="senha" id="senha" class="senhaInput input-entrar"
+                          value="<%= user.senha %>" required>
+                      </div>
 
 
-<%- include('./partials/footer') %>
-</body>
+                      <div class="btn-salvar-box">
+                        <button type="submit" class="btn-salvar">Salvar</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+
+              </div>
+
+            </main>
+
+
+            <%- include('./partials/footer') %>
+          </body>
+
 </html>

@@ -1,24 +1,64 @@
+<nav class="nav">
+  <div class="logo-nav">
+    <a href="/">
+      <h1><i class="tram">Tram</i><b class="pro">Pro</b></h1>
+    </a>
+  </div>
 
-    <nav id="nav">
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
 
-    <a href="/"><label class="logo"><i id="tram-logo">Tram</i><b>Pro</b></label></a>
-
-    <div class="search-box">
-      <form action="/search" method="GET" class="search-form">
-    <input class="search-text" name="keywords" type="text" placeholder="Qual serviço está precisando?">                                  
-        <button type="submit" class="search-btn"><i class="material-icons" id="search-icon">search</i></button>
-      </form>
+  <div class="search-box">
+    <form action="/search" method="GET" class="search-form">
+      <div class="search-content">
+        <input class="search-text" name="keywords" type="text" placeholder="Qual serviço está precisando?">
+        <button type="submit" class="search-btn"><i class="material-icons search-icon">search</i></button>
       </div>
+    </form>
+  </div>
 
-      <ul>
-        <li><a class="nav-btn" href="/profile">Perfil</a></li>
-        <li><a class="nav-btn" href="/servico">Trampos</a></li>
-        <li><a class="nav-btn" href="/entrar">Entrar</a></li>
-      </ul>
-    </nav>
+  <div class="ul-li-box">
+    <ul>
+      <li><a class="nav-btn" href="/profile">Perfil</a></li>
+      <li><a class="nav-btn" href="/servico">Trampos</a></li>
+      <li><a class="nav-btn" href="/entrar">Entrar</a></li>
+    </ul>
+  </div>
 
-    
+
+  <!-- BOTÃO HAMBURGER -->
+
+  <div class="menu-box">
+    <button onclick="animar()" id="menu">
+      <span class="linha"></span>
+      <span class="linha"></span>
+      <span class="linha"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile">
+  <ul>
+    <div class="box-menu-mobile">
+      <div class="li-menu-mobile"><a href="/profile">
+          <li>Perfil</li>
+        </a></div>
+    </div>
+
+    <div class="box-menu-mobile">
+      <div class="li-menu-mobile"><a href="/servico">
+          <li>Trampos</li>
+        </a></div>
+    </div>
+
+    <div class="box-menu-mobile">
+      <div class="li-menu-mobile"><a href="/entrar">
+          <li>Entrar</li>
+        </a></div>
+    </div>
+
+  </ul>
+  <div class="logo-nav-mobile">
+    <a href="/">
+      <h1><i class="tram">Tram</i><b class="pro">Pro</b></h1>
+    </a>
+  </div>
+</div>

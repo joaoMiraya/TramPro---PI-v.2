@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,103 +9,114 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/chat.css">
     <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
 </head>
+
 <body>
     <% if(!userLogged){ %>
         <%- include('./partials/header') %>
-      <% } else { %>
-        <%- include('./partials/headerLogged') %>
-        
-      <% } %>
-    <div class="container">
-<div class="coluna-lateral">
+            <% } else { %>
+                <%- include('./partials/headerLogged') %>
 
-<div class="contatos-msg">
-    <span></span>
-<div class="imagem-ctt">
-    <img width="50px" height="50px" src="/images/profiles/<%= users.foto %>" alt="User-Image">
-</div>
-<p><%= users.nome + ' ' + users.sobrenome %> </p>
-</div>
+                    <% } %>
+                        <div class="container">
+                            <div class="coluna-lateral">
 
-</div>
-<form id="chat">
-<div class="container-central">
-  
-    <div class="campo-de-mensagens">
-        <div class="messages">
+                                <div class="contatos-msg">
+                                    <span></span>
+                                    <div class="imagem-ctt">
+                                        <img width="50px" height="50px" src="/images/profiles/<%= users.foto %>"
+                                            alt="User-Image">
+                                    </div>
+                                    <p>
+                                        <%= users.nome + ' ' + users.sobrenome %>
+                                    </p>
+                                </div>
 
-      </div>
+                            </div>
+                            <form id="chat">
+                                <div class="container-central">
 
-    </div>
-    <div class="form-message">
-<input type="text" class="input-text-chat" name="message" placeholder="Digite sua mensagem">
-<button type="submit" class="button-send-message">
-    <span class="material-symbols-outlined sendMessage">
-    send
-    </span></button>
-</div>
+                                    <div class="campo-de-mensagens">
+                                        <div class="messages">
 
-</form>
+                                        </div>
 
+                                    </div>
+                                    <div class="form-message">
+                                        <input type="text" class="input-text-chat" name="message"
+                                            placeholder="Digite sua mensagem">
+                                        <button type="submit" class="button-send-message">
+                                            <span class="material-symbols-outlined sendMessage">
+                                                send
+                                            </span></button>
+                                    </div>
 
-</div>
-</div>
-<br>
-<%- include('./partials/footer') %>
+                            </form>
 
 
-
-<script type="text/javascript">
-    var socket = io('http://localhost:3030');
-    function renderMessage(message) {
-        $('.messages').append('<div class="message">' + message.message + '</div>')
-    }
-
-    socket.on('previousMesssages', function(messages){
-        for(message of messages){
-            renderMessage(message)
-        }
-    })
-
-      socket.on('receivedMessage', function(message){
-        renderMessage(message);
-      })
+                        </div>
+                        </div>
+                        <br>
+                        <%- include('./partials/footer') %>
 
 
-    $('#chat').submit(function(event){
-        event.preventDefault();
-        
-    
-        var message = $('input[name=message]').val();
-        
-        if(message.length){
-            var messageObject ={
-                
-               
-                message: message
-            };
 
-            renderMessage(messageObject);
+                            <script type="text/javascript">
+                                var socket = io('http://localhost:3030');
+                                function renderMessage(message) {
+                                    $('.messages').append('<div class="message">' + message.message + '</div>')
+                                }
 
-            socket.emit('sendMessage', messageObject);
-        }
-    });
-</script>
+                                socket.on('previousMesssages', function (messages) {
+                                    for (message of messages) {
+                                        renderMessage(message)
+                                    }
+                                })
+
+                                socket.on('receivedMessage', function (message) {
+                                    renderMessage(message);
+                                })
+
+
+                                $('#chat').submit(function (event) {
+                                    event.preventDefault();
+
+
+                                    var message = $('input[name=message]').val();
+
+                                    if (message.length) {
+                                        var messageObject = {
+
+
+                                            message: message
+                                        };
+
+                                        renderMessage(messageObject);
+
+                                        socket.emit('sendMessage', messageObject);
+                                    }
+                                });
+                            </script>
 </body>

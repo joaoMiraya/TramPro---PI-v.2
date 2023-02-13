@@ -1,19 +1,21 @@
-const btnTrampar = document.querySelector('.tramparBTN');
-const btnContratar = document.querySelector('.contratarBTN');
 
-const ancoraEntrar = document.querySelector('.ancoraEntrar');
-const ancoraTrampar = document.querySelector('.ancoraTrampar');
+            /* BOTÃO HAMBURGER */
 
-const verifyUserLogged = require('../../src/middlewares/verifyUserLogged');
-
-
-btnTrampar.addEventListener('click', ()=>{
-    console.log('teste')
-if(!verifyUserLogged){
-    ancoraEntrar.click();
-} else {
-    ancoraTrampar.click();
+const btn = document.getElementById('menu')
+function animar(){
+    btn.classList.toggle('ativarHamburguer')
 }
+
+btn.addEventListener('click',() =>{
+    console.log('xxrt')
+const menu = document.querySelector('.menu-mobile')
+menu.classList.toggle('menuActived')
 })
+            /* FIM BOTÃO HAMBURGER */
 
+const buttonSearch = document.querySelector('.search-btn'); 
+const inputSearch = document.querySelector('.search-text');
 
+buttonSearch.addEventListener('click', () =>{
+inputSearch.classList.add('inputAnimation')
+})

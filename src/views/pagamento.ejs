@@ -1,148 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TramPro</title>
     <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
-                            <!-- css links -->
+    <!-- css links -->
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/pagamento.css">
-                            <!-- swiper css -->
+    <!-- swiper css -->
     <link rel="stylesheet" href="/stylesheets/swiper.min.css">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-  <% if(!userLogged){ %>
-  <%- include('./partials/header') %>
-<% } else { %>
-  <%- include('./partials/headerLogged') %>
-  
-<% } %>
+    <% if(!userLogged){ %>
+        <%- include('./partials/header') %>
+            <% } else { %>
+                <%- include('./partials/headerLogged') %>
 
-    <main>
-<div class="containeir-principal">
+                    <% } %>
 
-<div class="formas-de-pagamento">
- <div class="text-pagamento-box">
-<h3>Salvar dados de Pagamento</h3>
-</div>
-<div class="cartao-de-credito-box">
-<div class="cartao-de-credito">
-<input type="checkbox" id="cartao" name="opcao-pagamento">
-<label for="opcao-pagamento" id="credito-debito" class="cartao-checkbox">Cartão de Crédito/Débito</label>
-<img class="bandeira-cartao-img" src="/images/mastercard_old_payment_method_card_icon_142735.png" alt="mastercard">
-<img class="bandeira-cartao-img" src="/images/credit_card_visa_payment_method_icon_134914.png" alt="visa">
-</div>
-</div>
+                        <main>
+                            <div class="containeir-principal">
 
-<div class="hidden" id="container-cartao">
- <form action="/pagamento" method="POST">
-        <input type="hidden" name="idServico" value="<%= idServico %>">
-        <div class="info-cartao">
-            <div class="numero-cartao-box">
-            <label for="numeroCartao">Numero do Cartão</label> <br>
-            <input type="text" name="numeroCartao" id="numeroCartao" class="numero-cartao" required>
-            </div>
+                                <div class="formas-de-pagamento">
+                                    <div class="text-pagamento-box">
+                                        <h3>Salvar dados de Pagamento</h3>
+                                    </div>
+                                    <div class="cartao-de-credito-box">
+                                        <div class="cartao-de-credito">
+                                            <input type="checkbox" id="cartao" name="opcao-pagamento">
+                                            <label for="opcao-pagamento" id="credito-debito"
+                                                class="cartao-checkbox">Cartão de Crédito/Débito</label>
+                                            <img class="bandeira-cartao-img"
+                                                src="/images/mastercard_old_payment_method_card_icon_142735.png"
+                                                alt="mastercard">
+                                            <img class="bandeira-cartao-img"
+                                                src="/images/credit_card_visa_payment_method_icon_134914.png"
+                                                alt="visa">
+                                        </div>
+                                    </div>
 
-            <div class="validade-box">
-                <label for="validadeCartao">Data <br> de Validade</label> <br>
-                <input type="text" name="validadeCartao" id="validadeCartao" class="validade-cartao" required placeholder="MM/AA">
-            </div>
-            
-            <div class="securityCode-box">
-                <label for="cvv">CVV</label> <br>
-                <input type="text" name="cvv" id="cvv" class="validade-cartao" required>
-            </div>
+                                    <div class="hidden" id="container-cartao">
+                                        <form action="/pagamento" method="POST">
+                                            <input type="hidden" name="idServico" value="<%= idServico %>">
+                                            <div class="info-cartao">
+                                                <div class="numero-cartao-box">
+                                                    <label for="numeroCartao">Numero do Cartão</label> <br>
+                                                    <input type="text" name="numeroCartao" id="numeroCartao"
+                                                        class="numero-cartao" required>
+                                                </div>
 
-        </div>
+                                                <div class="validade-box">
+                                                    <label for="validadeCartao">Data <br> de Validade</label> <br>
+                                                    <input type="text" name="validadeCartao" id="validadeCartao"
+                                                        class="validade-cartao" required placeholder="MM/AA">
+                                                </div>
 
-        <div class="info-usuario-cartao">
-            <div class="nome-cartao-box">
-                <label for="nomeCartao">Nome Completo</label> <br>
-                <input type="text" name="nomeCartao" id="nomeCartao" class="nome-cartao" value="<%= userLogged.nome + ' ' + userLogged.sobrenome %>" required>
-            </div>
-            
-            <div class="cpf-cartao-box">
-                <label for="cpfCartao">CPF</label> <br>
-                <input type="text" name="cpfCartao" id="cpfCartao" class="cpf-cartao" value="<%= userLogged.cpf %>" required>
-            </div>
+                                                <div class="securityCode-box">
+                                                    <label for="cvv">CVV</label> <br>
+                                                    <input type="text" name="cvv" id="cvv" class="validade-cartao"
+                                                        required>
+                                                </div>
 
-          <!--   <div class="nome-cartao-box">
+                                            </div>
+
+                                            <div class="info-usuario-cartao">
+                                                <div class="nome-cartao-box">
+                                                    <label for="nomeCartao">Nome Completo</label> <br>
+                                                    <input type="text" name="nomeCartao" id="nomeCartao"
+                                                        class="nome-cartao"
+                                                        value="<%= userLogged.nome + ' ' + userLogged.sobrenome %>"
+                                                        required>
+                                                </div>
+
+                                                <div class="cpf-cartao-box">
+                                                    <label for="cpfCartao">CPF</label> <br>
+                                                    <input type="text" name="cpfCartao" id="cpfCartao"
+                                                        class="cpf-cartao" value="<%= userLogged.cpf %>" required>
+                                                </div>
+
+                                                <!--   <div class="nome-cartao-box">
                 <label for="nomeTrabalhador">Nome do Trabalhador</label> <br>
                 <input type="text" name="nomeTrabalhador" id="nomeTrabalhador" class="nome-cartao" value="<%= users.nome + ' ' + users.sobrenome %> " required>
             </div> -->
 
-            <div class="dataDoServico">
-                <label for="DataServico">Selecione a data que você vai precisar</label> <br>
-                <input type="date" name="dataServico" id="DataServico">
-            </div>
-        </div>
-    
-            <div class="button-payment">
-                <button type="submit">Finalizar</button>
-            </div>
-    </form>
-</div>
+                                                <div class="dataDoServico">
+                                                    <label for="DataServico">Selecione a data que você vai
+                                                        precisar</label> <br>
+                                                    <input type="date" name="dataServico" id="DataServico">
+                                                </div>
+                                            </div>
+
+                                            <div class="button-payment">
+                                                <button type="submit">Finalizar</button>
+                                            </div>
+                                        </form>
+                                    </div>
 
 
 
 
-        </div>
-
-       
-<div class="revisao-do-servico">
-    <div class="descricaoNome">
-        <p> <%= users.nome + ' ' + users.sobrenome %> </p>
-    </div>
-<div class="foto-nome">
-<img class="imgDoServico" src="/images/servicesImg/<%= services.imagem %>" width="250px" height="155px" alt="foto do Serviços">
-</div>
-<p class="nome"> <%= services.nome %> </p>
-<hr>
-<div class="descricao">
-    <div class="txt-descricao">
-    <p> <%= services.descricao %> </p>
-    </div>
-</div>
-
-<div class="valor-final">
-<div class="total">  
-<p>Total: </p>
-</div>
-
-<div class="valor">  
-    <p>R$ <%= services.valor + ',00' %> </p>
-    </div>
-    
-</div>
+                                </div>
 
 
-</div>
+                                <div class="revisao-do-servico">
+                                    <div class="descricaoNome">
+                                        <p>
+                                            <%= users.nome + ' ' + users.sobrenome %>
+                                        </p>
+                                    </div>
+                                    <div class="foto-nome">
+                                        <img class="imgDoServico" src="/images/servicesImg/<%= services.imagem %>"
+                                            width="250px" height="155px" alt="foto do Serviços">
+                                    </div>
+                                    <p class="nome">
+                                        <%= services.nome %>
+                                    </p>
+                                    <hr>
+                                    <div class="descricao">
+                                        <div class="txt-descricao">
+                                            <p>
+                                                <%= services.descricao %>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="valor-final">
+                                        <div class="total">
+                                            <p>Total: </p>
+                                        </div>
+
+                                        <div class="valor">
+                                            <p>R$ <%= services.valor + ',00' %>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
 
 
 
 
 
-</div>
-    </main>
+                            </div>
+                        </main>
 
-    <script src="/javascripts/pagamentoScript.js"></script>
+                        <script src="/javascripts/pagamentoScript.js"></script>
 </body>
 
 

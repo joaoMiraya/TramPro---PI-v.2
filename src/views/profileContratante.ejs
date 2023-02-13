@@ -1,126 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TramPro</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-   <link rel="stylesheet" href="/stylesheets/contratanteProfile.css">
-   <link rel="stylesheet" href="/stylesheets/profile.css">
-    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TramPro</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/contratanteProfile.css">
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+  <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap"
     rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
 
-   <% if(!userLogged){ %>
+  <% if(!userLogged){ %>
     <%- include('./partials/header') %>
-  <% } else { %>
-    <%- include('./partials/headerLogged') %>
-    
-  <% } %>
-    
-<main> 
-  <div class="nav-profile-container">
-<div class="btn-trocarAcc-box">
-<button class="btn-trocarAcc"><a href="/profile">Trocar Trabalhador</a></button>
-</div>
+      <% } else { %>
+        <%- include('./partials/headerLogged') %>
 
-<!-- <div class="favoritos-icon">
+          <% } %>
+
+            <main>
+              <div class="nav-profile-container">
+                <div class="btn-trocarAcc-box">
+                  <button class="btn-trocarAcc"><a href="/profile">Trocar Trabalhador</a></button>
+                </div>
+
+                <!-- <div class="favoritos-icon">
 <span class="material-symbols-outlined">
 favorite
 </span>
 </div> -->
 
-<div class="logoutBox">
-  <a href="/profile/logout"><span class="material-symbols-outlined">
-     logout
-     </span></a> 
- </div>
-<!-- <div class="mensagens-icon">
+                <div class="logoutBox">
+                  <a href="/profile/logout"><span class="material-symbols-outlined">
+                      logout
+                    </span></a>
+                </div>
+                <!-- <div class="mensagens-icon">
 <span class="material-symbols-sharp">
 mail
 </span>
 </div> -->
-  </div>
+              </div>
 
-  <div class="paiDeTodos">
+              <div class="paiDeTodos">
 
-<div class="contrato-container"> 
-<div class="contratoBox">
-<h1 class="seus-contrato">Seus Trampos Contratados</h1>
- 
-<% if(contratacoes.length > 0){ %>
-  <% contratacoes.forEach(function(contrato){ %>
-    <div class="contrato-ativo">
-    <div class="contratoNameBox">
-        <p>Trampo adquirido em <%= contrato.dataPagamento %></p>
-    </div>
-   <div class="dataDoServico"> 
-    <p>Para o dia: <%= contrato.dataServico %> </p>
-    </div>
-  </div>
-  <% }) %>
+                <div class="contrato-container">
+                  <div class="contratoBox">
+                    <h1 class="seus-contrato">Seus Trampos Contratados</h1>
 
-  <% } else { %>
-    <div class="nenhumTrampo-box">
-      <p class="nenhumTrampoTxt">Parece que você não solicitou nenhum trampo ainda</p>
-    </div>
- <% }  %>
+                    <% if(contratacoes.length> 0){ %>
+                      <% contratacoes.forEach(function(contrato){ %>
+                        <div class="contrato-ativo">
+                          <div class="contratoNameBox">
+                            <p>Trampo adquirido em <%= contrato.dataPagamento %>
+                            </p>
+                          </div>
+                          <div class="dataDoServico">
+                            <p>Para o dia: <%= contrato.dataServico %>
+                            </p>
+                          </div>
+                        </div>
+                        <% }) %>
 
-</div> 
+                          <% } else { %>
+                            <div class="nenhumTrampo-box">
+                              <p class="nenhumTrampoTxt">Parece que você não solicitou nenhum trampo ainda</p>
+                            </div>
+                            <% } %>
 
-<!-- <div class="addTrampoBox">
+                  </div>
+
+                  <!-- <div class="addTrampoBox">
 <a class="add-trampo" href="/servicos">Contratar</a>
 </div> -->
 
-</div>
+                </div>
 
-<div class="perfil-container"> 
-  <div class="edit-icon">
-  <a href="/profile/formEdit/"><i class="material-icons" id="edit-icon">edit</i></a>
-  </div>
-  
-  
-    <form action="/foto" method="POST" enctype="multipart/form-data">
-     <div class="foto-container">
-     <img class="imagemUser" width="400px" height="400px" src="/images/profiles/<%= userLogged.foto %>" alt="imagem-do-usuario">
-     <input type="file" style="display: none;"  name="inputAvatar" id="inputAvatar">
-     <label class="addFotoTxt" for="inputAvatar"><p>Adicione uma boa foto de perfil</p> </label>
-       </div>
-  
-     <div class="enviarBtnBox">
-     <button class="enviarBtn" type="submit">Salvar</button>
-    </div>
-  </form>
-  
-  
-  <h2 id="nome"> <%= userLogged.nome + ' ' + userLogged.sobrenome %> </h2>
-  <p id="cidade"><%= userLogged.cidade %></p>
-    </div>
-  
-
-</div>
+                <div class="perfil-container">
+                  <div class="edit-icon">
+                    <a href="/profile/formEdit/"><i class="material-icons" id="edit-icon">edit</i></a>
+                  </div>
 
 
+                  <form action="/foto" method="POST" enctype="multipart/form-data">
+                    <div class="foto-container">
+                      <img class="imagemUser" width="400px" height="400px" src="/images/profiles/<%= userLogged.foto %>"
+                        alt="imagem-do-usuario">
+                      <input type="file" style="display: none;" name="inputAvatar" id="inputAvatar">
+                      <label class="addFotoTxt" for="inputAvatar">
+                        <p>Adicione uma boa foto de perfil</p>
+                      </label>
+                    </div>
+
+                    <div class="enviarBtnBox">
+                      <button class="enviarBtn" type="submit">Salvar</button>
+                    </div>
+                  </form>
 
 
-</main>
-<%- include('./partials/footer') %>
-  </body>
+                  <h2 id="nome">
+                    <%= userLogged.nome + ' ' + userLogged.sobrenome %>
+                  </h2>
+                  <p id="cidade">
+                    <%= userLogged.cidade %>
+                  </p>
+                </div>
+
+
+              </div>
+
+
+
+
+            </main>
+            <%- include('./partials/footer') %>
+</body>
+
 </html>
-  

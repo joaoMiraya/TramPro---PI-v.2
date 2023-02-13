@@ -1,181 +1,203 @@
-body{
-overflow-x: hidden;
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+
+.container-desktop{
+display: none;
+align-items: center;
+justify-content: space-around;
+height: 600px;
+background-color: rgb(40, 124, 39);
+}
+.contentSlides{
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+transform: translate(0%, -20%);
+}
+.slide{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+.slide-1{
+animation: slide1Position 1s ease;
+position: relative;
+top: 250px;
+}
+@keyframes slide1Position {
+0%{
+  position: relative;
+  opacity: 0;
+}
+50%{
+  top: 100px;
+  opacity: 0;
+}
+100%{
+  top: 250px;
+}
 }
 
-.first-vp{
-    background-color: rgb(40, 124, 39);
-    width: 100vw;
-    height: 650px;
-    padding: 15px;
+.slide2Animation{
+z-index: 10;
 }
+.slide-label{
+display: flex;
+justify-content: center;
+}
+.bar-slide{
+width: 50px;
+margin-top: 30px;
+margin: 15px;
+height: 15px;
+border: 2px solid #fff;
+border-radius: 5px;
+cursor: pointer;
+transition: .5s;
+}
+.bar-slide:hover{
+background-color:#fff;
+}
+.input-slide{
+display: none;
+}
+.trabalhar, .contratar{
+color: #fff;
+font-size: 50px;
+}
+.contratarBtnBox, .trabalharBtnBox{
+padding: 20px;
+}
+.carrosselBtn{
+  background-color: #FDB139;
+  border-radius: 5px;
+  border: none;
+  color: #FFF;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;  
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.carrosselBtn:hover{
+opacity: .9;
+}
+
+.fvp-text{
+text-align: center;
+animation: textAnimation 1s ease-in-out;
+}
+@keyframes textAnimation{
+0%{
+  position: relative;
+  bottom: 600px;
+  opacity: 0;
+}
+50%{
+  bottom: 300px;
+}
+100%{
+  bottom: 0px;
+}
+
+}
+.text-1-desktop, .text-2-desktop{
+font-size: 50px;
+color: aliceblue;
+font-family: 'Roboto', sans-serif;
+height: 100%;
+padding: 10px;
+}
+
+.seuServico{
+font-family: 'Dancing Script', cursive;
+font-size: 70px;
+line-height: 0;
+color: rgb(253, 177, 57);
+}
+  
+.fazer{
+font-family: 'Dancing Script', cursive;
+font-size: 70px;
+color: rgb(253, 177, 57);
+}
+
+                                         /*  SECTION FVP MOBILE */
+.first-viewport-mobile{
+background-color: rgb(40, 124, 39);
+height: 100vh;
+padding-top:15px ;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}                                           
 .search-container-mobile{
 display:block;
 flex-direction: column;
 }
 .search-box-mobile{
-  display: flex;
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-  }
-
-  .search-text-mobile{
-    background-color: aliceblue;
-    width: 60%;
-    height: 50px;
-    border-radius: 5px;
-   border-style: none;
-   font-size: 30px;
-   padding: 5px;
-   outline: none;
-  }
-  .pesquisar-btn{
-  display: flex;
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-  }
-  .search-btnMobile{
-  border-radius: 5px; 
-  width: 60%;
-  height: 50px;
-  background-color: #FDB139;
-   border: none; 
-   cursor: pointer;
-   font-size: 25px;
-   font-weight: bold;
-   color: #DFF6FE;
-   transition: 1s;
-  }
-  .search-btnMobile:hover{
-background-color: #F55253;
-  }
-.text-area-main-mobile{
-   display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-}
-.text-1-mobile,
-.text-2-mobile{
-  font-size: 40px;
-  margin-top: 40px;
-  color: aliceblue;
-  font-family: 'Roboto', sans-serif;
-}
-.fazer-mobile,
-.seuServico-mobile{
-  font-family: 'Dancing Script', cursive;
-  font-size: 60px;
-  line-height: 0;
-  color: rgb(253, 177, 57);
-}
-
-
-                                    /* COMEÇO FIRST SECTION DESKTOP */
- .container-main-desktop{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row-reverse;
-  }                                   
-.text-area-main-desktop{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-    float: left;
-    }
-   
-    .text-1-desktop, .text-2-desktop{
-    font-size: 50px;
-    margin: 50px 50px 0px 0px;
-    color: aliceblue;
-    font-family: 'Roboto', sans-serif;
-    }
-
-    #seuServico{
-        font-family: 'Dancing Script', cursive;
-        font-size: 70px;
-        line-height: 0;
-        color: rgb(253, 177, 57);
-    }
-    
-    #fazer{
-        font-family: 'Dancing Script', cursive;
-        font-size: 70px;
-        color: rgb(253, 177, 57);  
-    }                                /*  INICIO AREA SLIDES*/
-  
-                      /* AREA DOS SLIDES TRAMPAR/CONTRATAR */
-                      
-.contentSlides{
-display: flex;
-text-align: center;
-
-transform: translate(0%, -30%);
-}                    
-.slides{
 display: flex;
 justify-content: center;
 align-items: center;
-position: relative;
+}
+.search-text-mobile{
+  background-color: aliceblue;
+  width: 60%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  padding: 5px;
+  outline: none;
+}
+.pesquisar-btn{
+display: flex;
+margin-top: 20px;
+justify-content: center;
+align-items: center;
+}
+.search-btnMobile{
+border-radius: 5px; 
+width: 60%;
+height: 50px;
+background-color: #FDB139;
+ border: none; 
+ cursor: pointer;
+ font-size: 25px;
+ font-weight: bold;
+ color: #DFF6FE;
+ transition: 1s;
+}
+.search-btnMobile:hover{
+background-color: #F55253;
+}
+.text-area-main-mobile{
+ display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+}
+.text-1-mobile,
+.text-2-mobile{
+font-size: 40px;
+margin-top: 40px;
+color: aliceblue;
+font-family: 'Roboto', sans-serif;
+padding: 10px;
+}
+.fazer-mobile,
+.seuServico-mobile{
+font-family: 'Dancing Script', cursive;
+font-size: 60px;
+line-height: 0;
+color: rgb(253, 177, 57);
 }
 
-.s1{
-position: relative;
-top: 300px;
-}
-                               
-  .slide-label{
-    display: flex;
-    justify-content: center;
-  }
-  .bar-slide{
-    width: 50px;
-    margin-top: 30px;
-    margin: 15px;
-    height: 15px;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .5s;
-  }
-  .bar-slide:hover{
-    background-color:#fff;
-  }
-  .input-slide{
-    display: none;
-  }
-  .trabalhar, .contratar{
-    color: #fff;
-    font-size: 50px;
-  }
-  .contratarBtnBox, .trabalharBtnBox{
-    padding: 20px;
-  }
-  .carrosselBtn{
-    background-color: white;
-      border-radius: 5px;
-      border: none;
-      color: #062439;
-      padding: 10px 20px;
-      text-align: center;
-      font-weight: bold;
-      display: inline-block;
-      font-size: 16px;  
-      cursor: pointer;
-  }
-  
-  .slides{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-                                        /*  FIM DA AREA SLIDES*/   /*  FIM DA AREA DESKTOP*/
+
+
+                                    
                                           /*  SECOND VIEWPORT / ANUNCIOS */
 
 .subtitle-anuncios{
@@ -205,6 +227,7 @@ padding: 10px 20px 10px 20px;
 .info{
 flex-direction: column;
 margin: 30px;
+overflow-y: hidden;
 }
 
 .spn{
@@ -234,6 +257,7 @@ text-align: center;
 justify-content: center;
 align-items: center;
 transition: .8s;
+position: relative;
 }  
 .classes-servico img{
 width: 350px;
@@ -257,7 +281,9 @@ width: 300px;
 height: 100px;
 text-align: center;
 margin: 20px;
+overflow-y: hidden;
 }
+
 .servicos-title{
 color: rgb(49, 49, 49);
 }
@@ -283,11 +309,13 @@ justify-content: space-around;
 align-items: center;
 margin: 30px;
 border-radius: 5px;
+overflow-y: hidden;
 }
 .image-preFooter img{
 width: 600px;
 height: 500px;
 margin-top: 4px;
+margin-right: 170px;
 }
 .textBox-preFooter{
 display: flex;
@@ -486,14 +514,20 @@ width: 40%;
   }
 }
 
-   @media (min-width: 1100px){
-    .first-vp-mobile{
-      display: none;
-    }
+@media(min-width:1000px){
+  .ul-li-box ul {
+  display: flex;
   }
-
-  @media (max-width: 1100px){
-    .container-main-desktop{
-    display: none;
-    }
+  .search-box{
+  display: flex;
   }
+  .menu-box{
+  display: none;
+  }
+  .container-desktop{
+  display: flex;
+  }
+  .first-viewport-mobile{
+  display: none;
+  }
+  }  

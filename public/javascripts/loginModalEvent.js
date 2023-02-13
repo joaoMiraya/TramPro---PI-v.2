@@ -1,4 +1,5 @@
 const largura = window.innerWidth;
+let user = req.session.userLogged;
 
 
 setTimeout(() => {
@@ -16,6 +17,3 @@ modal.classList.remove('mostrar');
 initModal('modal-cadastro')
 }
 }, 5000);
-
-
-export {initModal}

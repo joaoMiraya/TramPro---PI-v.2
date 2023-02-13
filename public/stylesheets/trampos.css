@@ -5,6 +5,11 @@ overflow-x:hidden;
 main{
 padding: 15px;
 }
+a{
+text-decoration: none;
+list-style: none; 
+border: none;
+}
 .container-paiDeTodos-trampos{
 display: flex;
 width: 90%;
@@ -16,13 +21,12 @@ margin: 0px 20px;
 border-radius: 5px;
 box-shadow: 0px 1px 5px 0px;
 flex-wrap: wrap;
-margin: auto;
 }
 .search-result-text-box{
 display: flex;
 margin: 30px;
 }
-.nav-category-container{
+/* .nav-category-container{
 display: flex;
 flex-wrap: wrap;
 }
@@ -121,7 +125,7 @@ left: 10px;
 left: 15px;
 background-color: rgb(95, 209, 156);
 border: none;
-}
+} */
                                             /* AREA DOS ANUNCIOS */
 .anuncios-container{
 background-color: #EEF1E8;
@@ -210,12 +214,12 @@ margin: 15px 0;
 display: flex;
 justify-content: space-between;
 }
-.material-symbols-outlined{
+.favorite{
 transition: .5s;
 color: #47B5FF;
 cursor: pointer;
 }
-.material-symbols-outlined:hover{
+.favorite:hover{
 color: red;
 }
 .contratar-box{
@@ -228,13 +232,11 @@ color: red;
     cursor: pointer;
     margin-top: 10px;
     border: none;
-    outline: none;
     text-decoration: none;
 }
 .contratar-btn{
 background-color:#1D6758 ;
 border: none;
-outline: none;
 text-decoration: none;
 font-weight: bold;
 color: #FFF;
@@ -250,15 +252,3 @@ list-style: none;
 
 
                                         /* MEDIAS QUERIES */
-@media (max-width:1040px){
-.nav-category-container{
-flex-direction: column;
-}
-.optionBox select{
-margin-top: 15px;
-}
-.toggle-buttons{
-justify-content: flex-start;
-margin-left: 0;
-}
-}

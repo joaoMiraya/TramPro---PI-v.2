@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,107 +9,116 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/addTrampo.css">
     <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <% if(!userLogged){ %>
         <%- include('./partials/header') %>
-      <% } else { %>
-        <%- include('./partials/headerLogged') %>
-        
-      <% } %>
+            <% } else { %>
+                <%- include('./partials/headerLogged') %>
 
-<main>
-  <div class="container">
-    <div class="passoApasso">
-<h1 class="PassoTitle">Passo a Passo</h1>
+                    <% } %>
 
-<div class="passo1">
-    <h3>Primeiro passo</h3>
-    <p>Selecione uma imagem demonstrativa de seu serviço</p>
-</div>
+                        <main>
+                            <div class="container">
+                                <div class="passoApasso">
+                                    <h1 class="PassoTitle">Passo a Passo</h1>
 
-<div class="passo2">
-        <h3>Segundo passo</h3>
-    <p>Qual o nome do seu serviço? Assim que irão te procurar</p>
-</div>
+                                    <div class="passo1">
+                                        <h3>Primeiro passo</h3>
+                                        <p>Selecione uma imagem demonstrativa de seu serviço</p>
+                                    </div>
 
-<div class="passo3">
-        <h3>Terceiro passo</h3>
-    <p>Selecione uma categoria que corresponda ao seu serviço, <br>
-        o preço, se é presencial ou remoto e faça uma boa descrição <br>
-         de você e do serviço que oferece...Venda seu peixe</p>
-</div>
+                                    <div class="passo2">
+                                        <h3>Segundo passo</h3>
+                                        <p>Qual o nome do seu serviço? Assim que irão te procurar</p>
+                                    </div>
 
-    </div>
+                                    <div class="passo3">
+                                        <h3>Terceiro passo</h3>
+                                        <p>Selecione uma categoria que corresponda ao seu serviço, <br>
+                                            o preço, se é presencial ou remoto e faça uma boa descrição <br>
+                                            de você e do serviço que oferece...Venda seu peixe</p>
+                                    </div>
 
-<div class="form-box">
-  
-    <form action="/profile/editService/updateTrampo/<%= service.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-    <div class="serviceImageBox">
-        <input type="file" name="serviceImage" id="serviceImage">
-    </div>
-    
-    <div class="nomeServicoBox">
-        <label for="nome">Qual o nome do seu serviço?</label>
-        <input type="text" name="nome" id="nomeServico">
-      </div>
-   
-<div class="categoriaPrecoBox">
-    <div class="categoriaBox">
-        <select name="categorias" id="category">
-            <option value="todasCategorias" >Todas Categorias</option>
-            <option value="programacao">Programação</option>
-            <option value="delivery">Delivery</option>
-            <option value="jardinagem">Jardinagem</option>
-            <option value="manutenção">Manutenção</option>
-          </select>
-    </div>
+                                </div>
 
-<div class="remoto_presencial">
-    <select name="estilo" id="category" >
-        <option value="presencial">Presencial</option>
-        <option value="remoto">Remoto</option>
-      </select>
-    </div>
+                                <div class="form-box">
 
-    <div class="precoBox">
-        <label for="preco">Qual o valor do seu serviço?</label>
-        <input maxlength="3" type="text" name="preco" id="preco">
-      </div>
-    </div>
-    <div class="descricaoBox">
-        <textarea name="serviceDescricao" id="serviceDescricao" cols="50" rows="5" placeholder="Faça uma descrição"></textarea>
-    </div>
+                                    <form action="/profile/editService/updateTrampo/<%= service.id %>?_method=PUT"
+                                        method="POST" enctype="multipart/form-data">
+                                        <div class="serviceImageBox">
+                                            <input type="file" name="serviceImage" id="serviceImage">
+                                        </div>
 
-    <button type="submit">Salvar</button>
-</form>
-<% if(typeof errors!='undefined'){ %>
-    <ul>
-        <% for (let i=0; i < errors.length;i++){ %>
-                <li style="color: red"><%= errors[i] %>
-        <% } %>
-    </ul>
-<% } %>
-</div>
+                                        <div class="nomeServicoBox">
+                                            <label for="nome">Qual o nome do seu serviço?</label>
+                                            <input type="text" name="nome" id="nomeServico">
+                                        </div>
 
-  </div>
-</main>
-<%- include('./partials/footer') %>
+                                        <div class="categoriaPrecoBox">
+                                            <div class="categoriaBox">
+                                                <select name="categorias" id="category">
+                                                    <option value="todasCategorias">Todas Categorias</option>
+                                                    <option value="programacao">Programação</option>
+                                                    <option value="delivery">Delivery</option>
+                                                    <option value="jardinagem">Jardinagem</option>
+                                                    <option value="manutenção">Manutenção</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="remoto_presencial">
+                                                <select name="estilo" id="category">
+                                                    <option value="presencial">Presencial</option>
+                                                    <option value="remoto">Remoto</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="precoBox">
+                                                <label for="preco">Qual o valor do seu serviço?</label>
+                                                <input maxlength="3" type="text" name="preco" id="preco">
+                                            </div>
+                                        </div>
+                                        <div class="descricaoBox">
+                                            <textarea name="serviceDescricao" id="serviceDescricao" cols="50" rows="5"
+                                                placeholder="Faça uma descrição"></textarea>
+                                        </div>
+
+                                        <button type="submit">Salvar</button>
+                                    </form>
+                                    <% if(typeof errors!='undefined' ){ %>
+                                        <ul>
+                                            <% for (let i=0; i < errors.length;i++){ %>
+                                                <li style="color: red">
+                                                    <%= errors[i] %>
+                                                        <% } %>
+                                        </ul>
+                                        <% } %>
+                                </div>
+
+                            </div>
+                        </main>
+                        <%- include('./partials/footer') %>
 
 </body>
+
 </html>

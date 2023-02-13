@@ -7,18 +7,18 @@ const hiringRequest = require('../requests/hiringRequest');
 
 
 const contratanteController = {
-    contratante: async (req, res) =>{
+    contratante: async (req, res) => {
         let userLogged = req.session.userLogged;
-        let id = userLogged.id;     
+        let id = userLogged.id;
         let contratacoes = await hiringRequest.getUserHiring(id)
         contratacoes = contratacoes.data;
-       res.render('profileContratante', {
-        contratacoes
-       })
+        res.render('profileContratante', {
+            contratacoes
+        })
     },
     fotoCont: (req, res) => {
         console.log(req.file)
-   res.send('Foto alterada')
+        res.send('Foto alterada')
     }
 };
 

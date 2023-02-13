@@ -21,6 +21,8 @@ const pagamentoRouter = require('./src/routes/pagamento');
 const chatRouter = require('./src/routes/chat');
 
 
+const testeRouter = require('./src/routes/testeRouter');
+
 
 const app = express();
 
@@ -77,6 +79,8 @@ app.use('/entrar', entrarRouter);
 app.use('/servico', tramposRouter); 
 app.use('/pagamento', pagamentoRouter); 
 app.use('/chat', chatRouter); 
+
+app.use('/teste', testeRouter)
 
 
 

@@ -1,284 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TramPro</title>
-    <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
-                            <!-- css links -->
-    <link rel="stylesheet" href="/stylesheets/swiperCSS.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/home.css">
-                            <!-- swiper css -->
-    <link rel="stylesheet" href="/stylesheets/swiper.min.css">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TramPro</title>
+  <link rel="icon" type="image/x-icon" href="/images/TramPRO icon aba.png">
+  <!-- css links -->
+  <link rel="stylesheet" href="/stylesheets/swiperCSS.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/home.css">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="/stylesheets/swiper.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Roboto&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+
   <% if(!userLogged){ %>
-  <%- include('./partials/header') %>
-<% } else { %>
-  <%- include('./partials/headerLogged') %>
-  
-<% } %>
-<main>
- <section id="section-test" class="first-vp">
-    <div class="container-main-desktop"> 
-    
-<div class="text-area-main-desktop">
-<h2 class="text-1-desktop">
-  Nesse momento
-  pode ter alguém
-  precisando do
- <br> <strong id="seuServico">seu serviço!</strong>
-</h2>
-
-<h2 class="text-2-desktop"> Pare de perder tempo e mostre
-  oque <br> <strong id="fazer">você sabe fazer!</strong></h2> 
-</div>
-
-                          <!--  INICIO DA AREA SLIDE-->
-
-    <div class="contentSlides">
-  <div class="slides">
-    <input class="input-slide" type="radio" name="slide" id="slide1" checked>
-    <input class="input-slide" type="radio" name="slide" id="slide2">
-
-    <div id="txtSlide1" class="slide s1">
-      <h3 class="contratar txtBtn">Você pode contratar<br>alguem para o seu negócio</h3>
-      <div class="contratarBtnBox">
-  <a href="/servico"><button class="carrosselBtn contratarBTN">Contratar</button></a></div> 
-        </div>
- 
-  
-
-    <div id="txtSlide2" class="slide" style="visibility: hidden;">
-      <h3 class="trabalhar txtBtn">Você pode<br>procurar trabalhos para<br>sair do aperto</h3>
-        <div class="trabalharBtnBox">
-  <a href="/profile/addTrampo"><button class="carrosselBtn tramparBTN">Trampar</button></a></div>
-          </div>
-  
-<div class="slide-label">
-<label id="btn1" class="bar-slide bs1" for="slide1"></label>
-<label id="btn2" class="bar-slide bs2" for="slide2"></label>
-</div> </div>
- 
-</div>
-    </div> 
-    
-                    <!--   FIM DA AREA SLIDE -->  <!-- SECTION MOBILE -->
- <div class="first-vp-mobile">
-  
-  <div class="search-container-mobile">
-  <form action="/search" method="GET">
-    <div class="search-box-mobile">
-      <input class="search-text-mobile" name="keywords"  type="search" placeholder="Qual serviço está precisando?">                                  
-           </div>
-           <div class="pesquisar-btn">
-            <button type="submit" class="search-btnMobile">Pesquisar</button>
-           </div>
-          </form>
-  </div>   
-  
-      <div class="container-main-mobile"> 
-      
-  <div class="text-area-main-mobile">
-  <h2 class="text-1-mobile">
-    Nesse momento
-    pode ter alguém
-    precisando do
-   <br> <strong class="seuServico-mobile">seu serviço!</strong>
-  </h2>
-  
-  <h2 class="text-2-mobile"> Pare de perder tempo e mostre
-    oque <br> <strong class="fazer-mobile">você sabe fazer!</strong></h2> 
-  </div>
-</div>          
-                    <!-- FIM SECTION MOBILE -->                         
-  </section>
-                                  
-                            <!-- AREA DOS ANUNCIOS -->
- <section>
-  <h2 class="subtitle-anuncios">Encontre oque você precisa</h2>
+    <%- include('./partials/header') %>
+      <% } else { %>
+        <%- include('./partials/headerLogged') %>
+          <% } %>
 
 
 
-  <div class="slide-container swiper">
-    <div class="slide-content">
-      <div class="card-wraper swiper-wrapper">
- <% services.forEach(function(service){ %>
-       
-        <div class="card swiper-slide">
-  <div class="image-content">
-  <span class="overlay"></span>
-  
-  <div class="card-image">
-  <img src="/images/profiles/<%= service.Usuario.foto %>" alt="user-image" class="card-img">
-  </div>
-  </div>
-  
-  <div class="card-content">
-    <h2 class="name"> <%= service.nome %> </h2>
-    <p class="description"> <%= service.descricao %> </p>
-  <a href="/profilePublic/detail/<%= service.id %>"><button class="button">Saber mais</button> </a>
-  </div>
-    </div>
 
-    <% }) %>
-    
-      </div>
-        </div>
-  
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-  
-  </div>
+            <div class="container-desktop">
 
-                    <!-- FIM DA AREA DOS ANUNCIOS DESKTOP -->
-    <h2 class="subtitle-anuncios2">Um país inteiro de trabalhadores
-      freelancer ao seu alcance!</h2>
-                                     <!--  AREA DOS VIDEOS -->
+              <div class="contentSlides">
+                <div class="slide-1">
+                  <div id="txtSlide1" class="slide s1">
+                    <h3 class="contratar txtBtn">Você pode <br> contratar alguem <br> para o seu negócio</h3>
+                    <div class="contratarBtnBox">
+                      <a href="/servico" class="carrosselBtn">Contratar</a>
+                    </div>
+                  </div>
+                </div>
 
-     <!--  <h3 class="titulo-video">Encontre uma variedade de mão de obra para seu negócio!</h3> -->
-     <div class="video-container-pai">
-      <div class="videos-container">
-<iframe id="video1" src="https://player.vimeo.com/video/744249506?h=e0b2b751ad" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>
-   
-<div class="info">
-  <span class=" spn txt-1">
-  <p><strong class="str">O melhor para cada orçamento</strong>  <br>
-                
-  Encontre serviços de alta qualidade com várias opções de preço.
-   Sem tarifas por hora, preços somente com base em projetos.
-    </p>
-   </span>
-           
-  <span class=" spn txt-2">
-  <p><strong class="str">Trabalho com qualidade e rapidez</strong>  <br>
-                     
-  Encontre o freelancer certo em poucos minutos
-  para começar a trabalhar no seu projeto.
-  </p>
-  </span> 
- 
-  <span class=" spn txt-3">
-  <p><strong class="str">Pagamentos protegidos, sempre</strong> <br>
-                     
-  Saiba o valor que você pagará com antecedência.
-   Seu pagamento só será liberado depois que você aprovar o trabalho.
-   </p>
-   </span>
- 
-  <span class=" spn txt-4">
-  <p><strong class="str">Suporte 24/7</strong>  <br>
-           
-   Perguntas? Nossa equipe de suporte 24 horas está disponível
-   para ajudar a qualquer hora e em qualquer lugar.
-   </p>
-   </span>
-   </div>
-  </div>
-  </section>
+                <div class="slide-2">
+                  <div id="txtSlide2" class="slide" style="visibility: hidden;">
+                    <h3 class="trabalhar txtBtn">Você pode<br>procurar trabalhos <br> para sair do aperto</h3>
+                    <div class="trabalharBtnBox">
+                      <a href="/profile/addTrampo" class="carrosselBtn">Trampar</a>
+                    </div>
+                  </div>
 
-<div class="explore-classes">
-  <div class="nav-explore-servicos">
-<h1 class="explore-title">Mais procurados:</h1>
-<a class="nav-explore" href="./servico">Ver mais serviços ></a>
-</div>
-<div class="classes-servico-box">
+                  <div class="slide-label">
+                    <label id="btn1" class="bar-slide bs1" for="slide1"></label>
+                    <label id="btn2" class="bar-slide bs2" for="slide2"></label>
+                  </div>
+                </div>
+                <input class="input-slide" type="radio" name="slide" id="slide1" checked>
+                <input class="input-slide" type="radio" name="slide" id="slide2">
+              </div>
 
-<div class="classes-servico">
-  <div class="classes-image">
- <a href="/search?keywords=delivery"> <img src="/images/inputAvatar-comidaImage.jpg"  alt="serviços de culinaria"></a>
-  </div>
-<div class="servicos-description">
-<h2 class="servicos-title">Alimentação/Delivery</h2>
-<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-  </div>
-    </div>
+              <div class="fvp-text">
 
-    <div class="classes-servico">
-  <div class="classes-image">
-<a href="/search?keywords=manutencao"> <img src="/images/manuntencaoImage.jpg" alt="serviços de Manutenção"> </a>
-  </div>
-<div class="servicos-description">
-<h2 class="servicos-title">Manutenção</h2>
-<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-  </div>
-    </div>
+                <div class="text-1-box">
+                  <h2 class="text-1-desktop">
+                    Nesse momento <br>
+                    pode ter alguém <br>
+                    precisando do
+                    <br> <strong class="seuServico">seu serviço!</strong>
+                  </h2>
+                </div>
 
-    <div class="classes-servico">
-  <div class="classes-image">
- <a href="/search?keywords=programacao"><img src="/images/programacao-image.jpg"  alt="serviços de Jardinagem"></a> 
-  </div>
-<div class="servicos-description">
-<h2 class="servicos-title">Programação</h2>
-<p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-  </div>
-    </div>
-        </div>
-          </div>
-                            <!-- FIM DOS MAIS PROCURADOS -->
-<div class="model-preFooter">
+                <div class="text-1-box">
+                  <h2 class="text-2-desktop"> Pare de perder <br> tempo e mostre
+                    oque <br> <strong class="fazer">você sabe fazer!</strong>
+                  </h2>
+                </div>
+              </div>
+            </div>
 
-  <div class="textBox-preFooter">
-  <h1 class="text-preFooter">Encontre a <strong class="engrenagem">engrenagem</strong> que faltava para seu negócio <strong class="girar">girar  </strong>!</h1>
-  <a href="entrar"><button class="btn-preFooter">Começar</button></a>
-  </div>
 
-    <div class="image-preFooter">
-<img src="/images/modeloSemFundo.png" alt="model">
-    </div>
-</div>
+            <!-- FIRST SECTION MOBILE -->
 
-    </main>
+            <div class="first-viewport-mobile">
+              <div class="search-container-mobile">
+                <form action="/search" method="GET">
+                  <div class="search-box-mobile">
+                    <input class="search-text-mobile" name="keywords" type="search"
+                      placeholder="Qual serviço está precisando?">
+                  </div>
+                  <div class="pesquisar-btn">
+                    <button type="submit" class="search-btnMobile">Pesquisar</button>
+                  </div>
+                </form>
+              </div>
 
-<%- include('./partials/footer') %>
+              <div class="container-main-mobile">
 
-<div id="modal-cadastro" class="modal-container">
-<div class="modal">
-  <button id="modal-closeButton" class="close-modal-btn">x</button>
-  <h3 class="subtitle-modal">Faça o login ou crie uma conta</h3>
+                <div class="text-area-main-mobile">
+                  <h2 class="text-1-mobile">
+                    Nesse momento
+                    pode ter alguém
+                    precisando do
+                    <br> <strong class="seuServico-mobile">seu serviço!</strong>
+                  </h2>
 
-  <form action="/entrar/login" method="post">
-<div class="email-modal-box">
-<label for="input-modal-email">E-mail:</label>
-<input name="email" type="email" class="input-modal">
-</div>
+                  <h2 class="text-2-mobile"> Pare de perder tempo e mostre
+                    oque <br> <strong class="fazer-mobile">você sabe fazer!</strong>
+                  </h2>
+                </div>
+              </div>
 
-<div class="senha-modal-box">
-<label for="input-modal-senha">Senha:</label>
-<input name="password" type="password" class="input-modal">
-</div>
-<div class="box-modal">
-<button type="submit" class="button-login-modal">Entrar</button>
-</form>
-<div class="hr-modal-ou">
-<hr>ou<hr>
-</div>
-<div class="cadastrar-btn-modal-box">
-<a href="/entrar" class="button-cadastrar-modal">Cadastrar</a>
-</div>
-</div>
-</div>
 
-</div>
+            </div>
+
+
+            <!-- FIM SECTION MOBILE -->
+
+
+            <!-- AREA DOS ANUNCIOS -->
+            <section>
+              <h2 class="subtitle-anuncios">Encontre oque você precisa</h2>
+
+
+
+              <div class="slide-container swiper">
+                <div class="slide-content">
+                  <div class="card-wraper swiper-wrapper">
+                    <% services.forEach(function(service){ %>
+
+                      <div class="card swiper-slide">
+                        <div class="image-content">
+                          <span class="overlay"></span>
+
+                          <div class="card-image">
+                            <img src="/images/profiles/<%= service.Usuario.foto %>" alt="user-image" class="card-img">
+                          </div>
+                        </div>
+
+                        <div class="card-content">
+                          <h2 class="name">
+                            <%= service.nome %>
+                          </h2>
+                          <p class="description">
+                            <%= service.descricao %>
+                          </p>
+                          <a href="/profilePublic/detail/<%= service.id %>"><button class="button">Saber mais</button>
+                          </a>
+                        </div>
+                      </div>
+
+                      <% }) %>
+
+                  </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+
+              </div>
+            </section>
+
+
+            <!-- FIM DA AREA DOS ANUNCIOS DESKTOP -->
+            <h2 class="subtitle-anuncios2">Um país inteiro de trabalhadores
+              freelancer ao seu alcance!</h2>
+            <!--  AREA DOS VIDEOS -->
+
+            <!--  <h3 class="titulo-video">Encontre uma variedade de mão de obra para seu negócio!</h3> -->
+            <div class="video-container-pai">
+              <div class="videos-container">
+                <iframe id="video1" src="https://player.vimeo.com/video/744249506?h=e0b2b751ad" width="640" height="360"
+                  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              </div>
+
+              <div class="info">
+                <span class=" spn txt-1">
+                  <p><strong class="str">O melhor para cada orçamento</strong> <br>
+
+                    Encontre serviços de alta qualidade com várias opções de preço.
+                    Sem tarifas por hora, preços somente com base em projetos.
+                  </p>
+                </span>
+
+                <span class=" spn txt-2">
+                  <p><strong class="str">Trabalho com qualidade e rapidez</strong> <br>
+
+                    Encontre o freelancer certo em poucos minutos
+                    para começar a trabalhar no seu projeto.
+                  </p>
+                </span>
+
+                <span class=" spn txt-3">
+                  <p><strong class="str">Pagamentos protegidos, sempre</strong> <br>
+
+                    Saiba o valor que você pagará com antecedência.
+                    Seu pagamento só será liberado depois que você aprovar o trabalho.
+                  </p>
+                </span>
+
+                <span class=" spn txt-4">
+                  <p><strong class="str">Suporte 24/7</strong> <br>
+
+                    Perguntas? Nossa equipe de suporte 24 horas está disponível
+                    para ajudar a qualquer hora e em qualquer lugar.
+                  </p>
+                </span>
+              </div>
+            </div>
+
+            <div class="explore-classes">
+              <div class="nav-explore-servicos">
+                <h1 class="explore-title">Mais procurados:</h1>
+                <a class="nav-explore" href="./servico">Ver mais serviços ></a>
+              </div>
+              <div class="classes-servico-box">
+
+                <div class="classes-servico">
+                  <div class="classes-image">
+                    <a href="/search?keywords=delivery"><img src="/images/inputAvatar-comidaImage.jpg"
+                        alt="serviços de culinaria"></a>
+                  </div>
+                  <h2 class="servicos-title">Alimentação/Delivery</h2>
+                </div>
+
+                <div class="classes-servico">
+                  <div class="classes-image">
+                    <a href="/search?keywords=manutencao"><img src="/images/manuntencaoImage.jpg"
+                        alt="serviços de Manutenção"></a>
+                  </div>
+                  <h2 class="servicos-title">Manutenção</h2>
+                </div>
+
+                <div class="classes-servico">
+                  <div class="classes-image">
+                    <a href="/search?keywords=programacao"><img src="/images/programacao-image.jpg"
+                        alt="serviços de Jardinagem"></a>
+                  </div>
+                  <h2 class="servicos-title">Programação</h2>
+                </div>
+
+              </div>
+            </div>
+            <!-- FIM DOS MAIS PROCURADOS -->
+            <div class="model-preFooter">
+
+              <div class="textBox-preFooter">
+                <h1 class="text-preFooter">Encontre a <strong class="engrenagem">engrenagem</strong> que faltava para
+                  seu negócio <strong class="girar">girar </strong>!</h1>
+                <a href="entrar"><button class="btn-preFooter">Começar</button></a>
+              </div>
+
+              <div class="image-preFooter">
+                <img src="/images/modeloSemFundo.png" alt="model">
+              </div>
+            </div>
+
+
+
+            <%- include('./partials/footer') %>
+
+              <div id="modal-cadastro" class="modal-container">
+                <div class="modal">
+                  <button id="modal-closeButton" class="close-modal-btn">x</button>
+                  <h3 class="subtitle-modal">Faça o login ou crie uma conta</h3>
+
+                  <form action="/entrar/login" method="post">
+                    <div class="email-modal-box">
+                      <label for="input-modal-email">E-mail:</label>
+                      <input name="email" type="email" class="input-modal">
+                    </div>
+
+                    <div class="senha-modal-box">
+                      <label for="input-modal-senha">Senha:</label>
+                      <input name="password" type="password" class="input-modal">
+                    </div>
+                    <div class="box-modal">
+                      <button type="submit" class="button-login-modal">Entrar</button>
+                  </form>
+                  <div class="hr-modal-ou">
+                    <hr>ou
+                    <hr>
+                  </div>
+                  <div class="cadastrar-btn-modal-box">
+                    <a href="/entrar" class="button-cadastrar-modal">Cadastrar</a>
+                  </div>
+                </div>
+              </div>
+
+              </div>
 </body>
 
 <script src="/javascripts/main.js"></script>
@@ -287,6 +305,5 @@
 <!-- Swiper JS -->
 <script src="/javascripts/swiper-bundle.min.js"></script>
 <script src="/javascripts/swiperJs.js"></script>
+
 </html>
-
-

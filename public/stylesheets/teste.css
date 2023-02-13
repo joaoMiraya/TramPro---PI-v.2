@@ -1,0 +1,412 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    
+}
+
+.nav{
+background-color: #06293D;
+width: 100vw;
+height: 80px;
+display: flex;
+justify-content: space-between;
+z-index: 99;
+}
+                            /* LOGO TRAMPRO */
+.logo-nav{
+display: flex;
+height: 100%;
+align-items: center;
+margin-left: 30px;
+}
+
+.logo-nav h1{
+font-size: 35px;
+transition: .4s;
+}
+.logo-nav h1:hover{
+opacity: .7;
+}
+.tram{
+font-family: 'Pacifico', cursive;
+color: #FFF;
+}
+.pro{
+font-family: 'Roboto', sans-serif;
+color: rgb(72, 207, 174);
+font-weight: bold;
+}
+                            /* FIM LOGO TRAMPRO */
+
+                           /*  UL LI NAV */
+.ul-li-box{
+margin-bottom: 5px;
+margin-right: 30px;
+}                           
+.ul-li-box ul{
+display: none;
+height: 100%;
+align-items: flex-end;
+}
+.ul-li-box ul li{
+margin-right: 10px;
+}
+.ul-li-box ul a{
+font-size: 22px;
+color: #FFF;
+}
+.ul-li-box ul a:hover{
+opacity: .6;
+}
+                         /* FIM  UL LI NAV */
+                         
+.search-box{
+display: none;
+height: 100%;
+align-items: center;
+}     
+.search-content {
+display: flex;
+align-items: center;
+}                 
+.search-box input{
+height: 35px;
+width: 320px;
+font-size: 20px;
+outline: none;
+border: none;
+border-radius: 5px 0px 0px 5px;
+}
+.search-box button{
+background-color:rgb(72, 207, 174);
+border: none;
+border-radius: 0px 5px 5px 0px;
+height: 35px;
+width: 35px;
+cursor: pointer;
+}
+.search-icon{
+color: #FFF;
+}       
+.inputAnimation{
+animation: inputAnimation .5s ease;
+}
+@keyframes inputAnimation{
+  0%{
+width: 320px;
+  }
+  50%{
+width: 320px;
+  }
+  100%{
+width: 0px; 
+  }
+}
+                         /*    BOTÃO HAMBURGER */
+ .menu{
+  cursor: pointer;
+  color: #FFF;
+  }
+  .menu:hover .linha{
+  opacity: .7;
+  }
+  .menu-box span{
+   margin-top: 4px;
+  background-color: #FFF;
+  }
+  .menu-box button{
+  background-color: #06293D;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 15px 15px 0px 0px;
+
+  }
+  .linha{
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  transform-origin: center;
+  }
+  button.ativarHamburguer .linha:nth-child(1){
+      transform: translate(4px, 5px) rotate(-45deg);
+  }
+  
+  button.ativarHamburguer .linha:nth-child(3){
+      transform: translate(5px, -5px) rotate(45deg);
+  }
+  button.ativarHamburguer .linha:nth-child(2){
+     opacity: 0;
+  }
+                           /* FIM BOTÃO HAMBURGER */    
+                           
+                           /* MENU MOBILE */
+.menu-mobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 90vh;
+  background-color: #06293D;
+  color: #FFF;
+  position: absolute;
+  right: 2000px;
+  transition: .5s ease-in-out;
+  z-index: 98;
+  }
+  .menuActived{
+  right: 0;
+  }
+  .menu-mobile ul{
+  margin-top: 50px;
+  }                               
+  .box-menu-mobile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .li-menu-mobile a{
+  color: #FFF;
+  font-size: 20px;
+  }
+  .li-menu-mobile a:hover{
+opacity: .6;
+  }
+  
+
+  .box-menu-mobile div{
+  margin-left: 5px;
+  margin-top: 15px;
+  }                           
+                             /* FIM MENU MOBILE */
+
+                             /*  FIRST VIEWPORT DESKTOP */
+
+
+.container-desktop{
+display: none;
+align-items: center;
+justify-content: space-around;
+height: 600px;
+background-color: rgb(40, 124, 39);
+}
+.contentSlides{
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+transform: translate(0%, -20%);
+}
+.slide{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+.slide-1{
+animation: slide1Position 1s ease;
+position: relative;
+top: 250px;
+}
+@keyframes slide1Position {
+  0%{
+    position: relative;
+    opacity: 0;
+  }
+  50%{
+    top: 100px;
+    opacity: 0;
+  }
+  100%{
+    top: 250px;
+  }
+}
+
+.slide2Animation{
+z-index: 10;
+}
+.slide-label{
+  display: flex;
+  justify-content: center;
+}
+.bar-slide{
+  width: 50px;
+  margin-top: 30px;
+  margin: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+.bar-slide:hover{
+  background-color:#fff;
+}
+.input-slide{
+  display: none;
+}
+.trabalhar, .contratar{
+  color: #fff;
+  font-size: 50px;
+}
+.contratarBtnBox, .trabalharBtnBox{
+  padding: 20px;
+}
+.carrosselBtn{
+    background-color: #FDB139;
+    border-radius: 5px;
+    border: none;
+    color: #FFF;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;  
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.carrosselBtn:hover{
+opacity: .9;
+}
+
+.fvp-text{
+text-align: center;
+animation: textAnimation 1s ease-in-out;
+}
+@keyframes textAnimation{
+  0%{
+    position: relative;
+    bottom: 600px;
+    opacity: 0;
+  }
+  50%{
+    bottom: 300px;
+  }
+  100%{
+    bottom: 0px;
+  }
+ 
+}
+.text-1-desktop, .text-2-desktop{
+font-size: 50px;
+color: aliceblue;
+font-family: 'Roboto', sans-serif;
+height: 100%;
+padding: 10px;
+}
+
+.seuServico{
+font-family: 'Dancing Script', cursive;
+font-size: 70px;
+line-height: 0;
+color: rgb(253, 177, 57);
+}
+    
+.fazer{
+font-family: 'Dancing Script', cursive;
+font-size: 70px;
+color: rgb(253, 177, 57);
+ }
+
+                                           /*  SECTION FVP MOBILE */
+.first-viewport-mobile{
+background-color: rgb(40, 124, 39);
+height: 600px;
+}                                           
+.search-container-mobile{
+display:block;
+flex-direction: column;
+}
+.search-box-mobile{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  }
+  .search-text-mobile{
+    background-color: aliceblue;
+    width: 60%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font-size: 30px;
+    padding: 5px;
+    outline: none;
+  }
+  .pesquisar-btn{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  }
+  .search-btnMobile{
+  border-radius: 5px; 
+  width: 60%;
+  height: 50px;
+  background-color: #FDB139;
+   border: none; 
+   cursor: pointer;
+   font-size: 25px;
+   font-weight: bold;
+   color: #DFF6FE;
+   transition: 1s;
+  }
+  .search-btnMobile:hover{
+background-color: #F55253;
+  }
+.text-area-main-mobile{
+   display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+.text-1-mobile,
+.text-2-mobile{
+  font-size: 40px;
+  margin-top: 40px;
+  color: aliceblue;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+}
+.fazer-mobile,
+.seuServico-mobile{
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  line-height: 0;
+  color: rgb(253, 177, 57);
+}
+
+
+
+
+
+
+
+
+
+
+                                /* MEDIAS QUERIES    */                          
+@media(min-width:1000px){
+.ul-li-box ul {
+display: flex;
+}
+.search-box{
+display: flex;
+}
+.menu-box{
+display: none;
+}
+.container-desktop{
+display: flex;
+}
+.first-viewport-mobile{
+display: none;
+}
+}                                
